@@ -45,6 +45,7 @@ window:
   dynamic_padding: false
   decorations: full
 
+#Catppuccin Frappe
 colors:
     # Default colors
     primary:
