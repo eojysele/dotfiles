@@ -1,0 +1,150 @@
+env:
+  TERM: xterm-256color
+
+shell:
+  program: tmux
+  args:
+    - new-session
+    - -A
+    - -D
+    - -s
+    - main
+font:
+  size: 13
+  normal:
+    family: Iosevka Nerd Font Mono
+    type: Regular
+  bold:
+    family: Iosevka Nerd Font Mono
+    type: Bold
+  italic:
+    family: Iosevka Nerd Font Mono
+    type: Italic
+  bold_italic:
+    family: Iosevka Nerd Font Mono
+    type: Bold Italic
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+live_config_reload: true
+
+mouse:
+  hide_when_typing: true
+scrolling:
+  history: 5000
+  multiplier: 3
+
+window:
+  padding:
+    x: 2
+    y: 2
+  dynamic_padding: false
+  decorations: full
+
+#Catppuccin Frappe
+colors:
+    # Default colors
+    primary:
+        background: "#303446" # base
+        foreground: "#C6D0F5" # text
+        # Bright and dim foreground colors
+        dim_foreground: "#C6D0F5" # text
+        bright_foreground: "#C6D0F5" # text
+
+    # Cursor colors
+    cursor:
+        text: "#303446" # base
+        cursor: "#F2D5CF" # rosewater
+    vi_mode_cursor:
+        text: "#303446" # base
+        cursor: "#BABBF1" # lavender
+
+    # Search colors
+    search:
+        matches:
+            foreground: "#303446" # base
+            background: "#A5ADCE" # subtext0
+        focused_match:
+            foreground: "#303446" # base
+            background: "#A6D189" # green
+        footer_bar:
+            foreground: "#303446" # base
+            background: "#A5ADCE" # subtext0
+
+    # Keyboard regex hints
+    hints:
+        start:
+            foreground: "#303446" # base
+            background: "#E5C890" # yellow
+        end:
+            foreground: "#303446" # base
+            background: "#A5ADCE" # subtext0
+
+    # Selection colors
+    selection:
+        text: "#303446" # base
+        background: "#F2D5CF" # rosewater
+
+    # Normal colors
+    normal:
+        black: "#51576D" # surface1
+        red: "#E78284" # red
+        green: "#A6D189" # green
+        yellow: "#E5C890" # yellow
+        blue: "#8CAAEE" # blue
+        magenta: "#F4B8E4" # pink
+        cyan: "#81C8BE" # teal
+        white: "#B5BFE2" # subtext1
+
+    # Bright colors
+    bright:
+        black: "#626880" # surface2
+        red: "#E78284" # red
+        green: "#A6D189" # green
+        yellow: "#E5C890" # yellow
+        blue: "#8CAAEE" # blue
+        magenta: "#F4B8E4" # pink
+        cyan: "#81C8BE" # teal
+        white: "#A5ADCE" # subtext0
+
+    # Dim colors
+    dim:
+        black: "#51576D" # surface1
+        red: "#E78284" # red
+        green: "#A6D189" # green
+        yellow: "#E5C890" # yellow
+        blue: "#8CAAEE" # blue
+        magenta: "#F4B8E4" # pink
+        cyan: "#81C8BE" # teal
+        white: "#B5BFE2" # subtext1
+
+    indexed_colors:
+        - { index: 16, color: "#EF9F76" }
+        - { index: 17, color: "#F2D5CF" }
+
+key_bindings:
+  - { key: T, mods: Alt, chars: "\x02\x74" }
+  - { key: W, mods: Alt, chars: "\x02\x77" }
+  - { key: Key1, mods: Alt, chars: "\x02\x31" }
+  - { key: Key2, mods: Alt, chars: "\x02\x32" }
+  - { key: Key3, mods: Alt, chars: "\x02\x33" }
+  - { key: Key4, mods: Alt, chars: "\x02\x34" }
+  - { key: Key5, mods: Alt, chars: "\x02\x35" }
+  - { key: Key6, mods: Alt, chars: "\x02\x36" }
+  - { key: Key7, mods: Alt, chars: "\x02\x37" }
+  - { key: Key8, mods: Alt, chars: "\x02\x38" }
+  - { key: Key9, mods: Alt, chars: "\x02\x39" }
+  - { key: Left, mods: Alt, chars: "\x02\x70" }
+  - { key: Right, mods: Alt, chars: "\x02\x6e" }
+  - { key: D, mods: Alt, chars: "\x02\x25" }
+  - { key: D, mods: Alt|Shift, chars: "\x02\x22" }
+  - { key: Left, mods: Alt|Shift, chars: "\x02\x68" }
+  - { key: Down, mods: Alt|Shift, chars: "\x02\x6a" }
+  - { key: Up, mods: Alt|Shift, chars: "\x02\x6b" }
+  - { key: Right, mods: Alt|Shift, chars: "\x02\x6c" }
+  - { key: Comma, mods: Alt, chars: "\x02\x3c" }
+  - { key: Period, mods: Alt, chars: "\x02\x3e" }
