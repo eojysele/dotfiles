@@ -140,8 +140,8 @@ key_bindings:
   - { key: Key9, mods: Command, chars: "\x02\x39" }
   - { key: Left, mods: Command, chars: "\x02\x70" }
   - { key: Right, mods: Command, chars: "\x02\x6e" }
-  - { key: D, mods: Command, chars: "\x02\x25" }
-  - { key: D, mods: Command|Shift, chars: "\x02\x22" }
+  - { key: V, mods: Command|Shift, chars: "\x02\x25" }
+  - { key: H, mods: Command|Shift, chars: "\x02\x22" }
   - { key: Left, mods: Command|Shift, chars: "\x02\x68" }
   - { key: Down, mods: Command|Shift, chars: "\x02\x6a" }
   - { key: Up, mods: Command|Shift, chars: "\x02\x6b" }
