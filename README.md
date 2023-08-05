@@ -13,6 +13,8 @@ ln -s ~/.config/dotfiles/.tmux.conf ~/.tmux.conf
 
 ## zsh
 ```shell
+ln -s ~/.config/dotfiles/ej.zsh-theme ~/.oh-my-zsh/custom/themes/ej.zsh-theme
+
 ln -s ~/.config/dotfiles/.zshrc ~/.zshrc
 ```
 
