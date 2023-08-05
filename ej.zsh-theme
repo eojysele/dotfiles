@@ -1,13 +1,14 @@
 prompt_segment() {
-  echo -n "%{$fg_bold[$1]%}"
-  echo -n $2
+  echo -n "%{$fg_bold[$1]%}$2"
+}
+
+prompt_segment_regular() {
+  echo -n "%{$fg[$1]%}$2%{$reset_color%}"
 }
 
 # End the prompt, closing any open segments
-prompt_end() {
-  echo -n "%{%k%}"
-  echo -n "%{%f%}"
-  CURRENT_BG=''
+reset_color() {
+  echo -n "%{$reset_color%}"
 }
 
 prompt_context() {
@@ -67,12 +68,24 @@ prompt_git() {
   fi
 }
 
+prompt_carret() {
+  local CARET_SIGN=' $'
+  local CARET_COLOR="cyan"
+  if [[ "$USER" == 'root' ]]; then
+    CARET_COLOR='red'
+    CARET_SIGN='#'
+  fi
+
+  prompt_segment_regular $CARET_COLOR $CARET_SIGN 
+}
+
 build_prompt() {
   RETVAL=$?
   prompt_context
   prompt_dir
   prompt_git
-  prompt_end
+  reset_color
+  prompt_carret
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
+PROMPT='$(build_prompt) '
