@@ -70,7 +70,7 @@ prompt_git() {
 
 prompt_carret() {
   local CARET_SIGN=' $'
-  local CARET_COLOR="cyan"
+  local CARET_COLOR="white"
   if [[ "$USER" == 'root' ]]; then
     CARET_COLOR='red'
     CARET_SIGN='#'
