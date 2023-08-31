@@ -104,6 +104,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+t () { 
+    tmux new -ADs $1 
+}
+
+#main tmux session
+alias tm="tmux new -ADs main"
+
 export PATH=/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS:/opt/homebrew/bin:/opt/homebrew/bin:$HOME/.loca/bin
 
 source /Users/eojysele/.docker/init-zsh.sh || true # Added by Docker Desktop
