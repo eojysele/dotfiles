@@ -111,6 +111,7 @@ t () {
 
 #main tmux session
 alias tm="tmux new -ADs main"
+alias tw="tmux new -ADs work"
 
 export PATH=/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS:/opt/homebrew/bin:/opt/homebrew/bin:$HOME/.loca/bin
 
