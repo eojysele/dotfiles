@@ -140,16 +140,16 @@ key_bindings:
   - { key: Period,  mods: Command|Shift,    chars: "\x02\x3e" } # ^C-b > - move tab right
   - { key: D,       mods: Command,          chars: "\x02\x25" } # ^C-b % - vertical split
   - { key: D,       mods: Command|Shift,    chars: "\x02\x22" } # ^C-b " - horizontal split
-  - { key: Up,      mods: Option,           chars: "\x02\x7a" } # ^C-b z - toggle split to full screen
+  - { key: Up,      mods: Option|Shift,     chars: "\x02\x7a" } # ^C-b z - toggle split to full screen
   - { key: W,       mods: Command|Shift,    chars: "\x02\x57" } # ^C-b W - close pane (split)
   - { key: Left,    mods: Command,          chars: "\x02\x68" } # ^C-b h - go to split left
   - { key: Down,    mods: Command,          chars: "\x02\x6a" } # ^C-b j - go to split down
   - { key: Up,      mods: Command,          chars: "\x02\x6b" } # ^C-b k - go to split up
   - { key: Right,   mods: Command,          chars: "\x02\x6c" } # ^C-b l - go to split right
-  - { key: Left,    mods: Command|Shift,    chars: "\x02\x48" } # ^C-b H - resize split left
-  - { key: Down,    mods: Command|Shift,    chars: "\x02\x4a" } # ^C-b J - resize split down
-  - { key: Up,      mods: Command|Shift,    chars: "\x02\x4b" } # ^C-b K - resize split up
-  - { key: Right,   mods: Command|Shift,    chars: "\x02\x4c" } # ^C-b L - resize split right
-  - { key: Left,    mods: Option,           chars: "\x02\x7b" } # ^C-b { - swap split with previous
-  - { key: Right,   mods: Option,           chars: "\x02\x7d" } # ^C-b } - swap split with next
+  - { key: Left,    mods: Option,           chars: "\x02\x48" } # ^C-b H - resize split left
+  - { key: Down,    mods: Option,           chars: "\x02\x4a" } # ^C-b J - resize split down
+  - { key: Up,      mods: Option,           chars: "\x02\x4b" } # ^C-b K - resize split up
+  - { key: Right,   mods: Option,           chars: "\x02\x4c" } # ^C-b L - resize split right
+  - { key: Left,    mods: Command|Shift,    chars: "\x02\x7b" } # ^C-b { - swap split with previous
+  - { key: Right,   mods: Command|Shift,    chars: "\x02\x7d" } # ^C-b } - swap split with next
   - { key: V,       mods: Command|Shift,    chars: "\x02\x5b" } # ^C-b [ - vi mode
