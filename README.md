@@ -7,9 +7,21 @@
 Required: oh-my-zsh.
 
 ```shell
-ln -s ~/.config/dotfiles/ej.zsh-theme ~/.oh-my-zsh/custom/themes/ej.zsh-theme
+ln -s ~/.config/dotfiles/zsh/ej.zsh-theme ~/.oh-my-zsh/custom/themes/ej.zsh-theme
 
-ln -s ~/.config/dotfiles/zshrc ~/.zshrc
+ln -s ~/.config/dotfiles/zsh/zshrc ~/.zshrc
+```
+
+### Tmux
+
+```shell
+ln -s ~/.config/dotfiles/tmux/tmux.conf ~/.tmux.conf
+```
+
+### Neovim
+
+```shell
+ln -s ~/.config/dotfiles/nvim ~/.config/nvim
 ```
 
 ### Alacritty
@@ -20,12 +32,6 @@ ln -s ~/.config/dotfiles/alacritty/macos.yml ~/.config/alacritty/alacritty.yml
 
 # use for linux
 ln -s ~/.config/dotfiles/alacritty/linux.yml ~/.config/alacritty/alacritty.yml
-```
-
-### Tmux
-
-```shell
-ln -s ~/.config/dotfiles/tmux.conf ~/.tmux.conf
 ```
 
 ### kitty
@@ -44,13 +50,13 @@ ln -s ~/.config/dotfiles/kitty/linux.conf ~/.config/kitty/linux.conf
 
 ## Showcase
 
-1. Alacritty + tmux + [neovim](https://github.com/eojysele/nvim-config)
+1. Alacritty + tmux + neovim
 
-![Alacritty + tmux](resources/images/alacritty.png)
+![Alacritty + tmux](docs/resources/images/alacritty.png)
 
 2. kitty
 
-![kitty](resources/images/kitty.png)
+![kitty](docs/resources/images/kitty.png)
 
 
 
