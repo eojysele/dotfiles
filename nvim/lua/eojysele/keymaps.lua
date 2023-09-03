@@ -23,10 +23,9 @@ key_map("n", "<leader>sl", "<C-w>l")     -- to right split
 key_map("n", "<leader>sx", ":close<CR>") -- close current split window
 
 -- Buffers
-key_map("n", "<leader>bh", ":bprev<CR>")          -- go to prev buffer
-key_map("n", "<leader>bl", ":bnext<CR>")          -- go to next buffer
+key_map("n", "<leader>bp", ":bprev<CR>")          -- go to prev buffer
+key_map("n", "<leader>bn", ":bnext<CR>")          -- go to next buffer
 key_map("n", "<leader>bx", ":bdelete<CR>")        -- close current buffer
-key_map("n", "<leader>bp", ":BufferLinePick<CR>") -- buffer picking in bufferline
 
 -- Nvim-tree
 key_map("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
