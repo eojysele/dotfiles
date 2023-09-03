@@ -1,10 +1,14 @@
 # Dotfiles
 
+## Requirements
+- Alacritty >= 0.12.2
+- tmux >= 3.3
+- zsh >= 5.9 (also requred oh-my-zsh)
+- Neovim >= 0.9.1
+
 ## Installation
 
 ### zsh
-
-Required: oh-my-zsh.
 
 ```shell
 ln -s ~/.config/dotfiles/zsh/ej.zsh-theme ~/.oh-my-zsh/custom/themes/ej.zsh-theme
@@ -35,7 +39,5 @@ ln -s ~/.config/dotfiles/alacritty/linux.yml ~/.config/alacritty/alacritty.yml
 ```
 
 ## Showcase
-
-Alacritty + tmux + neovim
 
 ![Alacritty + tmux](docs/resources/images/alacritty.png)
