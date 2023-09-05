@@ -31,11 +31,15 @@ ln -s ~/.config/dotfiles/nvim ~/.config/nvim
 ### Alacritty
 
 ```shell
+ln -s ~/.config/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+
+ln -s ~/.config/dotfiles/alacritty/colors.yml ~/.config/alacritty/colors.yml
+
 # use for macos
-ln -s ~/.config/dotfiles/alacritty/macos.yml ~/.config/alacritty/alacritty.yml
+ln -s ~/.config/dotfiles/alacritty/macos.yml ~/.config/alacritty/os.yml
 
 # use for linux
-ln -s ~/.config/dotfiles/alacritty/linux.yml ~/.config/alacritty/alacritty.yml
+ln -s ~/.config/dotfiles/alacritty/linux.yml ~/.config/alacritty/os.yml
 ```
 
 ## Showcase

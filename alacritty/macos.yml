@@ -1,156 +1,34 @@
-env:
-  TERM: xterm-256color
-
-shell:
-  program: /opt/homebrew/bin/tmux
-  args:
-    - new-session
-    - -A
-    - -D
-    - -s
-    - main
-
-font:
-  size: 15
-  normal:
-    family: Iosevka Nerd Font Mono
-    type: Regular
-  bold:
-    family: Iosevka Nerd Font Mono
-    type: Bold
-  italic:
-    family: Iosevka Nerd Font Mono
-    type: Italic
-  bold_italic:
-    family: Iosevka Nerd Font Mono
-    type: Bold Italic
-  offset:
-    x: 0
-    y: 0
-  glyph_offset:
-    x: 0
-    y: 0
-
-live_config_reload: true
-
-mouse:
-  hide_when_typing: true
-scrolling:
-  history: 5000
-  multiplier: 3
-
-window:
-  padding:
-    x: 2
-    y: 2
-  dynamic_padding: false
-  decorations: full
-  startup_mode: Maximized
-
-#Catppuccin Frappe
-colors:
-    # Default colors
-    primary:
-        background: "#303446" # base
-        foreground: "#C6D0F5" # text
-        # Bright and dim foreground colors
-        dim_foreground: "#C6D0F5" # text
-        bright_foreground: "#C6D0F5" # text
-
-    # Search colors
-    search:
-        matches:
-            foreground: "#303446" # base
-            background: "#A5ADCE" # subtext0
-        focused_match:
-            foreground: "#303446" # base
-            background: "#A6D189" # green
-        footer_bar:
-            foreground: "#303446" # base
-            background: "#A5ADCE" # subtext0
-
-    # Keyboard regex hints
-    hints:
-        start:
-            foreground: "#303446" # base
-            background: "#E5C890" # yellow
-        end:
-            foreground: "#303446" # base
-            background: "#A5ADCE" # subtext0
-
-    # Selection colors
-    selection:
-        text: "#303446" # base
-        background: "#F2D5CF" # rosewater
-
-    # Normal colors
-    normal:
-        black: "#51576D" # surface1
-        red: "#E78284" # red
-        green: "#A6D189" # green
-        yellow: "#E5C890" # yellow
-        blue: "#8CAAEE" # blue
-        magenta: "#F4B8E4" # pink
-        cyan: "#81C8BE" # teal
-        white: "#B5BFE2" # subtext1
-
-    # Bright colors
-    bright:
-        black: "#626880" # surface2
-        red: "#E78284" # red
-        green: "#A6D189" # green
-        yellow: "#E5C890" # yellow
-        blue: "#8CAAEE" # blue
-        magenta: "#F4B8E4" # pink
-        cyan: "#81C8BE" # teal
-        white: "#A5ADCE" # subtext0
-
-    # Dim colors
-    dim:
-        black: "#51576D" # surface1
-        red: "#E78284" # red
-        green: "#A6D189" # green
-        yellow: "#E5C890" # yellow
-        blue: "#8CAAEE" # blue
-        magenta: "#F4B8E4" # pink
-        cyan: "#81C8BE" # teal
-        white: "#B5BFE2" # subtext1
-
-    indexed_colors:
-        - { index: 16, color: "#EF9F76" }
-        - { index: 17, color: "#F2D5CF" }
-
 key_bindings:
   # tmux shortcuts
-  - { key: A,       mods: Command,          chars: "\x02" }     # ^C-b - prefix
-  - { key: S,       mods: Command,          chars: "\x02\x73" } # ^C-b s - sessions preview
-  - { key: T,       mods: Command,          chars: "\x02\x74" } # ^C-b t - new tab
-  - { key: W,       mods: Command,          chars: "\x02\x77" } # ^C-b w - close current tab
-  - { key: Key1,    mods: Command,          chars: "\x02\x31" } # ^C-b 1 - go to tab 1
-  - { key: Key2,    mods: Command,          chars: "\x02\x32" } # ^C-b 2 - go to tab 2
-  - { key: Key3,    mods: Command,          chars: "\x02\x33" } # ^C-b 3 - go to tab 3
-  - { key: Key4,    mods: Command,          chars: "\x02\x34" } # ^C-b 4 - go to tab 4
-  - { key: Key5,    mods: Command,          chars: "\x02\x35" } # ^C-b 5 - go to tab 5
-  - { key: Key6,    mods: Command,          chars: "\x02\x36" } # ^C-b 6 - go to tab 6
-  - { key: Key7,    mods: Command,          chars: "\x02\x37" } # ^C-b 7 - go to tab 7
-  - { key: Key8,    mods: Command,          chars: "\x02\x38" } # ^C-b 8 - go to tab 8
-  - { key: Key9,    mods: Command,          chars: "\x02\x39" } # ^C-b 9 - go to tab 9
-  - { key: Comma,   mods: Command,          chars: "\x02\x70" } # ^C-b p - previous tab
-  - { key: Period,  mods: Command,          chars: "\x02\x6e" } # ^C-b n - next tab
-  - { key: Comma,   mods: Command|Shift,    chars: "\x02\x3c" } # ^C-b < - move tab left
-  - { key: Period,  mods: Command|Shift,    chars: "\x02\x3e" } # ^C-b > - move tab right
-  - { key: D,       mods: Command,          chars: "\x02\x25" } # ^C-b % - vertical split
-  - { key: D,       mods: Command|Shift,    chars: "\x02\x22" } # ^C-b " - horizontal split
-  - { key: Up,      mods: Option|Shift,     chars: "\x02\x7a" } # ^C-b z - toggle split to full screen
-  - { key: W,       mods: Command|Shift,    chars: "\x02\x57" } # ^C-b W - close pane (split)
-  - { key: Left,    mods: Command,          chars: "\x02\x68" } # ^C-b h - go to split left
-  - { key: Down,    mods: Command,          chars: "\x02\x6a" } # ^C-b j - go to split down
-  - { key: Up,      mods: Command,          chars: "\x02\x6b" } # ^C-b k - go to split up
-  - { key: Right,   mods: Command,          chars: "\x02\x6c" } # ^C-b l - go to split right
-  - { key: Left,    mods: Option,           chars: "\x02\x48" } # ^C-b H - resize split left
-  - { key: Down,    mods: Option,           chars: "\x02\x4a" } # ^C-b J - resize split down
-  - { key: Up,      mods: Option,           chars: "\x02\x4b" } # ^C-b K - resize split up
-  - { key: Right,   mods: Option,           chars: "\x02\x4c" } # ^C-b L - resize split right
-  - { key: Left,    mods: Command|Shift,    chars: "\x02\x7b" } # ^C-b { - swap split with previous
-  - { key: Right,   mods: Command|Shift,    chars: "\x02\x7d" } # ^C-b } - swap split with next
-  - { key: V,       mods: Command|Shift,    chars: "\x02\x5b" } # ^C-b [ - vi mode
+  - { key: A,         mods: Command,          chars: "\x02" }     # ^C-b - prefix
+  - { key: S,         mods: Command,          chars: "\x02\x73" } # ^C-b s - sessions preview
+  - { key: T,         mods: Command,          chars: "\x02\x74" } # ^C-b t - new tab
+  - { key: W,         mods: Command,          chars: "\x02\x77" } # ^C-b w - close current tab
+  - { key: Key1,      mods: Command,          chars: "\x02\x31" } # ^C-b 1 - go to tab 1
+  - { key: Key2,      mods: Command,          chars: "\x02\x32" } # ^C-b 2 - go to tab 2
+  - { key: Key3,      mods: Command,          chars: "\x02\x33" } # ^C-b 3 - go to tab 3
+  - { key: Key4,      mods: Command,          chars: "\x02\x34" } # ^C-b 4 - go to tab 4
+  - { key: Key5,      mods: Command,          chars: "\x02\x35" } # ^C-b 5 - go to tab 5
+  - { key: Key6,      mods: Command,          chars: "\x02\x36" } # ^C-b 6 - go to tab 6
+  - { key: Key7,      mods: Command,          chars: "\x02\x37" } # ^C-b 7 - go to tab 7
+  - { key: Key8,      mods: Command,          chars: "\x02\x38" } # ^C-b 8 - go to tab 8
+  - { key: Key9,      mods: Command,          chars: "\x02\x39" } # ^C-b 9 - go to tab 9
+  - { key: LBracket,  mods: Command,          chars: "\x02\x70" } # ^C-b p - previous tab
+  - { key: RBracket,  mods: Command,          chars: "\x02\x6e" } # ^C-b n - next tab
+  - { key: LBracket,  mods: Command|Shift,    chars: "\x02\x3c" } # ^C-b < - move tab left
+  - { key: RBracket,  mods: Command|Shift,    chars: "\x02\x3e" } # ^C-b > - move tab right
+  - { key: D,         mods: Command,          chars: "\x02\x25" } # ^C-b % - vertical split
+  - { key: D,         mods: Command|Shift,    chars: "\x02\x22" } # ^C-b " - horizontal split
+  - { key: W,         mods: Command|Shift,    chars: "\x02\x57" } # ^C-b W - close pane (split)
+  - { key: H,         mods: Command|Shift,    chars: "\x02\x68" } # ^C-b h - go to split left
+  - { key: J,         mods: Command|Shift,    chars: "\x02\x6a" } # ^C-b j - go to split down
+  - { key: K,         mods: Command|Shift,    chars: "\x02\x6b" } # ^C-b k - go to split up
+  - { key: L,         mods: Command|Shift,    chars: "\x02\x6c" } # ^C-b l - go to split right
+  - { key: H,         mods: Control|Shift,    chars: "\x02\x48" } # ^C-b H - resize split left
+  - { key: J,         mods: Control|Shift,    chars: "\x02\x4a" } # ^C-b J - resize split down
+  - { key: K,         mods: Control|Shift,    chars: "\x02\x4b" } # ^C-b K - resize split up
+  - { key: L,         mods: Control|Shift,    chars: "\x02\x4c" } # ^C-b L - resize split right
+  - { key: F,         mods: Command|Shift,    chars: "\x02\x7a" } # ^C-b z - toggle split to full screen
+  - { key: Comma,     mods: Command|Shift,    chars: "\x02\x7b" } # ^C-b { - swap split with previous
+  - { key: Period,    mods: Command|Shift,    chars: "\x02\x7d" } # ^C-b } - swap split with next
+  - { key: V,         mods: Command|Shift,    chars: "\x02\x5b" } # ^C-b [ - vi mode
