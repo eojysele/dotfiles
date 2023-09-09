@@ -1,4 +1,4 @@
-require("plugins-setup") -- Lazy
+require("plugin-manager") -- Lazy
 require("options")
 require("colorscheme")
 require("keymaps")
