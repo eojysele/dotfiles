@@ -1,6 +1,5 @@
 require("catppuccin").setup({
     flavour = "frappe",
-    term_colors = true,
     styles = {
         comments = { "italic" },
         conditionals = { "italic" },
@@ -11,11 +10,6 @@ require("catppuccin").setup({
         dap = {
             enabled = true,
         },
-        indent_blankline = {
-            enabled = true,
-            colored_indent_levels = true,
-        },
-
     },
 })
 
