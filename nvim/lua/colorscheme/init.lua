@@ -1,5 +1,6 @@
 require("catppuccin").setup({
     flavour = "frappe",
+    term_colors = true,
     styles = {
         comments = { "italic" },
         conditionals = { "italic" },
@@ -9,15 +10,16 @@ require("catppuccin").setup({
         symbols_outline = true,
         dap = {
             enabled = true,
-        }
+        },
+        indent_blankline = {
+            enabled = true,
+            colored_indent_levels = true,
+        },
+
     },
 })
 
-local status, _ = pcall(vim.cmd, "colorscheme catppuccin")
-if not status then
-    print("Colorscheme not found!") -- print error if colorscheme not installed
-    return
-end
+vim.cmd.colorscheme "catppuccin"
 
 local signs = {
     DiagnosticSignError = "",

@@ -97,7 +97,7 @@ ins_left {
 ins_left {
     'branch',
     icon = '',
-    color = {fg = colors.text, gui = 'bold'},
+    color = { fg = colors.text, gui = 'bold' },
     padding = { left = 1, right = 1 }
 }
 
@@ -143,13 +143,13 @@ ins_right {
 
 ins_right {
     'location',
-    color = {fg = colors.text, gui = 'bold'},
+    color = { fg = colors.text, gui = 'bold' },
     padding = { left = 1, right = 1 }
 }
 
 ins_right {
     'progress',
-    color = {fg = colors.text, gui = "bold"},
+    color = { fg = colors.text, gui = "bold" },
     padding = { left = 1, right = 1 }
 }
 

@@ -33,10 +33,6 @@ key_map("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 -- Symbols-outline
 key_map("n", "<leader>so", ":SymbolsOutline<CR>")
 
--- Diffview
-key_map("n", "<leader>do", ":DiffviewOpen<CR>")
-key_map("n", "<leader>dx", ":DiffviewClose<CR>")
-
 -- Default keys (lsp)
 key_map("n", "gd", vim.lsp.buf.definition)                                    -- go to definition
 key_map("n", "gD", vim.lsp.buf.declaration)                                   -- go to declaration
@@ -86,7 +82,7 @@ function P.java_key_map(bufnr)
     key_map("n", "<leader>tm", jdtls.test_nearest_method)                                   -- test method
 
     -- Spring Boot App
-    local spring_app = require('eojysele.auxiliary-scripts.language.java.run-spring-app')
+    local spring_app = require('auxiliary-scripts.language.java.run-spring-app')
     key_map("n", "<F9>", function() spring_app.run_spring_boot() end)
     key_map("n", "<F10>", function() spring_app.run_spring_boot(true) end) -- run in debug
 end
