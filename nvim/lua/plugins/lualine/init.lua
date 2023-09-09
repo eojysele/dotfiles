@@ -111,7 +111,7 @@ ins_left {
 ins_left {
     'filename',
     shorting_target = 150,
-    color = { fg = colors.text, gui = 'italic,bold' },
+    color = { fg = colors.text, gui = 'bold' },
     symbols = {
         modified = '',
         readonly = '',
