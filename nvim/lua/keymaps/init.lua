@@ -13,8 +13,8 @@ end
 --------------------------
 -- Window management
 -- Splits
-key_map("n", "<leader>sd", "<C-w>v")      -- split window vertically
-key_map("n", "<leader>sD", "<C-w>s")      -- split window horizontally
+key_map("n", "<leader>sd", "<C-w>v")     -- split window vertically
+key_map("n", "<leader>sD", "<C-w>s")     -- split window horizontally
 key_map("n", "<leader>s=", "<C-w>=")     -- make split windows equal width & height
 key_map("n", "<leader>sj", "<C-w>j")     -- to lower split
 key_map("n", "<leader>sk", "<C-w>k")     -- to upper split
@@ -23,9 +23,11 @@ key_map("n", "<leader>sl", "<C-w>l")     -- to right split
 key_map("n", "<leader>sx", ":close<CR>") -- close current split window
 
 -- Buffers
-key_map("n", "<leader>bp", ":bprev<CR>")          -- go to prev buffer
-key_map("n", "<leader>bn", ":bnext<CR>")          -- go to next buffer
-key_map("n", "<leader>bx", ":bdelete<CR>")        -- close current buffer
+key_map("n", "<leader>bp", ":bprev<CR>")    -- go to prev buffer
+key_map("n", "<leader>bn", ":bnext<CR>")    -- go to next buffer
+key_map("n", "<leader>bx", ":bdelete<CR>")  -- close current buffer
+key_map("n", "<leader>bX", ":bdelete!<CR>") -- close current buffer
+
 -- Gitsigns
 function P.gitsings_key_map(bufnr, gs)
     key_map("n", "<leader>do", gs.diffthis)                                                              -- open diff in split
