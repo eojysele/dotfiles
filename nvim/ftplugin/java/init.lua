@@ -16,7 +16,7 @@ local root_dir = require('jdtls.setup').find_root(root_markers)
 local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
 local on_attach = function(client, bufnr)
-    require 'keymaps'.java_key_map(bufnr);
+    require 'eojysele.keymaps'.java_key_map(bufnr);
     require('jdtls').setup_dap({ hotcodereplace = 'auto' })
 end
 

@@ -95,7 +95,7 @@ function P.java_key_map(bufnr)
     key_map("n", "<leader>tm", jdtls.test_nearest_method)                                   -- test method
 
     -- Spring Boot App
-    local spring_app = require('auxiliary-scripts.language.java.run-spring-app')
+    local spring_app = require("eojysele.auxiliary-scripts.language.java.run-spring-app")
     key_map("n", "<F9>", function() spring_app.run_spring_boot() end)
     key_map("n", "<F10>", function() spring_app.run_spring_boot(true) end) -- run in debug
 end
