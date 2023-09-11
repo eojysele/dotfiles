@@ -51,8 +51,8 @@ key_map("n", "gd", vim.lsp.buf.definition)                                    --
 key_map("n", "gD", vim.lsp.buf.declaration)                                   -- go to declaration
 key_map("n", "gr", vim.lsp.buf.references)                                    -- list of references
 key_map("n", "gi", vim.lsp.buf.implementation)                                -- go to implementation
-key_map("n", "<leader>ht", vim.lsp.buf.hover)                                 -- hover text
-key_map("n", "<leader>hs", vim.lsp.buf.signature_help)                        -- show signature
+key_map("n", "<leader>St", vim.lsp.buf.hover)                                 -- hover text
+key_map("n", "<leader>Ss", vim.lsp.buf.signature_help)                        -- show signature
 key_map("n", "<leader>rn", vim.lsp.buf.rename)                                -- rename
 key_map("n", "<leader>ca", vim.lsp.buf.code_action)                           -- code actions
 key_map("n", '<leader>f', function() vim.lsp.buf.format { async = true } end) -- format file
