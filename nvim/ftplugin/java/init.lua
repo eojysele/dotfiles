@@ -7,15 +7,16 @@ local path_to_config = jdtls_path .. "/config_mac"
 local path_to_plugins = jdtls_path .. "/plugins"
 local path_to_jar_jdtls = path_to_plugins .. "/org.eclipse.equinox.launcher_*.jar"
 local path_to_lombok = jdtls_path .. "/lombok.jar"
-local java_debug_path = nvim_home .. "/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
+local java_debug_path = nvim_home ..
+"/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
 local java_test_path = nvim_home .. "/mason/packages/java-test/extension/server/*.jar"
 
-local root_markers = {'gradlew', 'mvnw', '.git'}
+local root_markers = { 'gradlew', 'mvnw', '.git' }
 local root_dir = require('jdtls.setup').find_root(root_markers)
 local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
 local on_attach = function(client, bufnr)
-    require'keymaps'.java_key_map(bufnr);
+    require 'keymaps'.java_key_map(bufnr);
     require('jdtls').setup_dap({ hotcodereplace = 'auto' })
 end
 
@@ -30,67 +31,50 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local config = {
     flags = {
-            debounce_text_changes = 80,
-        },
+        debounce_text_changes = 80,
+    },
 
-        capabilities = capabilities,
-        on_attach = on_attach,
+    capabilities = capabilities,
+    on_attach = on_attach,
 
-        init_options = {
-            bundles = bundles
-        },
+    init_options = {
+        bundles = bundles
+    },
 
-        root_dir = root_dir,
-        settings = {
-            java = {
-                eclipse = {
-                    downloadSources = true,
+    root_dir = root_dir,
+    settings = {
+        java = {
+            eclipse = {
+                downloadSources = true,
+            },
+            maven = {
+                downloadSources = true,
+            },
+            implementationsCodeLens = {
+                enabled = true,
+            },
+            referencesCodeLens = {
+                enabled = true,
+            },
+            references = {
+                includeDecompiledSources = true,
+            },
+            format = {
+                settings = {
+                    url = home .. "/.config/nvim/code-styles/intellij-java-google-style.xml",
+                    profile = "GoogleStyle",
                 },
-                maven = {
-                    downloadSources = true,
-                },
-                implementationsCodeLens = {
-                    enabled = true,
-                },
-                referencesCodeLens = {
-                    enabled = true,
-                },
-                references = {
-                    includeDecompiledSources = true,
-                },
-                format = {
-                    settings = {
-                        url = home .. "/.config/nvim/code-styles/intellij-java-google-style.xml",
-                        profile = "GoogleStyle",
-                    },
-                },
-                signatureHelp = {
-                    enabled = true
-                },
-                contentProvider = {
-                    preferred = 'fernflower'
-                },
-                completion = {
-                    favoriteStaticMembers = {
-                        "org.hamcrest.MatcherAssert.assertThat",
-                        "org.hamcrest.Matchers.*",
-                        "org.hamcrest.CoreMatchers.*",
-                        "org.junit.jupiter.api.Assertions.*",
-                        "java.util.Objects.requireNonNull",
-                        "java.util.Objects.requireNonNullElse",
-                        "org.mockito.Mockito.*"
-                    },
-                    importOrder = {
-                        "java",
-                        "javax",
-                        "com",
-                        "org"
-                    },
-                },
+            },
+            signatureHelp = {
+                enabled = true
+            },
+            contentProvider = {
+                preferred = 'fernflower'
+            },
             sources = {
                 organizeImports = {
-                    starThreshold = 9999;
-                    staticStarThreshold = 9999;
+                    starThreshold = 9999,
+                    staticStarThreshold = 9999,
                 },
             },
             codeGeneration = {
