@@ -12,6 +12,7 @@ require("dap.ext.vscode").load_launchjs()
 -- Plugins directory
 require("plugins.tree")
 require("plugins.lualine")
+require("plugins.gitsigns")
 require("plugins.symbols-outline")
 require("plugins.telescope")
 require("plugins.lspconfig")

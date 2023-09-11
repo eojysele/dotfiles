@@ -26,6 +26,17 @@ key_map("n", "<leader>sx", ":close<CR>") -- close current split window
 key_map("n", "<leader>bp", ":bprev<CR>")          -- go to prev buffer
 key_map("n", "<leader>bn", ":bnext<CR>")          -- go to next buffer
 key_map("n", "<leader>bx", ":bdelete<CR>")        -- close current buffer
+-- Gitsigns
+function P.gitsings_key_map(bufnr, gs)
+    key_map("n", "<leader>do", gs.diffthis)                                                              -- open diff in split
+    key_map("n", "<leader>hp", gs.preview_hunk)                                                          -- preview change
+    key_map("n", "<leader>hs", gs.stage_hunk)                                                            -- add changes in current line
+    key_map("v", "<leader>hs", function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end)      -- add changes in selected lines
+    key_map("n", "<leader>hr", gs.reset_hunk)                                                            -- reset changes in current line
+    key_map("v", "<leader>hr", function() gs.reset_hunk { vim.fn.line("."), vim.fn.line("v") } end)      -- reset changes in selected lines
+    key_map("n", "<leader>hu", gs.undo_stage_hunk)                                                       -- undo adding changes in current line
+    key_map("v", "<leader>hu", function() gs.undo_stage_hunk { vim.fn.line("."), vim.fn.line("v") } end) -- undo adding changes in selected lines
+end
 
 -- Nvim-tree
 key_map("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
