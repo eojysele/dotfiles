@@ -8,7 +8,7 @@ local path_to_plugins = jdtls_path .. "/plugins"
 local path_to_jar_jdtls = path_to_plugins .. "/org.eclipse.equinox.launcher_*.jar"
 local path_to_lombok = jdtls_path .. "/lombok.jar"
 local java_debug_path = nvim_home ..
-"/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
+    "/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
 local java_test_path = nvim_home .. "/mason/packages/java-test/extension/server/*.jar"
 
 local root_markers = { 'gradlew', 'mvnw', '.git' }
