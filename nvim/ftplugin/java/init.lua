@@ -26,8 +26,7 @@ local bundles = {
 
 vim.list_extend(bundles, vim.split(vim.fn.glob(java_test_path, 1), "\n"))
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local config = {
     flags = {

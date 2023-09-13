@@ -1,12 +1,16 @@
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 -- Markdown
-require 'lspconfig'.marksman.setup {}
+require 'lspconfig'.marksman.setup {
+    capabilities = capabilities,
+}
 
 -- Lua
-require 'lspconfig'.lua_ls.setup {}
+require 'lspconfig'.lua_ls.setup {
+    capabilities = capabilities,
+}
 
 -- HTML
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 require 'lspconfig'.html.setup {
     capabilities = capabilities,
 }
@@ -17,4 +21,6 @@ require 'lspconfig'.jsonls.setup {
 }
 
 -- XML
-require 'lspconfig'.lemminx.setup {}
+require 'lspconfig'.lemminx.setup {
+    capabilities = capabilities,
+}
