@@ -31,8 +31,8 @@ colors:
 
     # Selection colors
     selection:
-        text: "#303446" # base
-        background: "#F2D5CF" # rosewater
+        text: "#C6D0F5" # text
+        background: "#51576D" # surface1
 
     # Normal colors
     normal:
