@@ -45,7 +45,7 @@ window:
     y: 2
   dynamic_padding: false
   decorations: full
-  startup_mode: Windowed
+  startup_mode: Maximized
 
 import:
   - ~/.config/alacritty/colors.yml
