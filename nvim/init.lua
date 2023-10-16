@@ -37,7 +37,6 @@ require("lazy").setup({
     "mfussenegger/nvim-dap",
 
     -- Code highlighting, completion and editing
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-vsnip",
