@@ -42,6 +42,12 @@ ln -s ~/.config/dotfiles/alacritty/macos.yml ~/.config/alacritty/os.yml
 ln -s ~/.config/dotfiles/alacritty/linux.yml ~/.config/alacritty/os.yml
 ```
 
+### lf
+
+```shell
+ln -s ~/.config/dotfiles/lf ~/.config/lf
+```
+
 ## Showcase
 
-![Alacritty + tmux](docs/resources/images/alacritty.png)
+![Alacritty + tmux](docs/resources/images/dotfiles.png)
