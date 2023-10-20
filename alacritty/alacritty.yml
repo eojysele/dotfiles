@@ -36,7 +36,7 @@ live_config_reload: true
 mouse:
   hide_when_typing: true
 scrolling:
-  history: 5000
+  history: 10000
   multiplier: 3
 
 window:
