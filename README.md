@@ -5,6 +5,7 @@
 - tmux >= 3.3
 - zsh >= 5.9 (also requred oh-my-zsh)
 - Neovim >= 0.9.1
+- lf >= 30
 
 ## Installation
 
