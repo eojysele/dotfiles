@@ -18,7 +18,7 @@ prompt_context() {
 }
 
 prompt_dir() {
-  prompt_segment blue '%~'
+  prompt_segment blue '%c'
 }
 
 prompt_git() {
