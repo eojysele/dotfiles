@@ -8,6 +8,14 @@ colors:
         dim_foreground: "#C6D0F5" # text
         bright_foreground: "#C6D0F5" # text
 
+    # Cursor colors
+    cursor:
+        text: "#303446" # base
+        cursor: "#C6D0F5" # text
+    vi_mode_cursor:
+        text: "#303446" # base
+        cursor: "#C6D0F5" # text
+
     # Search colors
     search:
         matches:
