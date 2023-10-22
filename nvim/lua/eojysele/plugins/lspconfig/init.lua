@@ -24,3 +24,23 @@ require 'lspconfig'.jsonls.setup {
 require 'lspconfig'.lemminx.setup {
     capabilities = capabilities,
 }
+
+-- YAML
+require 'lspconfig'.yamlls.setup {
+    filetypes = { "yaml" },
+    settings = {
+        redhat = {
+            telemetry = {
+                enabled = false
+            }
+        }
+    }
+}
+
+-- Docker compose
+require 'lspconfig'.docker_compose_language_service.setup {
+    filetypes = { "yaml.docker-compose" }
+}
+
+-- Dockerfile
+require 'lspconfig'.dockerls.setup {}

@@ -41,6 +41,7 @@ require("lazy").setup({
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-vsnip",
     "hrsh7th/vim-vsnip",
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     "windwp/nvim-autopairs",
     "numToStr/Comment.nvim"
 

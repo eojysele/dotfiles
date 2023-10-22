@@ -2,6 +2,8 @@ require("nvim-tree").setup({
     on_attach = on_attach,
     view = {
         adaptive_size = true,
+        number = true,
+        relativenumber = true,
     },
     renderer = {
         root_folder_label = ":~:t?$?/..?",
