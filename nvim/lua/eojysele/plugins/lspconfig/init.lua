@@ -27,7 +27,6 @@ require 'lspconfig'.lemminx.setup {
 
 -- YAML
 require 'lspconfig'.yamlls.setup {
-    filetypes = { "yaml" },
     settings = {
         redhat = {
             telemetry = {
@@ -35,11 +34,6 @@ require 'lspconfig'.yamlls.setup {
             }
         }
     }
-}
-
--- Docker compose
-require 'lspconfig'.docker_compose_language_service.setup {
-    filetypes = { "yaml.docker-compose" }
 }
 
 -- Dockerfile

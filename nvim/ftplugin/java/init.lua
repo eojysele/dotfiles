@@ -89,18 +89,18 @@ local config = {
                 runtimes = {
                     {
                         name = "JavaSE-17",
-                        path = "/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home"
+                        path = "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"
                     },
                     {
                         name = "JavaSE-11",
-                        path = "/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home"
+                        path = "/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home"
                     }
                 }
             }
         }
     },
     cmd = {
-        '/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/bin/java',
+        '/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin/java',
         '-Declipse.application=org.eclipse.jdt.ls.core.id1',
         '-Dosgi.bundles.defaultStartLevel=4',
         '-Declipse.product=org.eclipse.jdt.ls.core.product',
