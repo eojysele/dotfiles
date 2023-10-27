@@ -1,3 +1,5 @@
+env:
+  term: screen-256color
 shell:
   program: /opt/homebrew/bin/tmux
   args:
