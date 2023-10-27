@@ -7,7 +7,7 @@ masonLspconfig.setup()
 -- Auto install mason packages
 local masonRegistry = require("mason-registry")
 
-local listRequredPackages = {
+local requiredPackages = {
     ----------------------------
     -- LSP servers -------------
     "jdtls",
@@ -24,16 +24,15 @@ local listRequredPackages = {
     "java-test"
 }
 
-local installedPackages = ""
+local requiredPackagesName = ""
 
-for _, requredPackageName in ipairs(listRequredPackages) do
-    if masonRegistry.is_installed(requredPackageName) == false then
-        local packageToInstall = masonRegistry.get_package(requredPackageName)
-        packageToInstall:install()
-        installedPackages = installedPackages .. requredPackageName .. " "
+for _, requiredPackage in ipairs(requiredPackages) do
+    if masonRegistry.is_installed(requiredPackage) == false then
+        masonRegistry.get_package(requiredPackage):install()
+        requiredPackagesName = requiredPackagesName .. requiredPackage .. " "
     end
 end
 
-if installedPackages ~= "" then
-    print("[Mason] Installing packages: " .. installedPackages)
+if requiredPackagesName ~= "" then
+    print("[Mason] Installing packages: " .. requiredPackagesName)
 end
