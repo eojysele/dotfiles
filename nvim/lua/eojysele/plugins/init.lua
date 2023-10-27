@@ -1,7 +1,5 @@
 -- Without options
 require("nvim-web-devicons").setup()
-require("mason").setup()
-require("mason-lspconfig").setup()
 require("nvim-autopairs").setup()
 require("Comment").setup()
 
@@ -14,6 +12,7 @@ require("eojysele.plugins.lualine")
 require("eojysele.plugins.gitsigns")
 require("eojysele.plugins.symbols-outline")
 require("eojysele.plugins.telescope")
+require("eojysele.plugins.mason")
 require("eojysele.plugins.lspconfig")
 require("eojysele.plugins.cmp")
 require("eojysele.plugins.treesitter")

@@ -36,8 +36,7 @@
 7. lemminx (на Apple Silicon требует Rosetta) 
 8. json-lsp (jsonls)
 9. yaml-language-server
-10. docker-compose-language-service
-11. dockerfile-language-server
+10. dockerfile-language-server
 
 ## Отладка
 

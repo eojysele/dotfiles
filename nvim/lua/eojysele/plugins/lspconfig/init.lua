@@ -1,32 +1,27 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local lspconfig = require("lspconfig")
 
 -- Markdown
-require 'lspconfig'.marksman.setup {
-    capabilities = capabilities,
-}
+lspconfig.marksman.setup {}
 
 -- Lua
-require 'lspconfig'.lua_ls.setup {
-    capabilities = capabilities,
-}
+lspconfig.lua_ls.setup {}
 
 -- HTML
-require 'lspconfig'.html.setup {
+lspconfig.html.setup {
     capabilities = capabilities,
 }
 
 -- JSON
-require 'lspconfig'.jsonls.setup {
+lspconfig.jsonls.setup {
     capabilities = capabilities,
 }
 
 -- XML
-require 'lspconfig'.lemminx.setup {
-    capabilities = capabilities,
-}
+lspconfig.lemminx.setup {}
 
 -- YAML
-require 'lspconfig'.yamlls.setup {
+lspconfig.yamlls.setup {
     settings = {
         redhat = {
             telemetry = {
@@ -37,4 +32,4 @@ require 'lspconfig'.yamlls.setup {
 }
 
 -- Dockerfile
-require 'lspconfig'.dockerls.setup {}
+lspconfig.dockerls.setup {}
