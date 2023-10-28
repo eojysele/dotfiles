@@ -25,7 +25,7 @@ require("nvim-tree").setup({
     diagnostics = {
         enable = true,
         show_on_dirs = true,
-        show_on_open_dirs = false,
+        show_on_open_dirs = true,
         debounce_delay = 50,
         severity = {
             min = vim.diagnostic.severity.ERROR,
