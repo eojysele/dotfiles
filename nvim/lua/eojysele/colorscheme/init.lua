@@ -1,11 +1,14 @@
 require("catppuccin").setup({
     flavour = "frappe",
+    no_italic = true,
+    no_underline = true,
     styles = {
-        comments = { "italic" },
-        conditionals = { "italic" },
+        comments = {},
+        conditionals = {},
     },
     integrations = {
         treesitter = true,
+        nvimtree = true,
         symbols_outline = true,
         dap = {
             enabled = true,

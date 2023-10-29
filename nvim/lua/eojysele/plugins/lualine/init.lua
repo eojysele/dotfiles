@@ -103,7 +103,7 @@ ins_left {
 
 ins_left {
     'filetype',
-    color = { gui = 'italic,bold' },
+    color = { gui = 'bold' },
     icon_only = true,
     padding = { left = 1, right = 0 }
 }

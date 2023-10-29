@@ -75,6 +75,7 @@ key_map("n", "<leader>fb", builtin.buffers)                                     
 key_map("n", "<leader>fm", builtin.marks)                                        -- find mark
 key_map("n", "<leader>fd", function() builtin.diagnostics({ bufnr = 0 }) end)    -- find diagnostics in buffer
 key_map("n", "<leader>fD", builtin.diagnostics)                                  -- find all diagnostics
+key_map("n", "<leader>fg", builtin.git_status)
 key_map("n", "<leader>fB", require("telescope").extensions.dap.list_breakpoints) -- list breakpoints
 
 --------------------------------------
