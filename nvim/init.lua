@@ -25,6 +25,7 @@ require("lazy").setup({
     -- Searching
     "nvim-telescope/telescope.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = 'make' },
+    "nvim-telescope/telescope-dap.nvim",
     "nvim-lua/plenary.nvim",
 
     -- LSP

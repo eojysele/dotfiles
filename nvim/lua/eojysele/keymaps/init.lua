@@ -1,9 +1,8 @@
 local P = {}
 
--- Set leader key to space
 vim.g.mapleader = " "
 
--- key_mapping --
+-- Key_mapping --
 local key_map = function(mode, key, result)
     vim.keymap.set(mode, key, result)
 end
@@ -39,49 +38,50 @@ function P.gitsings_key_map(bufnr, gs)
 end
 
 -- Nvim-tree
-key_map("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+key_map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
 
 -- Symbols-outline
-key_map("n", "<leader>so", ":SymbolsOutline<CR>")
+key_map("n", "<leader>so", "<cmd>SymbolsOutline<CR>")
 
 -- Default keys (lsp)
-key_map("n", "gd", vim.lsp.buf.definition)                                    -- go to definition
-key_map("n", "gD", vim.lsp.buf.declaration)                                   -- go to declaration
-key_map("n", "gr", vim.lsp.buf.references)                                    -- list of references
-key_map("n", "gi", vim.lsp.buf.implementation)                                -- go to implementation
-key_map("n", "<leader>St", vim.lsp.buf.hover)                                 -- show hover text
-key_map("n", "<leader>Ss", vim.lsp.buf.signature_help)                        -- show signature
-key_map("n", "<leader>rn", vim.lsp.buf.rename)                                -- rename
-key_map("n", "<leader>ca", vim.lsp.buf.code_action)                           -- code actions
-key_map("n", '<leader>f', function() vim.lsp.buf.format { async = true } end) -- format file
+local lsp_buf = vim.lsp.buf
+key_map("n", "gd", lsp_buf.definition)                                    -- go to definition
+key_map("n", "gD", lsp_buf.declaration)                                   -- go to declaration
+key_map("n", "gr", lsp_buf.references)                                    -- list of references
+key_map("n", "gi", lsp_buf.implementation)                                -- go to implementation
+key_map("n", "<leader>St", lsp_buf.hover)                                 -- show hover text
+key_map("n", "<leader>Ss", lsp_buf.signature_help)                        -- show signature
+key_map("n", "<leader>rn", lsp_buf.rename)                                -- rename
+key_map("n", "<leader>ca", lsp_buf.code_action)                           -- code actions
+key_map("n", '<leader>F', function() lsp_buf.format { async = true } end) -- format file
 
 -- Debug
-key_map("n", "<leader>Bb", "<cmd>lua require'dap'.toggle_breakpoint()<CR>") -- set breakpoint
-key_map("n", "<leader>Bx", "<cmd>lua require'dap'.clear_breakpoints()<CR>") -- clear breakpoints
-key_map("n", "<leader>Bl", "<cmd>Telescope dap list_breakpoints<CR>")       -- list breakpoints
-key_map("n", "<leader>Dc", "<cmd>lua require'dap'.continue()<CR>")          -- continue
-key_map("n", "<leader>Do", "<cmd>lua require'dap'.step_over()<CR>")         -- step over
-key_map("n", "<leader>Di", "<cmd>lua require'dap'.step_into()<CR>")         -- step into
-key_map("n", "<leader>DO", "<cmd>lua require'dap'.step_out()<CR>")          -- step out
-key_map("n", "<leader>Dv", function() require "dap.ui.widgets".hover() end) -- variables
-key_map("n", "<leader>Ds",
-    function()
-        local widgets = require "dap.ui.widgets"; widgets.centered_float(widgets.scopes)
-    end) -- scopes
+local dap = require("dap")
+local dap_ui = require("dap.ui.widgets")
+key_map("n", "<leader>Bb", dap.toggle_breakpoint)                               -- set breakpoint
+key_map("n", "<leader>Bx", dap.clear_breakpoints)                               -- clear breakpoints
+key_map("n", "<leader>Dc", dap.continue)                                        -- continue
+key_map("n", "<leader>Do", dap.step_over)                                       -- step over
+key_map("n", "<leader>Di", dap.step_into)                                       -- step into
+key_map("n", "<leader>DO", dap.step_out)                                        -- step out
+key_map("n", "<leader>Dv", dap_ui.hover)                                        -- variables
+key_map("n", "<leader>Ds", function() dap_ui.centered_float(dap_ui.scopes) end) -- scopes
 
 -- Searching
-key_map("n", "<leader>F", "<cmd>Telescope live_grep<CR>")            -- grep
-key_map("n", "<leader>Ff", "<cmd>Telescope find_files<CR>")          -- find file
-key_map("n", "<leader>Fb", "<cmd>Telescope buffers<CR>")             -- find buffer
-key_map("n", "<leader>Fm", "<cmd>Telescope marks<CR>")               -- find mark
-key_map("n", "<leader>Fd", "<cmd>Telescope diagnostics bufnr=0<CR>") -- find diagnostics in buffer
+local builtin = require("telescope.builtin")
+key_map("n", "<leader>f", builtin.live_grep)                                     -- grep
+key_map("n", "<leader>ff", builtin.find_files)                                   -- find file
+key_map("n", "<leader>fb", builtin.buffers)                                      -- find buffer
+key_map("n", "<leader>fm", builtin.marks)                                        -- find mark
+key_map("n", "<leader>fd", function() builtin.diagnostics({ bufnr = 0 }) end)    -- find diagnostics in buffer
+key_map("n", "<leader>fD", builtin.diagnostics)                                  -- find all diagnostics
+key_map("n", "<leader>fB", require("telescope").extensions.dap.list_breakpoints) -- list breakpoints
 
 --------------------------------------
 -- Unique keys mapping for language --
 --------------------------------------
 -- Java
-function P.java_key_map(bufnr)
-    local jdtls = require("jdtls")
+function P.java_key_map(bufnr, jdtls)
     key_map("n", "<leader>ji", jdtls.organize_imports)    -- organize imports
     key_map("n", "<leader>tc", jdtls.test_class)          -- test class
     key_map("n", "<leader>tm", jdtls.test_nearest_method) -- test method

@@ -1,4 +1,6 @@
-require('telescope').setup({
+local telescope = require("telescope")
+
+telescope.setup({
     defaults = {
         dynamic_preview_title = true,
     },
@@ -12,4 +14,5 @@ require('telescope').setup({
     }
 })
 
-require('telescope').load_extension('fzf')
+telescope.load_extension("fzf")
+telescope.load_extension("dap")
