@@ -39,8 +39,9 @@ scrolling:
 window:
   padding:
     x: 2
-    y: 2
+    y: 0
   dynamic_padding: false
+  dynamic_title: false
   decorations: full
   startup_mode: Maximized
 
