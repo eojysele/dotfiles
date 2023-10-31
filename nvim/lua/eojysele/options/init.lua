@@ -16,7 +16,7 @@ opt.background = "dark"
 opt.signcolumn = "yes"
 opt.backspace = "indent,eol,start"
 opt.list = true
-vim.opt.listchars:append "space:⋅"
+opt.listchars:append "space:⋅"
 opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
