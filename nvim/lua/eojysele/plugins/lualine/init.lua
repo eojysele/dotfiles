@@ -78,6 +78,7 @@ local function get_color_by_mode(vim_mode)
         i = colors.green,
         v = colors.mauve,
         V = colors.mauve,
+        [''] = colors.mauve,
         c = colors.peach,
         R = colors.red,
     }
