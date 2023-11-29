@@ -35,18 +35,18 @@ key.set("n", "<leader>St", lsp_buf.hover)                                 -- sho
 key.set("n", "<leader>Ss", lsp_buf.signature_help)                        -- show signature
 key.set("n", "<leader>rn", lsp_buf.rename)                                -- rename
 key.set("n", "<leader>ca", lsp_buf.code_action)                           -- code actions
-key.set("n", '<leader>f', function() lsp_buf.format { async = true } end) -- format file
+key.set("n", '<leader>F', function() lsp_buf.format { async = true } end) -- format file
 
 -- Searching
 local builtin = require("telescope.builtin")
-key.set("n", "ff", builtin.live_grep)                                    -- grep
-key.set("n", "fF", builtin.find_files)                                   -- find file
-key.set("n", "fb", builtin.buffers)                                      -- find buffer
-key.set("n", "fm", builtin.marks)                                        -- find mark
-key.set("n", "fd", function() builtin.diagnostics({ bufnr = 0 }) end)    -- find diagnostics in buffer
-key.set("n", "fD", builtin.diagnostics)                                  -- find all diagnostics
-key.set("n", "fg", builtin.git_status)                                   -- list files with diff
-key.set("n", "fB", require("telescope").extensions.dap.list_breakpoints) -- list breakpoints
+key.set("n", "<leader>ff", builtin.live_grep)                                    -- grep
+key.set("n", "<leader>fF", builtin.find_files)                                   -- find file
+key.set("n", "<leader>fb", builtin.buffers)                                      -- find buffer
+key.set("n", "<leader>fm", builtin.marks)                                        -- find mark
+key.set("n", "<leader>fd", function() builtin.diagnostics({ bufnr = 0 }) end)    -- find diagnostics in buffer
+key.set("n", "<leader>fD", builtin.diagnostics)                                  -- find all diagnostics
+key.set("n", "<leader>fg", builtin.git_status)                                   -- list files with diff
+key.set("n", "<leader>fB", require("telescope").extensions.dap.list_breakpoints) -- list breakpoints
 
 -- Debug
 local dap = require("dap")
