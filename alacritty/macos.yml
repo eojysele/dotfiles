@@ -1,5 +1,6 @@
 key_bindings:
   # tmux shortcuts
+  - { key: F,         mods: Command|Shift,   action: ToggleFullscreen }
   - { key: A,         mods: Command,          chars: "\x02" }     # ^C-b - prefix
   - { key: S,         mods: Command,          chars: "\x02\x73" } # ^C-b s - sessions preview
   - { key: T,         mods: Command,          chars: "\x02\x74" } # ^C-b t - new tab
