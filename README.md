@@ -6,6 +6,8 @@
 - zsh >= 5.9 (also requred oh-my-zsh)
 - Neovim >= 0.9.1
 - lf >= 30
+- yabai >= 6.0.2
+- skhd >= 0.3.9
 
 ## Installation
 
