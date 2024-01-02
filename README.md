@@ -63,6 +63,14 @@ ln -s ~/.config/dotfiles/alacritty/linux.yml ~/.config/alacritty/os.yml
 ln -s ~/.config/dotfiles/lf ~/.config/lf
 ```
 
-## Showcase
+### yabai
 
-![Alacritty + tmux](docs/resources/images/dotfiles.png)
+```shell
+ln -s ~/.config/dotfiles/yabai ~/.config/yabai
+```
+
+### skhd
+
+```shell
+ln -s ~/.config/dotfiles/skhd ~/.config/skhd
+```
