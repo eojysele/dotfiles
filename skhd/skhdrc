@@ -1,25 +1,20 @@
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - h : yabai -m window --focus west
-alt - l : yabai -m window --focus east
+fn - j : yabai -m window --focus south
+fn - k : yabai -m window --focus north
+fn - h : yabai -m window --focus west
+fn - l : yabai -m window --focus east
 
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - h : yabai -m window --swap west
-shift + alt - l : yabai -m window --swap east
+fn + shift - j : yabai -m window --swap south
+fn + shift - k : yabai -m window --swap north
+fn + shift - h : yabai -m window --swap west
+fn + shift - l : yabai -m window --swap east
 
-ctrl + alt - j : yabai -m window --warp south
-ctrl + alt - k : yabai -m window --warp north
-ctrl + alt - h : yabai -m window --warp west
-ctrl + alt - l : yabai -m window --warp east
+fn + shift - y : yabai -m space --mirror y-axis
+fn + shift - x : yabai -m space --mirror x-axis
+fn - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
-shift + alt - y : yabai -m space --mirror y-axis
-shift + alt - x : yabai -m space --mirror x-axis
-alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+fn - f : yabai -m window --toggle zoom-fullscreen
+fn - r : yabai -m space --balance
 
-alt - f : yabai -m window --toggle zoom-fullscreen
-alt - r : yabai -m space --balance
-
-ctrl + alt - q : yabai --stop-service
-ctrl + alt - s : yabai --start-service
-ctrl + alt - r : yabai --restart-service
+fn + ctrl + alt - q : yabai --stop-service
+fn + ctrl + alt - s : yabai --start-service
+fn + ctrl + alt - r : yabai --restart-service
