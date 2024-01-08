@@ -13,6 +13,9 @@ fn + ctrl - j : yabai -m window --warp south
 fn + ctrl - k : yabai -m window --warp north
 fn + ctrl - l : yabai -m window --warp east
 
+fn + shift - t : yabai -m space --layout bsp
+fn + shift - f : yabai -m space --layout stack
+
 fn + shift - y : yabai -m space --mirror y-axis
 fn + shift - x : yabai -m space --mirror x-axis
 fn - t : yabai -m window --toggle float --grid 4:4:1:1:2:2

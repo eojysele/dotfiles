@@ -41,4 +41,4 @@
 ## Отладка
 
 В корневой директории проекта создать директорию _.vscode_ (если она отсутствует). 
-В директорию _.vscode_ скопировать файл _lauch.json_ из _nvim/debug-settings/<language-name>/_
+В директорию _.vscode_ скопировать файл _lauch.json_ из _nvim/debug-settings/<language-name>/_.
