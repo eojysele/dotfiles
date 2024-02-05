@@ -5,7 +5,7 @@ require("glow").setup({
     install_path = mason_bin,
     border = "rounded",
     style = "dark",
-    width_ratio = 0.6,
+    width_ratio = 0.5,
     height_ratio = 0.8,
 
 })
