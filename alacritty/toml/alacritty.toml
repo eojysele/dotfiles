@@ -1,0 +1,48 @@
+import = ["~/.config/alacritty/colors.toml", "~/.config/alacritty/os.toml"]
+live_config_reload = true
+
+
+
+[font.normal]
+family = "Iosevka Nerd Font Mono"
+
+[font.bold]
+family = "Iosevka Nerd Font Mono"
+
+[font.italic]
+family = "Iosevka Nerd Font Mono"
+
+[font.bold_italic]
+family = "Iosevka Nerd Font Mono"
+
+[font]
+size = 15
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[shell]
+args = ["new-session", "-A", "-D", "-s", "main"]
+program = "/opt/homebrew/bin/tmux"
+
+[window]
+decorations = "full"
+dynamic_padding = false
+dynamic_title = false
+startup_mode = "Maximized"
+
+[window.padding]
+x = 2
+y = 0

@@ -1,0 +1,5 @@
+require("eojysele.options")
+require("eojysele.lazy")
+require("eojysele.keymaps")
+require("eojysele.colorscheme")
+require("eojysele.plugins")
