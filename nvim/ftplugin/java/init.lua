@@ -21,14 +21,8 @@ local config = {
     flags = {
         debounce_text_changes = 80,
     },
-
     capabilities = capabilities,
     on_attach = on_attach,
-
-    init_options = {
-        bundles = bundles
-    },
-
     root_dir = root_dir,
     settings = {
         java = {
