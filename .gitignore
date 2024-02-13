@@ -2,3 +2,4 @@
 nvim/log
 nvim/plugin
 nvim/lazy-lock.json
+*.log
