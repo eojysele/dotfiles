@@ -32,11 +32,8 @@ history = 10000
 multiplier = 3
 
 [window]
-decorations = "full"
-dynamic_padding = false
+decorations = "Full"
+dynamic_padding = true
 dynamic_title = false
 startup_mode = "Maximized"
-
-[window.padding]
-x = 2
-y = 0
+decorations_theme_variant = "Dark"
