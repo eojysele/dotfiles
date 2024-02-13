@@ -1,8 +1,6 @@
 import = ["~/.config/alacritty/colors.toml", "~/.config/alacritty/os.toml"]
 live_config_reload = true
 
-
-
 [font.normal]
 family = "Iosevka Nerd Font Mono"
 
@@ -16,7 +14,7 @@ family = "Iosevka Nerd Font Mono"
 family = "Iosevka Nerd Font Mono"
 
 [font]
-size = 15
+size = 16
 
 [font.glyph_offset]
 x = 0
@@ -32,10 +30,6 @@ hide_when_typing = true
 [scrolling]
 history = 10000
 multiplier = 3
-
-[shell]
-args = ["new-session", "-A", "-D", "-s", "main"]
-program = "/opt/homebrew/bin/tmux"
 
 [window]
 decorations = "full"
