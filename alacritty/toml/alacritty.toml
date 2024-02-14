@@ -38,5 +38,5 @@ multiplier = 3
 [window]
 decorations = "Full"
 dynamic_padding = true
-dynamic_title = false
+dynamic_title = true
 startup_mode = "Windowed"
