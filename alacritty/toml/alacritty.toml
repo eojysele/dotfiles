@@ -35,5 +35,5 @@ multiplier = 3
 decorations = "Full"
 dynamic_padding = true
 dynamic_title = false
-startup_mode = "Maximized"
+startup_mode = "Windowed"
 decorations_theme_variant = "Dark"
