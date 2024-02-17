@@ -114,20 +114,18 @@ ins_right {
 }
 
 ins_right {
-    'fileformat',
-    padding = { left = 1, right = 1 },
-    symbols = {
-        unix = '',
-        dos = '',
-        mac = '',
-    }
-}
-
-ins_right {
     'encoding',
     fmt = string.upper,
     color = { fg = colors.text, gui = 'bold' },
     padding = { left = 1, right = 1 }
+}
+
+ins_right {
+    'fileformat',
+    fmt = string.upper,
+    icons_enabled = false,
+    color = { fg = colors.text, gui = 'bold' },
+    padding = { left = 1, right = 1 },
 }
 
 ins_right {

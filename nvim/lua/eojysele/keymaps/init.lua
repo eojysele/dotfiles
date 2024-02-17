@@ -5,7 +5,7 @@ local P = {}
 --------------------------
 local key = require("eojysele.keymaps.utils")
 
-key.set("n", "<leader>+", "<C-a>")
+key.set("n", "<leader>=", "<C-a>")
 key.set("n", "<leader>-", "<C-x>")
 
 -- Window management
