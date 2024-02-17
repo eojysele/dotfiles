@@ -8,6 +8,15 @@ require("catppuccin").setup({
         },
         mason = true,
     },
+    custom_highlights = function(colors)
+        return {
+            NormalFloat = { bg = colors.base },
+            NvimTreeModifiedIcon = { fg = colors.text },
+            NvimTreeGitStagedIcon = { fg = colors.green },
+            NvimTreeGitDeletedIcon = { fg = colors.red },
+            NvimTreeGitDirtyIcon = { fg = colors.yellow },
+        }
+    end
 })
 
 vim.cmd.colorscheme "catppuccin"
@@ -41,5 +50,3 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
     opts.border = "rounded"
     return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
-
-require("eojysele.colorscheme.groups")

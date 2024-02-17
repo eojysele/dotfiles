@@ -9,8 +9,14 @@ local config = {
         component_separators = '',
         ignore_focus = { 'NvimTree', 'Outline' },
         theme = {
-            normal = { c = { fg = colors.text, bg = colors.crust } },
-            incative = { c = { fg = colors.text, bg = colors.crust } }
+            normal = {
+                c = { fg = colors.text, bg = colors.crust },
+                x = { fg = colors.text, bg = colors.crust },
+            },
+            incative = {
+                c = { fg = colors.text, bg = colors.crust },
+                x = { fg = colors.text, bg = colors.crust },
+            }
         }
     },
     sections = {
@@ -86,7 +92,7 @@ ins_left {
     shorting_target = 150,
     color = { fg = colors.text, gui = 'bold' },
     symbols = {
-        modified = '',
+        modified = '',
         readonly = '',
         unnamed = '',
         newfile = '',
@@ -105,6 +111,16 @@ ins_right {
     sources = { 'nvim_diagnostic' },
     symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
     padding = { left = 1, right = 1 }
+}
+
+ins_right {
+    'fileformat',
+    padding = { left = 1, right = 1 },
+    symbols = {
+        unix = '',
+        dos = '',
+        mac = '',
+    }
 }
 
 ins_right {

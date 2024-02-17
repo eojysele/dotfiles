@@ -43,12 +43,13 @@ key.set("n", "<leader>dh", function() vim.diagnostic.open_float() end)    -- sho
 local lint = require("lint")
 key.set("n", "<leader>l", function() lint.try_lint() end) -- try ling current file (buffer)
 
-key.set("n", "<leader>mp", ":Glow<CR>") -- markdown preview
+key.set("n", "<leader>mp", ":Glow<CR>")                   -- markdown preview
 
 -- Searching
 local builtin = require("telescope.builtin")
-key.set("n", "<leader>ff", builtin.live_grep)                                 -- grep
-key.set("n", "<leader>fF", builtin.find_files)                                -- find file
+key.set("n", "<leader>ff", builtin.current_buffer_fuzzy_find)                 -- current buffer
+key.set("n", "<leader>fF", builtin.live_grep)                                 -- grep
+key.set("n", "<leader>fn", builtin.find_files)                                -- find file
 key.set("n", "<leader>fb", builtin.buffers)                                   -- find buffer
 key.set("n", "<leader>fm", builtin.marks)                                     -- find mark
 key.set("n", "<leader>fd", function() builtin.diagnostics({ bufnr = 0 }) end) -- find diagnostics in buffer

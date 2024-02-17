@@ -2,14 +2,32 @@ local home = os.getenv('HOME')
 local jdtls = require('jdtls')
 
 local nvim_home = vim.fn.stdpath('data')
-local jdtls_path = nvim_home .. "/mason/packages/jdtls"
-local path_to_config = jdtls_path .. "/config_mac"
-local path_to_plugins = jdtls_path .. "/plugins"
-local path_to_jar_jdtls = path_to_plugins .. "/org.eclipse.equinox.launcher_*.jar"
-local path_to_lombok = jdtls_path .. "/lombok.jar"
+local jdtls_home = nvim_home .. "/mason/packages/jdtls"
+local jdtls_config_home = jdtls_home .. "/config_mac"
+local jdtls_plugins_home = jdtls_home .. "/plugins"
+local jdtls_file = jdtls_plugins_home .. "/org.eclipse.equinox.launcher_*.jar"
+local lombok_file = jdtls_home .. "/lombok.jar"
 local root_markers = { 'gradlew', 'mvnw', '.git' }
-local root_dir = require('jdtls.setup').find_root(root_markers)
-local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+local project_home = require('jdtls.setup').find_root(root_markers)
+local workspace_home = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(project_home, ":p:h:t")
+
+-- default formatter
+local formatter_settings = {
+    url = home .. "/.config/tools/style/java/eclipse-java-style.xml",
+    profile = "EJStyle",
+}
+
+if project_home ~= nil then
+    local formatter_file = project_home .. "/.settings/eclipse-java-style.xml"
+    local formatter_name = "ProjectStyle"
+    local is_readable = vim.fn.filereadable(formatter_file)
+    if is_readable == 1 then
+        formatter_settings = {
+            url = formatter_file,
+            profile = formatter_name,
+        }
+    end
+end
 
 local on_attach = function(client, bufnr)
     require("eojysele.keymaps").java_keymaps(bufnr, jdtls);
@@ -23,7 +41,7 @@ local config = {
     },
     capabilities = capabilities,
     on_attach = on_attach,
-    root_dir = root_dir,
+    root_dir = project_home,
     settings = {
         java = {
             eclipse = {
@@ -65,6 +83,9 @@ local config = {
                 },
                 useBlocks = true,
             },
+            format = {
+                settings = formatter_settings,
+            },
             configuration = {
                 runtimes = {
                     {
@@ -95,10 +116,10 @@ local config = {
         '--add-modules=ALL-SYSTEM',
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-        '-javaagent:' .. path_to_lombok,
-        '-jar', vim.fn.glob(path_to_jar_jdtls),
-        '-configuration', path_to_config,
-        '-data', workspace_folder,
+        '-javaagent:' .. lombok_file,
+        '-jar', vim.fn.glob(jdtls_file),
+        '-configuration', jdtls_config_home,
+        '-data', workspace_home,
     },
 }
 

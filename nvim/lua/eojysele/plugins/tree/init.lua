@@ -39,6 +39,11 @@ require("nvim-tree").setup({
             error = "",
         },
     },
+    modified = {
+        enable = true,
+        show_on_dirs = true,
+        show_on_open_dirs = true,
+    },
     actions = {
         open_file = {
             quit_on_open = true,
