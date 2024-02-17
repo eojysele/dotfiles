@@ -7,7 +7,7 @@ bold_prompt(){
 }
 
 start_prompt(){
-    base_prompt white 
+    base_prompt white " "
 }
 
 user_prompt(){
