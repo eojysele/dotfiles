@@ -14,12 +14,12 @@ local workspace_home = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(pr
 
 -- default formatter
 local formatter_settings = {
-    url = home .. "/.local/share/eclipse/.settings/eclipse-java-style.xml",
+    url = home .. "/.local/share/eclipse/.nvim/eclipse-java-style.xml",
     profile = "EJStyle",
 }
 
 if project_home ~= nil then
-    local formatter_file = project_home .. "/.settings/eclipse-java-style.xml"
+    local formatter_file = project_home .. "/.nvim/eclipse-java-style.xml"
     local formatter_name = "ProjectStyle"
     local is_readable = vim.fn.filereadable(formatter_file)
     if is_readable == 1 then
