@@ -38,6 +38,7 @@ local import_order = {
     "org",
     ""
 }
+
 local project_import_order = require("eojysele.plugins.jdt-ls.project-import-order")
 
 if project_import_order ~= nil then
