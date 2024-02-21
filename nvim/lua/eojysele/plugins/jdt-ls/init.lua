@@ -1,6 +1,7 @@
 local JDTLS_CONFIG
 
 local jdtls = require('jdtls')
+local file_utils = require("eojysele.utils.file")
 local home = os.getenv('HOME')
 local nvim_home = vim.fn.stdpath('data')
 local jdtls_home = nvim_home .. "/mason/packages/jdtls"
@@ -23,8 +24,6 @@ local import_order = {
     "java",
     "javax",
     "jakarta",
-    "com",
-    "org",
     ""
 }
 
@@ -33,7 +32,7 @@ if project_home ~= nil then
     -- formatter
     local formatter_file = project_home .. "/.nvim/eclipse-java-style.xml"
     local formatter_name = "ProjectStyle"
-    if vim.fn.filereadable(formatter_file) == 1 then
+    if file_utils.file_is_exists(formatter_file) then
         formatter_settings = {
             url = formatter_file,
             profile = formatter_name,
@@ -42,8 +41,8 @@ if project_home ~= nil then
 
     -- import order
     local import_order_file = project_home .. "/.nvim/import-order.lua"
-    if vim.fn.filereadable(formatter_file) == 1 then
-        local load_project_import_order = assert(loadfile())
+    if file_utils.file_is_exists(import_order_file) then
+        local load_project_import_order = assert(loadfile(import_order_file))
         local project_import_order = load_project_import_order()
         if project_import_order ~= nil then
             import_order = project_import_order
