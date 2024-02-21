@@ -2,4 +2,5 @@
 nvim/log
 nvim/plugin
 nvim/lazy-lock.json
+nvim/lua/eojysele/plugins/jdt-ls/project-import-order.lua
 *.log
