@@ -39,7 +39,8 @@ local import_order = {
     ""
 }
 
-local project_import_order = require("eojysele.plugins.jdt-ls.project-import-order")
+local load_project_import_order = assert(loadfile(project_home .. "/.nvim/import-order.lua"))
+local project_import_order = load_project_import_order()
 
 if project_import_order ~= nil then
     import_order = project_import_order
