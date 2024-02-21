@@ -18,18 +18,7 @@ local formatter_settings = {
     profile = "EJStyle",
 }
 
-if project_home ~= nil then
-    local formatter_file = project_home .. "/.nvim/eclipse-java-style.xml"
-    local formatter_name = "ProjectStyle"
-    local is_readable = vim.fn.filereadable(formatter_file)
-    if is_readable == 1 then
-        formatter_settings = {
-            url = formatter_file,
-            profile = formatter_name,
-        }
-    end
-end
-
+-- default import order
 local import_order = {
     "java",
     "javax",
@@ -39,11 +28,27 @@ local import_order = {
     ""
 }
 
-local load_project_import_order = assert(loadfile(project_home .. "/.nvim/import-order.lua"))
-local project_import_order = load_project_import_order()
+-- project settings
+if project_home ~= nil then
+    -- formatter
+    local formatter_file = project_home .. "/.nvim/eclipse-java-style.xml"
+    local formatter_name = "ProjectStyle"
+    if vim.fn.filereadable(formatter_file) == 1 then
+        formatter_settings = {
+            url = formatter_file,
+            profile = formatter_name,
+        }
+    end
 
-if project_import_order ~= nil then
-    import_order = project_import_order
+    -- import order
+    local import_order_file = project_home .. "/.nvim/import-order.lua"
+    if vim.fn.filereadable(formatter_file) == 1 then
+        local load_project_import_order = assert(loadfile())
+        local project_import_order = load_project_import_order()
+        if project_import_order ~= nil then
+            import_order = project_import_order
+        end
+    end
 end
 
 local on_attach = function(client, bufnr)
