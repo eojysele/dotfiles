@@ -21,4 +21,4 @@ mods = "Control|Shift"
 [[keyboard.bindings]]
 chars = "\u0002"
 key = "A"
-mods = "Control"
+mods = "Alt"
