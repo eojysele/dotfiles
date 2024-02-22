@@ -1,17 +1,40 @@
 local JDTLS_CONFIG
 
 local jdtls = require('jdtls')
+
 local file_utils = require("eojysele.utils.file")
 local home = os.getenv('HOME')
+local runtimes_home = os.getenv("SDKMAN_DIR") .. "/candidates/java"
 local nvim_home = vim.fn.stdpath('data')
+
 local jdtls_home = nvim_home .. "/mason/packages/jdtls"
 local jdtls_config_home = jdtls_home .. "/config_mac"
 local jdtls_plugins_home = jdtls_home .. "/plugins"
 local jdtls_file = jdtls_plugins_home .. "/org.eclipse.equinox.launcher_*.jar"
+local jdtls_runtime = runtimes_home .. "/21.0.2-tem/bin/java"
+
 local lombok_file = jdtls_home .. "/lombok.jar"
 local root_markers = { 'gradlew', 'mvnw', '.git' }
 local project_home = require('jdtls.setup').find_root(root_markers)
 local workspace_home = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(project_home, ":p:h:t")
+
+local runtimes = {
+    {
+        name = "JavaSE-21",
+        path = runtimes_home .. "/21.0.2-tem"
+
+    },
+    {
+        name = "JavaSE-17",
+        path = runtimes_home .. "/17.0.10-tem",
+        default = true
+    },
+    {
+        name = "JavaSE-11",
+        path = runtimes_home .. "/11.0.22-tem"
+
+    }
+}
 
 -- default formatter
 local formatter_settings = {
@@ -111,26 +134,12 @@ JDTLS_CONFIG = {
                 settings = formatter_settings,
             },
             configuration = {
-                runtimes = {
-                    {
-                        name = "JavaSE-21",
-                        path = "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home"
-                    },
-                    {
-                        name = "JavaSE-17",
-                        path = "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home",
-                        default = true
-                    },
-                    {
-                        name = "JavaSE-11",
-                        path = "/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home"
-                    }
-                }
+                runtimes = runtimes
             }
         }
     },
     cmd = {
-        '/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/bin/java',
+        jdtls_runtime,
         '-Declipse.application=org.eclipse.jdt.ls.core.id1',
         '-Dosgi.bundles.defaultStartLevel=4',
         '-Declipse.product=org.eclipse.jdt.ls.core.product',
