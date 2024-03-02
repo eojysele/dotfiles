@@ -25,7 +25,7 @@
 21. [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 22. [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
 
-## Пакеты из Mason 
+## Пакеты из Mason
 
 1. jdtls
 2. typescript-language-server
@@ -33,7 +33,7 @@
 4. lua-language-server
 5. html-lsp
 6. marksman
-7. lemminx (на Apple Silicon требует Rosetta) 
+7. lemminx (на Apple Silicon требует Rosetta)
 8. json-lsp (jsonls)
 9. yaml-language-server
 10. dockerfile-language-server
@@ -42,5 +42,5 @@
 
 ## Отладка
 
-В корневой директории проекта создать директорию _.vscode_ (если она отсутствует). 
+В корневой директории проекта создать директорию _.vscode_ (если она отсутствует).
 В директорию _.vscode_ скопировать файл _lauch.json_ из _nvim/debug-settings/<language-name>/_.
