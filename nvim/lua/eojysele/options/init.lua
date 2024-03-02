@@ -24,9 +24,11 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 opt.backspace = "indent,eol,start"
+opt.clipboard:append("unnamedplus")
+
 opt.list = true
 opt.listchars:append "space:⋅"
-opt.clipboard:append("unnamedplus")
+opt.listchars:append "tab:󰜴 "
 
 opt.splitright = true
 opt.splitbelow = true
