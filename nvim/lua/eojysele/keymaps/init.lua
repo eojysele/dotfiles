@@ -60,27 +60,27 @@ key.set("n", "<leader>fg", builtin.git_status)                                --
 -- ON ATTACH --
 -- NvimTree
 function P.tree_keymaps(bufnr)
-	key.delete('n', 'f', bufnr)
-	key.delete('n', 'F', bufnr)
+    key.delete('n', 'f', bufnr)
+    key.delete('n', 'F', bufnr)
 end
 
 -- Gitsings
 function P.gitsings_keymaps(bufnr, gs)
-	key.set("n", "<leader>do", gs.diffthis)                                                           -- open diff in split
-	key.set("n", "<leader>hp", gs.preview_hunk)                                                       -- preview change
-	key.set("n", "<leader>hs", gs.stage_hunk)                                                         -- add changes in current line
-	key.set("v", "<leader>hs", function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end)   -- add changes in selected lines
-	key.set("n", "<leader>hr", gs.reset_hunk)                                                         -- reset changes in current line
-	key.set("v", "<leader>hr", function() gs.reset_hunk { vim.fn.line("."), vim.fn.line("v") } end)   -- reset changes in selected lines
-	key.set("n", "<leader>hu", gs.undo_stage_hunk)                                                    -- undo adding changes in current line
-	key.set("v", "<leader>hu", function() gs.undo_stage_hunk { vim.fn.line("."), vim.fn.line("v") } end) -- undo adding changes in selected lines
+    key.set("n", "<leader>do", gs.diffthis)                                                           -- open diff in split
+    key.set("n", "<leader>hp", gs.preview_hunk)                                                       -- preview change
+    key.set("n", "<leader>hs", gs.stage_hunk)                                                         -- add changes in current line
+    key.set("v", "<leader>hs", function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end)   -- add changes in selected lines
+    key.set("n", "<leader>hr", gs.reset_hunk)                                                         -- reset changes in current line
+    key.set("v", "<leader>hr", function() gs.reset_hunk { vim.fn.line("."), vim.fn.line("v") } end)   -- reset changes in selected lines
+    key.set("n", "<leader>hu", gs.undo_stage_hunk)                                                    -- undo adding changes in current line
+    key.set("v", "<leader>hu", function() gs.undo_stage_hunk { vim.fn.line("."), vim.fn.line("v") } end) -- undo adding changes in selected lines
 end
 
 -- Java
 function P.java_keymaps(bufrn, jdtls)
-	key.set("n", "<leader>oi", jdtls.organize_imports) -- organize imports
-	key.set("n", "<leader>tc", jdtls.test_class)       -- test class
-	key.set("n", "<leader>tm", jdtls.test_nearest_method) -- test method
+    key.set("n", "<leader>oi", jdtls.organize_imports) -- organize imports
+    key.set("n", "<leader>tc", jdtls.test_class)       -- test class
+    key.set("n", "<leader>tm", jdtls.test_nearest_method) -- test method
 end
 
 return P
