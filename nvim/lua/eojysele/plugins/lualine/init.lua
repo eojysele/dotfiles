@@ -140,6 +140,21 @@ ins_right {
     padding = { left = 1, right = 1 }
 }
 
+ins_right {
+    'tabs',
+    tab_max_length = 3,
+    mode = 0,
+    use_mode_colors = true,
+    tabs_color = {
+        active = { bg = colors.crust, fg = colors.text, gui = 'bold' },
+        inactive = { bg = colors.crust, fg = colors.overlay0, gui = 'bold' },
+    },
+    symbols = {
+        modified = " "
+    },
+    padding = { left = 1, right = 1 }
+}
+
 ins_inactive_left {
     function()
         return ""
