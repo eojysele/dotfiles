@@ -39,7 +39,7 @@ local runtimes = {
 -- default formatter
 local formatter_settings = {
 	url = home .. "/.local/share/eclipse/.nvim/eclipse-java-style.xml",
-	profile = "EJStyle",
+	profile = "CodeStyle",
 }
 
 -- default import order
@@ -57,7 +57,7 @@ local import_order = {
 if project_home ~= nil then
 	-- formatter
 	local formatter_file = project_home .. "/.nvim/eclipse-java-style.xml"
-	local formatter_name = "ProjectStyle"
+	local formatter_name = "ProjectCodeStyle"
 	if file_utils.file_is_exists(formatter_file) then
 		formatter_settings = {
 			url = formatter_file,
