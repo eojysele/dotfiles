@@ -47,7 +47,10 @@ local import_order = {
 	"java",
 	"javax",
 	"jakarta",
-	""
+	"org",
+	"com",
+	"",
+	"#"
 }
 
 -- project settings
