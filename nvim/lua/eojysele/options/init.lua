@@ -27,8 +27,10 @@ opt.backspace = "indent,eol,start"
 opt.clipboard:append("unnamedplus")
 
 opt.list = true
-opt.listchars:append "space:⋅"
+opt.listchars:append "space:·"
+opt.listchars:append "trail:∘"
 opt.listchars:append "tab:󰜴 "
+opt.listchars:append "eol:󱞤"
 
 opt.splitright = true
 opt.splitbelow = true

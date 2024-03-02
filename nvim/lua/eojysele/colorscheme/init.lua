@@ -10,6 +10,8 @@ require("catppuccin").setup({
 	},
 	custom_highlights = function(colors)
 		return {
+			NonText = { fg = colors.surface1 },
+			SpecialKey = { fg = colors.surface1 },
 			NormalFloat = { bg = colors.base },
 			NvimTreeModifiedIcon = { fg = colors.text },
 			NvimTreeGitStagedIcon = { fg = colors.green },
