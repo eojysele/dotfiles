@@ -7,7 +7,7 @@ bold_prompt(){
 }
 
 start_prompt(){
-	base_prompt white 
+	base_prompt white 󰜴
 }
 
 user_prompt(){
@@ -47,16 +47,11 @@ git_prompt(){
 	fi
 }
 
-end_prompt(){
-	base_prompt white 
-}
-
 build_prompt() {
 	start_prompt
 	user_prompt
 	dir_prompt
 	git_prompt
-	end_prompt
 }
 
 PROMPT='$(build_prompt)'
