@@ -34,6 +34,7 @@ function t () {
 alias tm="tmux new -ADs main"
 alias tw="tmux new -ADs work"
 alias lf="lfcd"
+alias n="tput bel"
 
 export PATH=/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$HOME/.local/bin
 
