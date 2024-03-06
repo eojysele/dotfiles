@@ -1,6 +1,19 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
 
+-- Rust
+lspconfig.rust_analyzer.setup {
+	settings = {
+		["rust_analyzer"] = {
+			diagnostics = {
+				enable = true,
+			},
+			cargo = {
+				allFeatures = true,
+			}
+		}
+	}
+}
 -- JavaScript/TypeScript
 lspconfig.tsserver.setup {
 }
@@ -41,4 +54,5 @@ lspconfig.yamlls.setup {
 -- Dockerfile
 lspconfig.dockerls.setup {}
 
+-- Bash
 lspconfig.bashls.setup {}
