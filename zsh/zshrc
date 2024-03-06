@@ -8,7 +8,13 @@ plugins=(
 	git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+	zsh-vi-mode
 )
+
+function zvm_config() {
+	ZVM_VI_HIGHLIGHT_BACKGROUND=#51576d
+	ZVM_VI_HIGHLIGHT_FOREGROUND=#c6d0f5
+}
 
 source $ZSH/oh-my-zsh.sh
 
