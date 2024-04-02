@@ -1,28 +1,28 @@
-fn - h : yabai -m window --focus west
-fn - j : yabai -m window --focus south
-fn - k : yabai -m window --focus north
-fn - l : yabai -m window --focus east
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
 
-fn + shift - h : yabai -m window --swap west
-fn + shift - j : yabai -m window --swap south
-fn + shift - k : yabai -m window --swap north
-fn + shift - l : yabai -m window --swap east
+alt + shift - h : yabai -m window --swap west
+alt + shift - j : yabai -m window --swap south
+alt + shift - k : yabai -m window --swap north
+alt + shift - l : yabai -m window --swap east
 
-fn + ctrl - h : yabai -m window --warp west
-fn + ctrl - j : yabai -m window --warp south
-fn + ctrl - k : yabai -m window --warp north
-fn + ctrl - l : yabai -m window --warp east
+alt + ctrl - h : yabai -m window --warp west
+alt + ctrl - j : yabai -m window --warp south
+alt + ctrl - k : yabai -m window --warp north
+alt + ctrl - l : yabai -m window --warp east
 
-fn + shift - t : yabai -m space --layout bsp
-fn + shift - f : yabai -m space --layout stack
+alt + shift - t : yabai -m space --layout bsp
+alt + shift - f : yabai -m space --layout stack
 
-fn + shift - y : yabai -m space --mirror y-axis
-fn + shift - x : yabai -m space --mirror x-axis
-fn - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+alt + shift - y : yabai -m space --mirror y-axis
+alt + shift - x : yabai -m space --mirror x-axis
+alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
-fn - f : yabai -m window --toggle zoom-fullscreen
-fn - r : yabai -m space --balance
+alt - f : yabai -m window --toggle zoom-fullscreen
+alt - r : yabai -m space --balance
 
-fn + ctrl + alt - q : yabai --stop-service
-fn + ctrl + alt - s : yabai --start-service
-fn + ctrl + alt - r : yabai --restart-service
+cmd + ctrl + alt - q : yabai --stop-service
+cmd + ctrl + alt - s : yabai --start-service
+cmd + ctrl + alt - r : yabai --restart-service
