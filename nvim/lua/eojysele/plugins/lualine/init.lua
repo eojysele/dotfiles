@@ -2,6 +2,8 @@ local lualine = require('lualine')
 
 -- Colorscheme: Catpuccin Frappe
 local colors = require("eojysele.colorscheme.colors").get_colors_from_current_themes()
+local icons = require("eojysele.colorscheme.icons")
+
 local config = {
 	options = {
 		icons_enabled = true,
@@ -65,7 +67,7 @@ end
 
 ins_left {
 	function()
-		return ""
+		return icons.logo.vim
 	end,
 	color = function()
 		return get_color_by_mode(vim.fn.mode())
@@ -75,7 +77,7 @@ ins_left {
 
 ins_left {
 	'branch',
-	icon = '',
+	icon = icons.git.branch,
 	color = { fg = colors.text, gui = 'bold' },
 	padding = { left = 1, right = 1 }
 }
@@ -92,8 +94,8 @@ ins_left {
 	shorting_target = 150,
 	color = { fg = colors.text, gui = 'bold' },
 	symbols = {
-		modified = '',
-		readonly = '',
+		modified = icons.file.modified,
+		readonly = icons.file.readonly,
 		unnamed = '',
 		newfile = '',
 	},
@@ -102,14 +104,23 @@ ins_left {
 
 ins_left {
 	'diff',
-	symbols = { added = ' ', modified = ' ', removed = ' ' },
+	symbols = {
+		added = icons.git.diff.staged .. " ",
+		modified = icons.git.diff.unstaged .. " ",
+		removed = icons.git.diff.deleted .. " ",
+	},
 	padding = { left = 1, right = 1 }
 }
 
 ins_right {
 	'diagnostics',
 	sources = { 'nvim_diagnostic' },
-	symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+	symbols = {
+		error = icons.diagnostics.error .. ' ',
+		warn = icons.diagnostics.warn .. ' ',
+		info = icons.diagnostics.info .. ' ',
+		hint = icons.diagnostics.hint .. ' '
+	},
 	padding = { left = 1, right = 1 }
 }
 
@@ -150,14 +161,14 @@ ins_right {
 		inactive = { bg = colors.crust, fg = colors.overlay0, gui = 'bold' },
 	},
 	symbols = {
-		modified = " "
+		modified = " " .. icons.file.modified
 	},
 	padding = { left = 1, right = 1 }
 }
 
 ins_inactive_left {
 	function()
-		return ""
+		return icons.logo.vim
 	end,
 	color = function()
 		return get_color_by_mode(vim.fn.mode())

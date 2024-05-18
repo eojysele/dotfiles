@@ -23,11 +23,13 @@ require("catppuccin").setup({
 
 vim.cmd.colorscheme "catppuccin"
 
+local icons = require("eojysele.colorscheme.icons")
+
 local signs = {
-	DiagnosticSignError = "",
-	DiagnosticSignWarn = "",
-	DiagnosticSignHint = "",
-	DiagnosticSignInfo = "",
+	DiagnosticSignError = icons.diagnostics.error,
+	DiagnosticSignWarn = icons.diagnostics.warn,
+	DiagnosticSignHint = icons.diagnostics.hint,
+	DiagnosticSignInfo = icons.diagnostics.info,
 }
 
 for type, icon in pairs(signs) do

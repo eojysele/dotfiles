@@ -1,10 +1,10 @@
-local colors = {}
+local COLORS = {}
 
-function colors.get_colors_from_current_themes()
+function COLORS.get_colors_from_current_themes()
 	return require("catppuccin.palettes.frappe")
 end
 
-function colors.get_colors()
+function COLORS.get_colors()
 	return {
 		rosewater = "#f2d5cf",
 		flamingo = "#eebebe",
@@ -35,4 +35,4 @@ function colors.get_colors()
 	}
 end
 
-return colors
+return COLORS

@@ -1,3 +1,5 @@
+local icons = require("eojysele.colorscheme.icons")
+
 require("nvim-tree").setup({
 	on_attach = function(bufnr)
 		local api = require('nvim-tree.api')
@@ -14,15 +16,15 @@ require("nvim-tree").setup({
 		root_folder_label = ":~:t?$?/..?",
 		icons = {
 			glyphs = {
-				modified = "",
+				modified = icons.file.modified,
 				git = {
-					unstaged = "",
-					staged = "",
-					unmerged = "󰀁",
-					renamed = "",
-					untracked = "",
-					deleted = "",
-					ignored = "",
+					unstaged = icons.git.diff.unstaged,
+					staged = icons.git.diff.staged,
+					unmerged = icons.git.diff.unmerged,
+					renamed = icons.git.diff.renamed,
+					untracked = icons.git.diff.untracked,
+					deleted = icons.git.diff.deleted,
+					ignored = icons.git.diff.ignored,
 				}
 			}
 		}
@@ -33,10 +35,10 @@ require("nvim-tree").setup({
 		show_on_open_dirs = true,
 		debounce_delay = 50,
 		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
+			hint = icons.diagnostics.hint,
+			info = icons.diagnostics.info,
+			warning = icons.diagnostics.warn,
+			error = icons.diagnostics.error,
 		},
 	},
 	modified = {
