@@ -1,8 +1,21 @@
 local ICONS = {
 
 	file = {
+		default = "",
+		symlink = {
+			default = "",
+			arrow = "",
+		},
 		modified = "",
 		readonly = "",
+		bookmark = "",
+	},
+	folder = {
+		default = "",
+		open = "",
+		symlink = "",
+		arrow_open = "",
+		arrow_close = ""
 	},
 	diagnostics = {
 		error = "",
@@ -16,7 +29,7 @@ local ICONS = {
 			staged = "",
 			unstaged = "",
 			deleted = "",
-			unmerged = "󰀁",
+			unmerged = "󱋯",
 			renamed = "",
 			untracked = "",
 			ignored = "",

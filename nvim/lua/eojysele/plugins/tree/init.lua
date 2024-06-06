@@ -15,8 +15,22 @@ require("nvim-tree").setup({
 	renderer = {
 		root_folder_label = ":~:t?$?/..?",
 		icons = {
+			symlink_arrow = " " .. icons.file.symlink.arrow .. " ",
 			glyphs = {
+				default = icons.file.default,
+				symlink = icons.file.symlink.default,
 				modified = icons.file.modified,
+				bookmark = icons.file.bookmark,
+				folder = {
+					arrow_closed = "",
+					arrow_open = "",
+					default = icons.folder.default,
+					open = icons.folder.open,
+					empty = icons.folder.default,
+					empty_open = icons.folder.open,
+					symlink = icons.folder.symlink,
+					symlink_open = icons.folder.symlink,
+				},
 				git = {
 					unstaged = icons.git.diff.unstaged,
 					staged = icons.git.diff.staged,
