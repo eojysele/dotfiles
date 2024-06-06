@@ -7,17 +7,17 @@ bold_prompt(){
 }
 
 start_prompt(){
-	base_prompt white 󰜴
+	base_prompt white 
 }
 
 user_prompt(){
 	if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-		bold_prompt cyan " %n@%m"
+		bold_prompt cyan " %n@%m"
 	fi
 }
 
 dir_prompt(){
-	bold_prompt blue " %c"
+	bold_prompt blue " %c"
 }
 
 git_prompt(){
