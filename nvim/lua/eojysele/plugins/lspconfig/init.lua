@@ -1,19 +1,10 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
 
--- Rust
-lspconfig.rust_analyzer.setup {
-	settings = {
-		["rust_analyzer"] = {
-			diagnostics = {
-				enable = true,
-			},
-			cargo = {
-				allFeatures = true,
-			}
-		}
-	}
+-- Go
+lspconfig.gopls.setup {
 }
+
 -- JavaScript/TypeScript
 lspconfig.tsserver.setup {
 }

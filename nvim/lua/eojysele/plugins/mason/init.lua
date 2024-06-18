@@ -15,7 +15,7 @@ local mason_registry = require("mason-registry")
 
 local required_packages = {
 	"jdtls",
-	"rust-analyzer",
+	"gopls",
 	"typescript-language-server",
 	"eslint-lsp",
 	"lua-language-server",
