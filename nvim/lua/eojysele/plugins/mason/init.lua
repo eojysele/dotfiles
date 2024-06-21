@@ -25,6 +25,7 @@ local required_packages = {
 	"json-lsp",
 	"yaml-language-server",
 	"dockerfile-language-server",
+	"docker-compose-language-service",
 	"bash-language-server",
 	"glow",
 }

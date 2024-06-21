@@ -2,12 +2,10 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
 
 -- Go
-lspconfig.gopls.setup {
-}
+lspconfig.gopls.setup {}
 
 -- JavaScript/TypeScript
-lspconfig.tsserver.setup {
-}
+lspconfig.tsserver.setup {}
 
 -- JavaScript Linter
 lspconfig.eslint.setup {}
@@ -44,6 +42,9 @@ lspconfig.yamlls.setup {
 
 -- Dockerfile
 lspconfig.dockerls.setup {}
+
+-- Docker Compose
+lspconfig.docker_compose_language_service.setup {}
 
 -- Bash
 lspconfig.bashls.setup {}
