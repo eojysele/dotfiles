@@ -38,7 +38,7 @@ key.set("n", "<leader>R", lsp_buf.rename)                                 -- ren
 key.set("n", "<leader>ca", lsp_buf.code_action)                           -- code actions
 key.set("n", '<leader>F', function() lsp_buf.format { async = true } end) -- format file
 key.set("v", '<leader>F', function() lsp_buf.format { async = true } end) -- format selected in visual mode
-key.set("n", "<leader>dh", function() vim.diagnostic.open_float() end)    -- show diagnostics
+key.set("n", "<leader>Sd", function() vim.diagnostic.open_float() end)    -- show diagnostics
 
 -- Linting
 local lint = require("lint")
