@@ -13,6 +13,7 @@ require("catppuccin").setup({
 			NonText = { fg = colors.surface1 },
 			SpecialKey = { fg = colors.surface1 },
 			NormalFloat = { bg = colors.base },
+			FloatBorder = { bg = colors.base },
 			NvimTreeModifiedIcon = { fg = colors.text },
 			NvimTreeGitStagedIcon = { fg = colors.green },
 			NvimTreeGitDeletedIcon = { fg = colors.red },
