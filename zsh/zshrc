@@ -36,6 +36,7 @@ alias tw="tmux new -ADs work"
 alias lf="lfcd"
 alias n="tput bel"
 alias lg="lazygit"
+alias v="nvim"
 
 export PATH=/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$HOME/.local/bin
 
