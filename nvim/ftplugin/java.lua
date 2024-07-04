@@ -1,6 +1,6 @@
 local jdtls = require('jdtls')
 
-local file_utils = require("eojysele.utils.file")
+local file_utils = require("eojysele.core.utils.file")
 local home = os.getenv('HOME')
 local runtimes_home = os.getenv("SDKMAN_DIR") .. "/candidates/java"
 local nvim_home = vim.fn.stdpath('data')
@@ -75,7 +75,7 @@ if project_home ~= nil then
 end
 
 local on_attach = function(client, bufnr)
-    require("eojysele.keymaps").java_keymaps(bufnr, jdtls);
+    require("eojysele.core.keymaps").java_keymaps(bufnr, jdtls);
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()

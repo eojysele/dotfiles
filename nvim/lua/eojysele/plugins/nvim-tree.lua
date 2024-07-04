@@ -4,13 +4,13 @@ return {
 		'nvim-tree/nvim-web-devicons'
 	},
 	config = function()
-		local icons = require("eojysele.ui.icons")
+		local icons = require("eojysele.core.ui.icons")
 
 		require("nvim-tree").setup({
 			on_attach = function(bufnr)
 				local api = require('nvim-tree.api')
 				api.config.mappings.default_on_attach(bufnr)
-				require("eojysele.keymaps").tree_keymaps(bufnr)
+				require("eojysele.core.keymaps").tree_keymaps(bufnr)
 			end,
 			view = {
 				adaptive_size = true,

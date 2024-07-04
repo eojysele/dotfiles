@@ -1,4 +1,4 @@
-local icons = require("eojysele.ui.icons")
+local icons = require("eojysele.core.ui.icons")
 
 local signs = {
 	DiagnosticSignError = icons.diagnostics.error,

@@ -27,6 +27,6 @@ require("lazy").setup(
 	}
 )
 
-require("eojysele.options")
-require("eojysele.ui")
-require("eojysele.keymaps").general_keymaps()
+require("eojysele.core.options")
+require("eojysele.core.ui")
+require("eojysele.core.keymaps").general_keymaps()
