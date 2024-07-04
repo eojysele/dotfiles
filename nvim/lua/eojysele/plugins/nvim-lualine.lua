@@ -4,7 +4,7 @@ return {
 		local lualine = require('lualine')
 
 		-- Colorscheme: Catpuccin Frappe
-		local colors = require("eojysele.core.ui.colors").get_colors_from_current_themes()
+		local colors = require("eojysele.core.ui.colors").get_palette()
 		local icons = require("eojysele.core.ui.icons")
 
 		local config = {

@@ -7,9 +7,6 @@ return {
 			integrations = {
 				treesitter = true,
 				nvimtree = true,
-				dap = {
-					enabled = true,
-				},
 				mason = true,
 			},
 			custom_highlights = function(colors)
