@@ -65,7 +65,7 @@ return {
 				c = colors.peach,
 				R = colors.red,
 			}
-			return { bg = colors.crust, fg = mode_color[vim_mode], gui = 'bold' }
+			return { fg = colors.crust, bg = mode_color[vim_mode], gui = 'bold' }
 		end
 
 		ins_left {
@@ -151,21 +151,6 @@ return {
 		ins_right {
 			'progress',
 			color = { fg = colors.text, gui = "bold" },
-			padding = { left = 1, right = 1 }
-		}
-
-		ins_right {
-			'tabs',
-			tab_max_length = 3,
-			mode = 0,
-			use_mode_colors = true,
-			tabs_color = {
-				active = { bg = colors.crust, fg = colors.text, gui = 'bold' },
-				inactive = { bg = colors.crust, fg = colors.overlay0, gui = 'bold' },
-			},
-			symbols = {
-				modified = " " .. icons.file.modified
-			},
 			padding = { left = 1, right = 1 }
 		}
 

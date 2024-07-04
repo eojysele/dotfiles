@@ -34,4 +34,4 @@ opt.listchars:append "eol:󱞤"
 
 opt.splitright = true
 opt.splitbelow = true
-opt.showtabline = 0
+opt.showtabline = 1
