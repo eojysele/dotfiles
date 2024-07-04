@@ -14,8 +14,9 @@ return {
 			},
 			custom_highlights = function(colors)
 				return {
-					NonText = { fg = colors.surface1 },
-					SpecialKey = { fg = colors.surface1 },
+					NonText = { fg = colors.surface0 },
+					SpecialKey = { fg = colors.surface0 },
+					Whitespace = { fg = colors.surface0 },
 					NormalFloat = { bg = colors.base },
 					FloatBorder = { bg = colors.base },
 					NvimTreeModifiedIcon = { fg = colors.text },
