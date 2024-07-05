@@ -18,7 +18,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 opt.cursorline = true
-opt.scrolloff = 999
+opt.scrolloff = 9999
 
 opt.termguicolors = true
 opt.background = "dark"
@@ -34,4 +34,4 @@ opt.listchars:append "eol:󱞤"
 
 opt.splitright = true
 opt.splitbelow = true
-opt.showtabline = 0
+opt.showtabline = 1

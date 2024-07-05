@@ -1,16 +1,19 @@
--- Without options
-require("nvim-web-devicons").setup()
-require("nvim-autopairs").setup()
-require("Comment").setup()
-
--- Plugins directory
-require("eojysele.plugins.tree")
-require("eojysele.plugins.lualine")
-require("eojysele.plugins.gitsigns")
-require("eojysele.plugins.telescope")
-require("eojysele.plugins.mason")
-require("eojysele.plugins.lspconfig")
-require("eojysele.plugins.lint")
-require("eojysele.plugins.glow")
-require("eojysele.plugins.cmp")
-require("eojysele.plugins.treesitter")
+return {
+	require("eojysele.plugins.nvim-catppuccin"),
+	require("eojysele.plugins.nvim-web-devicons"),
+	require("eojysele.plugins.nvim-lualine"),
+	require("eojysele.plugins.nvim-tree"),
+	require("eojysele.plugins.nvim-gitsigns"),
+	require("eojysele.plugins.nvim-telescope"),
+	require("eojysele.plugins.nvim-telescope-fzf-native"),
+	require("eojysele.plugins.nvim-plenary"),
+	require("eojysele.plugins.nvim-mason"),
+	require("eojysele.plugins.nvim-mason-lspconfig"),
+	require("eojysele.plugins.nvim-lspconfig"),
+	require("eojysele.plugins.nvim-jdtls"),
+	require("eojysele.plugins.nvim-lint"),
+	require("eojysele.plugins.nvim-cmp"),
+	require("eojysele.plugins.nvim-treesitter"),
+	require("eojysele.plugins.nvim-autopairs"),
+	require("eojysele.plugins.nvim-comment"),
+}
