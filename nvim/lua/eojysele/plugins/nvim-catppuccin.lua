@@ -11,9 +11,9 @@ return {
 			},
 			custom_highlights = function(colors)
 				return {
-					NonText = { fg = colors.surface0 },
-					SpecialKey = { fg = colors.surface0 },
-					Whitespace = { fg = colors.surface0 },
+					NonText = { fg = colors.surface2 },
+					SpecialKey = { fg = colors.surface2 },
+					Whitespace = { fg = colors.surface2 },
 					NormalFloat = { bg = colors.base },
 					FloatBorder = { bg = colors.base },
 					TabLine = { fg = colors.overlay0, bg = colors.mantle },
