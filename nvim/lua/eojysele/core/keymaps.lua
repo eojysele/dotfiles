@@ -84,6 +84,13 @@ function P.gitsings_keymaps(bufnr, gs)
 	set("v", "<leader>hu", function() gs.undo_stage_hunk { vim.fn.line("."), vim.fn.line("v") } end) -- undo adding changes in selected lines
 end
 
+function P.ts_context_keymaps(bufrn)
+	set("n", "<leader>tu", function()
+		require("treesitter-context").go_to_context(vim.v.count1)
+	end)
+	set("n", "<leader>tt", "<cmd>TSContextToggle<CR>")
+end
+
 -- Java
 function P.java_keymaps(bufrn, jdtls)
 	set("n", "<leader>oi", jdtls.organize_imports) -- organize imports

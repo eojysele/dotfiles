@@ -6,6 +6,10 @@ return {
 			flavour = "frappe",
 			integrations = {
 				treesitter = true,
+				treesitter_context = false,
+				telescope = {
+					enabled = true,
+				},
 				nvimtree = true,
 				mason = true,
 			},
@@ -23,6 +27,14 @@ return {
 					NvimTreeGitStagedIcon = { fg = colors.green },
 					NvimTreeGitDeletedIcon = { fg = colors.red },
 					NvimTreeGitDirtyIcon = { fg = colors.yellow },
+					TreesitterContext = { bg = colors.mantle },
+					TreesitterContextBottom = {
+						sp = colors.surface0
+					},
+					TreesitterContextLineNumber = {
+						fg = colors.surface1,
+						bg = colors.mantle,
+					}
 				}
 			end
 		})

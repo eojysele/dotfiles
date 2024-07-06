@@ -14,6 +14,7 @@ return {
 	require("eojysele.plugins.nvim-lint"),
 	require("eojysele.plugins.nvim-cmp"),
 	require("eojysele.plugins.nvim-treesitter"),
+	require("eojysele.plugins.nvim-treesitter-context"),
 	require("eojysele.plugins.nvim-autopairs"),
 	require("eojysele.plugins.nvim-comment"),
 }
