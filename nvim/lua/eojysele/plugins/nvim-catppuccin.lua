@@ -27,13 +27,14 @@ return {
 					NvimTreeGitStagedIcon = { fg = colors.green },
 					NvimTreeGitDeletedIcon = { fg = colors.red },
 					NvimTreeGitDirtyIcon = { fg = colors.yellow },
-					TreesitterContext = { bg = colors.mantle },
+					TreesitterContext = { bg = colors.base },
 					TreesitterContextBottom = {
-						sp = colors.surface0
+						sp = colors.surface0,
+						style = { "underline" },
 					},
 					TreesitterContextLineNumber = {
 						fg = colors.surface1,
-						bg = colors.mantle,
+						bg = colors.base,
 					}
 				}
 			end
