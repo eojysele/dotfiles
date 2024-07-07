@@ -1,5 +1,3 @@
 .DS_Store
 nvim/log
-nvim/plugin
-nvim/lua/eojysele/plugins/jdt-ls/project-import-order.lua
 *.log
