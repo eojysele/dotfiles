@@ -1,7 +1,7 @@
 # Dotfiles
 
 ## Requirements
-- Alacritty >= 0.12.2
+- Alacritty >= 0.13.0
 - tmux >= 3.3
 - zsh >= 5.9 (also requred oh-my-zsh)
 - Neovim >= 0.9.1
@@ -24,7 +24,7 @@ ln -s ~/.config/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/.config/dotfiles/tmux/tmux.conf ~/.tmux.conf
 ```
 
-### neovim
+### [neovim](/nvim/README.md)
 
 ```shell
 ln -s ~/.config/dotfiles/nvim ~/.config/nvim
