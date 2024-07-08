@@ -23,18 +23,16 @@ return {
 					TabLine = { fg = colors.overlay0, bg = colors.mantle },
 					TabLineFill = { fg = colors.text, bg = colors.crust },
 					TabLineSel = { fg = colors.text, bg = colors.base },
+					CursorLineNr = { fg = colors.text, style = { "bold" } },
+					LineNr = { fg = colors.surface2 },
 					NvimTreeModifiedIcon = { fg = colors.text },
 					NvimTreeGitStagedIcon = { fg = colors.green },
 					NvimTreeGitDeletedIcon = { fg = colors.red },
 					NvimTreeGitDirtyIcon = { fg = colors.yellow },
-					TreesitterContext = { bg = colors.base },
-					TreesitterContextBottom = {
-						sp = colors.surface0,
-						style = { "underline" },
-					},
+					TreesitterContext = { bg = colors.surface0 },
 					TreesitterContextLineNumber = {
-						fg = colors.surface1,
-						bg = colors.base,
+						fg = colors.surface2,
+						bg = colors.surface0,
 					}
 				}
 			end
