@@ -1,3 +1,5 @@
+autoload -U colors && colors
+
 base_prompt(){
 	echo -n "%{$fg[$1]%}$2%{$reset_color%} "
 }
@@ -7,7 +9,7 @@ bold_prompt(){
 }
 
 start_prompt(){
-	base_prompt white 
+	base_prompt white ""
 }
 
 user_prompt(){
@@ -47,11 +49,17 @@ git_prompt(){
 	fi
 }
 
+finish_prompt(){
+	NEWLINE=$'\n 󱞪'
+	base_prompt white $NEWLINE
+}
+
 build_prompt() {
 	start_prompt
 	user_prompt
 	dir_prompt
 	git_prompt
+	finish_prompt
 }
 
-PROMPT='$(build_prompt)'
+PROMPT=$(build_prompt)

@@ -1,16 +1,19 @@
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="eojysele"
-
 DEFAULT_USER="$(whoami)"
 
-plugins=(
-	git
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-)
+DOTFILES_HOME=$HOME/.config/dotfiles
 
-source $ZSH/oh-my-zsh.sh
+source $DOTFILES_HOME/zsh/eojysele.zsh-theme
+
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 
 function lfcd () {
 	tmp="$(mktemp)"
@@ -45,4 +48,7 @@ source /Users/eojysele/.docker/init-zsh.sh || true # Added by Docker Desktop
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
