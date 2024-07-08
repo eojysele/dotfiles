@@ -15,6 +15,8 @@ return {
 			},
 			custom_highlights = function(colors)
 				return {
+					CursorColumn = { bg = colors.surface0 },
+					CursorLine = { bg = colors.surface0 },
 					NonText = { fg = colors.surface2 },
 					SpecialKey = { fg = colors.surface2 },
 					Whitespace = { fg = colors.surface2 },
