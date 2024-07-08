@@ -20,6 +20,7 @@
  - [hrsh7th/cmp-vsnip](https://github.com/hrsh7th/cmp-vsnip)
  - [hrsh7th/vim-vsnip](https://github.com/hrsh7th/vim-vsnip)
  - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+ - [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
  - [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
  - [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
 
