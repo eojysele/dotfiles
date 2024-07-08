@@ -35,3 +35,5 @@ opt.listchars:append "eol:󱞤"
 opt.splitright = true
 opt.splitbelow = true
 opt.showtabline = 1
+
+vim.api.nvim_create_autocmd("VimEnter", { command = "clearjumps" })
