@@ -30,28 +30,6 @@ ln -s ~/.config/dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.config/dotfiles/nvim ~/.config/nvim
 ```
 
-### kitty
-
-#### General
-
-```shell
-ln -s ~/.config/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
-ln -s ~/.config/dotfiles/kitty/colors.conf ~/.config/kitty/colors.conf
-```
-
-#### macOS
-
-```shell
-ln -s ~/.config/dotfiles/kitty/macos.conf ~/.config/kitty/os.conf
-ln -s /Applications/kitty.app/Contents/MacOS/kitten ~/.local/bin
-```
-
-#### linux
-
-``` shell
-ln -s ~/.config/dotfiles/kitty/linux.conf ~/.config/kitty/os.conf
-```
-
 ### alacritty
 
 #### General
