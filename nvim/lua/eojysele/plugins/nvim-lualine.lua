@@ -54,6 +54,10 @@ return {
 			table.insert(config.inactive_sections.lualine_c, component)
 		end
 
+		local function ins_inactive_right(component)
+			table.insert(config.inactive_sections.lualine_x, component)
+		end
+
 
 		local function get_color_by_mode(vim_mode)
 			local mode_color = {
@@ -68,7 +72,7 @@ return {
 			return { fg = colors.crust, bg = mode_color[vim_mode], gui = 'bold' }
 		end
 
-		ins_left {
+		local vim_mode_section = {
 			function()
 				return icons.logo.vim
 			end,
@@ -77,6 +81,8 @@ return {
 			end,
 			padding = { left = 1, right = 1 }
 		}
+
+		ins_left(vim_mode_section)
 
 		ins_left {
 			'branch',
@@ -154,15 +160,7 @@ return {
 			padding = { left = 1, right = 1 }
 		}
 
-		ins_inactive_left {
-			function()
-				return icons.logo.vim
-			end,
-			color = function()
-				return get_color_by_mode(vim.fn.mode())
-			end,
-			padding = { left = 1, right = 1 }
-		}
+		ins_inactive_left(vim_mode_section)
 
 		lualine.setup(config)
 	end
