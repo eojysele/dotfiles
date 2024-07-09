@@ -36,8 +36,8 @@ local runtimes = {
 
 -- default formatter
 local formatter_settings = {
-	url = home .. "/.local/share/eclipse/.nvim/eclipse-java-style.xml",
-	profile = "CodeStyle",
+	url = home .. "/.local/share/eclipse/.nvim/eclipse-java-google-style.xml",
+	profile = "GoogleStyle",
 }
 
 -- default import order
