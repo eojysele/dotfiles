@@ -12,9 +12,6 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
-
 function lfcd () {
 	tmp="$(mktemp)"
 	lf -last-dir-path="$tmp" "$@"
@@ -43,12 +40,24 @@ alias v="nvim"
 
 export PATH=/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$HOME/.local/bin
 
+function zvm_config() {
+	ZVM_VI_HIGHLIGHT_BACKGROUND=#51576d
+	ZVM_VI_HIGHLIGHT_FOREGROUND=#c6d0f5
+	ZVM_VI_HIGHLIGHT_EXTRASTYLE=bold
+}
+
+function zvm_after_lazy_keybindings() {
+	zvm_bindkey vicmd 'J' history-search-forward
+	zvm_bindkey vicmd 'K' history-search-backward
+}
+
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 source /Users/eojysele/.docker/init-zsh.sh || true # Added by Docker Desktop
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
