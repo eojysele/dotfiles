@@ -43,6 +43,7 @@ function P.general_keymaps()
 	set("n", "<leader>Ss", lsp_buf.signature_help)                     -- show signature
 	set("n", "<leader>R", lsp_buf.rename)                              -- rename
 	set("n", "<leader>ca", lsp_buf.code_action)                        -- code actions
+	set("n", '<leader>F', function() lsp_buf.format { async = true } end) -- format file
 	set("v", '<leader>f', function() lsp_buf.format { async = true } end) -- format selected in visual mode
 	set("n", "<leader>Sd", function() vim.diagnostic.open_float() end) -- show diagnostics
 
