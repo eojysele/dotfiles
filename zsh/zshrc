@@ -26,17 +26,11 @@ function lfcd () {
 	fi
 }
 
-function t () {
-	tmux new -ADs $1
-}
-
-#main tmux session
-alias tm="tmux new -ADs main"
-alias tw="tmux new -ADs work"
-alias lf="lfcd"
-alias n="tput bel"
-alias lg="lazygit"
+alias t="tmux new -ADs main"
 alias v="nvim"
+alias lf="lfcd"
+alias lg="lazygit"
+alias n="tput bel"
 
 export PATH=/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$HOME/.local/bin
 
