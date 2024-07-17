@@ -31,7 +31,7 @@ git_prompt(){
 			status_color="yellow"
 		fi
 
-		local ahead_icon=$(base_prompt green '󱦴')
+		local ahead_icon=$(base_prompt cyan '󱦴')
 		local behind_icon=$(base_prompt blue '󱦶')
 
 		local ahead=$(git log --oneline @{upstream}.. 2>/dev/null)
