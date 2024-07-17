@@ -49,4 +49,8 @@ if [[ "$(uname 2>/dev/null)" = "Darwin" ]]; then
 	source $DOTFILES_HOME/zsh/macos.zsh
 fi
 
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+
+zstyle ':completion:*' menu select
+
+compinit
