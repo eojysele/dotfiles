@@ -45,6 +45,8 @@ function zvm_after_lazy_keybindings() {
 	zvm_bindkey vicmd 'K' history-search-backward
 }
 
-source $DOTFILES_HOME/zsh/macos.zsh
+if [[ "$(uname 2>/dev/null)" = "Darwin" ]]; then
+	source $DOTFILES_HOME/zsh/macos.zsh
+fi
 
 autoload -Uz compinit && compinit
