@@ -32,8 +32,6 @@ alias lf="lfcd"
 alias lg="lazygit"
 alias n="tput bel"
 
-export PATH=/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$HOME/.local/bin
-
 function zvm_config() {
 	ZVM_VI_HIGHLIGHT_BACKGROUND=#51576d
 	ZVM_VI_HIGHLIGHT_FOREGROUND=#c6d0f5
@@ -45,13 +43,7 @@ function zvm_after_lazy_keybindings() {
 	zvm_bindkey vicmd 'K' history-search-backward
 }
 
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source $DOTFILES_HOME/zsh/macos.zsh
 
-source /Users/eojysele/.docker/init-zsh.sh || true # Added by Docker Desktop
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+autoload -Uz compinit
+compinit
