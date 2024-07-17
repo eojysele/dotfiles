@@ -1,5 +1,3 @@
-autoload -U colors && colors
-
 base_prompt(){
 	echo -n "%{$fg[$1]%}$2%{$reset_color%}"
 }
@@ -61,5 +59,4 @@ build_prompt() {
 	finish_prompt
 }
 
-setopt PROMPT_SUBST
 PROMPT='$(build_prompt)'

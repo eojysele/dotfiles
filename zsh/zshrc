@@ -2,7 +2,9 @@ DEFAULT_USER="$(whoami)"
 
 DOTFILES_HOME=$HOME/.config/dotfiles
 
-source $DOTFILES_HOME/zsh/eojysele.zsh-theme
+autoload -U colors && colors
+setopt PROMPT_SUBST
+source $DOTFILES_HOME/zsh/themes/default.zsh-theme
 
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
@@ -45,5 +47,4 @@ function zvm_after_lazy_keybindings() {
 
 source $DOTFILES_HOME/zsh/macos.zsh
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
