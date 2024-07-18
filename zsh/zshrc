@@ -42,11 +42,6 @@ function zvm_config() {
 	ZVM_VI_HIGHLIGHT_EXTRASTYLE=bold
 }
 
-function zvm_after_lazy_keybindings() {
-	zvm_bindkey vicmd 'J' history-search-forward
-	zvm_bindkey vicmd 'K' history-search-backward
-}
-
 if [[ "$(uname 2>/dev/null)" = "Darwin" ]]; then
 	source $DOTFILES_HOME/zsh/macos.zsh
 fi
@@ -56,3 +51,9 @@ autoload -Uz compinit
 zstyle ':completion:*' menu select
 
 compinit
+
+bindkey -M viins '^I' menu-complete
+bindkey -M viins '^[[Z' reverse-menu-complete
+bindkey -M vicmd 'J' history-search-forward
+bindkey -M vicmd 'K' history-search-backward
+
