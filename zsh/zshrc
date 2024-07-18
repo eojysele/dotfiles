@@ -39,6 +39,7 @@ alias v="nvim"
 alias lf="lfcd"
 alias lg="lazygit"
 alias n="tput bel"
+alias grep='grep --color=auto'
 
 function zvm_config() {
 	ZVM_VI_HIGHLIGHT_BACKGROUND=#51576d
