@@ -1,5 +1,7 @@
 DEFAULT_USER="$(whoami)"
 
+EDITOR=nvim
+
 DOTFILES_HOME=$HOME/.config/dotfiles
 
 autoload -U colors && colors
