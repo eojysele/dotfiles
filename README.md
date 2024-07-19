@@ -1,9 +1,10 @@
 # Dotfiles
 
 ## Requirements
+- Nerd Font
 - Alacritty >= 0.13.0
 - tmux >= 3.3
-- zsh >= 5.9 (also requred oh-my-zsh)
+- zsh >= 5.9
 - Neovim >= 0.9.1
 - lf >= 30
 - yabai >= 6.0.2
