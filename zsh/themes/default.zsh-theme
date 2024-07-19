@@ -13,7 +13,7 @@ user_prompt(){
 }
 
 dir_prompt(){
-	bold_prompt blue " %c "
+	bold_prompt blue " %~ "
 }
 
 git_prompt(){
