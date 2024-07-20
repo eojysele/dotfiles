@@ -26,10 +26,7 @@ function P.general_keymaps()
 	set("n", "<leader>sl", "<C-w>l")  -- to right split
 	set("n", "<leader>sx", ":close<CR>") -- close current split window
 
-	-- Buffers
-	set("n", "<leader>bx", ":bdelete<CR>")        -- close current buffer
-	set("n", "<leader>bX", ":bdelete!<CR>")       -- close current buffer
-
+	-- File Tree
 	set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
 
 	-- LSP
@@ -82,6 +79,7 @@ function P.gitsings_keymaps(bufnr, gs)
 	set("v", "<leader>hu", function() gs.undo_stage_hunk { vim.fn.line("."), vim.fn.line("v") } end)
 end
 
+-- Treesitter Context
 function P.ts_context_keymaps(bufrn, ts)
 	set("n", "<leader>tu", function() ts.go_to_context(vim.v.count1) end)
 	set("n", "<leader>tt", "<cmd>TSContextToggle<CR>")
