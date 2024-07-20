@@ -74,10 +74,6 @@ if project_home ~= nil then
 	end
 end
 
-local on_attach = function(client, bufnr)
-	require("eojysele.core.keymaps").java_keymaps(bufnr, jdtls);
-end
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local config = {

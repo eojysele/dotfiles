@@ -53,6 +53,8 @@ return {
 		lspconfig.docker_compose_language_service.setup {}
 
 		-- Bash
-		lspconfig.bashls.setup {}
+		lspconfig.bashls.setup {
+			filetypes = { "sh", "zsh", "bash" },
+		}
 	end
 }
