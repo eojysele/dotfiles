@@ -1,8 +1,8 @@
-DEFAULT_USER="$(whoami)"
+export DEFAULT_USER="$(whoami)"
 
-EDITOR=nvim
+export EDITOR=nvim
 
-DOTFILES_HOME=$HOME/.config/dotfiles
+export DOTFILES_HOME=$HOME/.config/dotfiles
 
 autoload -U colors && colors
 setopt PROMPT_SUBST

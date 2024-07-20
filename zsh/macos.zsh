@@ -1,19 +1,19 @@
 # PATH
-PATH=/usr/local/bin:$PATH
-PATH=/System/Cryptexes/App/usr/bin:$PATH
-PATH=/usr/bin:$PATH
-PATH=/bin:$PATH
-PATH=/usr/sbin:$PATH
-PATH=/sbin:$PATH
-PATH=/opt/homebrew/bin:$PATH
-PATH=$HOME/.local/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/System/Cryptexes/App/usr/bin:$PATH
+export PATH=/usr/bin:$PATH
+export PATH=/bin:$PATH
+export PATH=/usr/sbin:$PATH
+export PATH=/sbin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Docker
 source /Users/eojysele/.docker/init-zsh.sh || true
 
 # FPATH
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-FPATH="${HOME}/.zsh/completions/:${FPATH}"
+export FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+export FPATH="${HOME}/.zsh/completions/:${FPATH}"
 
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
