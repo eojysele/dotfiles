@@ -69,7 +69,7 @@ end
 
 -- Gitsings
 function P.gitsings_keymaps(bufnr, gs)
-	set("n", "<leader>do", gs.diffthis)
+	set("n", "<leader>hd", gs.diffthis)
 	set("n", "<leader>hp", gs.preview_hunk)
 	set("n", "<leader>hs", gs.stage_hunk)
 	set("v", "<leader>hs", function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end)
