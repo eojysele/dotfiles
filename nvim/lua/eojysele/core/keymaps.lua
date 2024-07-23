@@ -44,8 +44,7 @@ function P.general_keymaps()
 	local format_function = function()
 		lsp_buf.format { async = true }
 	end
-	set("n", '<leader>cf', format_function)
-	set("v", '<leader>cf', format_function)
+	set({ "n", "v" }, '<leader>cf', format_function)
 
 	-- Linting
 	local lint = require("lint")
