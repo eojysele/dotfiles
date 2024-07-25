@@ -2,20 +2,12 @@ return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-vsnip",
-		"hrsh7th/vim-vsnip",
 	},
 	config = function()
 		local cmp = require('cmp')
 		cmp.setup {
 			sources = {
 				{ name = 'nvim_lsp' },
-				{ name = 'vsnip' },
-			},
-			snippet = {
-				expand = function(args)
-					vim.fn["vsnip#anonymous"](args.body) -- because we are using the vsnip cmp plugin
-				end,
 			},
 			window = {
 				completion = {
@@ -31,8 +23,8 @@ return {
 				}
 			},
 			mapping = cmp.mapping.preset.insert({
-				['<C-k>'] = cmp.mapping.scroll_docs(-4),
-				['<C-j>'] = cmp.mapping.scroll_docs(4),
+				['<C-y>'] = cmp.mapping.scroll_docs(-4),
+				['<C-e>'] = cmp.mapping.scroll_docs(4),
 				['<C-Space>'] = cmp.mapping.complete(),
 				['<CR>'] = cmp.mapping.confirm {
 					behavior = cmp.ConfirmBehavior.Replace,
