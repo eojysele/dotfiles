@@ -1,7 +1,14 @@
 # Neovim
 
+## Requirements
+
+ - [tree-sitter](https://github.com/tree-sitter/tree-sitter)
+ - [ripgrep](https://github.com/BurntSushi/ripgrep)
+ - [fd](https://github.com/sharkdp/fd)
+
 ## Plugins
 
+ - [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
  - [catppuccin/nvim](https://github.com/catppuccin/nvim)
  - [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
  - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
@@ -17,8 +24,6 @@
  - [mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)
  - [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
  - [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
- - [hrsh7th/cmp-vsnip](https://github.com/hrsh7th/cmp-vsnip)
- - [hrsh7th/vim-vsnip](https://github.com/hrsh7th/vim-vsnip)
  - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
  - [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
  - [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
@@ -39,3 +44,4 @@
  - dockerfile-language-server
  - docker-compose-language-service
  - bash-language-server
+
