@@ -34,14 +34,6 @@ function lfcd () {
 	fi
 }
 
-alias t="tmux new -ADs main"
-alias v="nvim"
-alias lf="lfcd"
-alias lg="lazygit"
-alias n="tput bel"
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-
 function zvm_config() {
 	ZVM_VI_HIGHLIGHT_BACKGROUND=#51576d
 	ZVM_VI_HIGHLIGHT_FOREGROUND=#c6d0f5
@@ -52,12 +44,18 @@ if [[ "$(uname 2>/dev/null)" = "Darwin" ]]; then
 	source $DOTFILES_HOME/zsh/macos.zsh
 fi
 
+alias t="tmux new -ADs main"
+alias v="nvim"
+alias lf="lfcd"
+alias lg="lazygit"
+alias n="tput bel"
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
 autoload -Uz compinit
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-
-compinit
 
 bindkey -M viins '^I' menu-complete
 bindkey -M viins '^[[Z' reverse-menu-complete
