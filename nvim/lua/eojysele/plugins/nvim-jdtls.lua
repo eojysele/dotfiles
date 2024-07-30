@@ -79,7 +79,6 @@ return {
 					debounce_text_changes = 80,
 				},
 				capabilities = capabilities,
-				on_attach = on_attach,
 				root_dir = project_directory,
 				settings = {
 					java = {
