@@ -1,9 +1,4 @@
 [[keyboard.bindings]]
-action = "ToggleFullscreen"
-key = "F"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
 chars = "\u0002"
 key = "A"
 mods = "Command"
