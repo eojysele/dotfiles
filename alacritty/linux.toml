@@ -1,24 +1,12 @@
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u0016"
-key = "V"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u0003"
-key = "C"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002"
-key = "A"
-mods = "Alt"
+[keyboard]
+bindings = [
+  { key = "V", mods = "Control", action = "Paste" },
+  { key = "V", mods = "Control|Shift", chars = "\u0016" },
+  { key = "C", mods = "Control", action = "Copy" },
+  { key = "C", mods = "Control|Shift", chars = "\u0003" }
+  { key = 'A', mods = "Alt", chars = "\u0002"},
+  { key = "Left",  mods = "Alt", chars = "\u001bb" },
+  { key = "Right", mods = "Alt", chars = "\u001bf" },
+  { key = "Left", mods = "Control", chars = "\u0001" },
+  { key = "Right", mods = "Control", chars = "\u0005" }
+]
