@@ -61,3 +61,7 @@ bindkey '^I' menu-complete
 bindkey '^[[Z' reverse-menu-complete
 bindkey '^[[B' history-search-forward
 bindkey '^[[A' history-search-backward
+bindkey '^[b' backward-word
+bindkey '^[f' forward-word
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
