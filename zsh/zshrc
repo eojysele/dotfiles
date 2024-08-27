@@ -57,10 +57,7 @@ autoload -Uz compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-bindkey -M viins '^I' menu-complete
-bindkey -M viins '^[[Z' reverse-menu-complete
-bindkey -M viins '^[[B' history-search-forward
-bindkey -M viins '^[[A' history-search-backward
-bindkey -M vicmd 'J' history-search-forward
-bindkey -M vicmd 'K' history-search-backward
-
+bindkey '^I' menu-complete
+bindkey '^[[Z' reverse-menu-complete
+bindkey '^[[B' history-search-forward
+bindkey '^[[A' history-search-backward
