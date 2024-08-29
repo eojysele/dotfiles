@@ -1,7 +1,5 @@
 export DEFAULT_USER="$(whoami)"
 
-export EDITOR=nvim
-
 export DOTFILES_HOME=$HOME/.config/dotfiles
 
 autoload -U colors && colors
@@ -34,12 +32,6 @@ function lfcd () {
 	fi
 }
 
-function zvm_config() {
-	ZVM_VI_HIGHLIGHT_BACKGROUND=#51576d
-	ZVM_VI_HIGHLIGHT_FOREGROUND=#c6d0f5
-	ZVM_VI_HIGHLIGHT_EXTRASTYLE=bold
-}
-
 if [[ "$(uname 2>/dev/null)" = "Darwin" ]]; then
 	source $DOTFILES_HOME/zsh/macos.zsh
 fi
@@ -59,8 +51,8 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 bindkey '^I' menu-complete
 bindkey '^[[Z' reverse-menu-complete
-bindkey '^[[B' history-search-forward
-bindkey '^[[A' history-search-backward
+bindkey '^[[1;2B' history-beginning-search-forward
+bindkey '^[[1;2A' history-beginning-search-backward
 bindkey '^[b' backward-word
 bindkey '^[f' forward-word
 bindkey '^a' beginning-of-line
