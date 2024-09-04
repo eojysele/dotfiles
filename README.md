@@ -1,14 +1,12 @@
 # Dotfiles
 
 ## Requirements
-- Nerd Font
+- Nerd Font (Iosevka)
 - Alacritty >= 0.13.0
 - tmux >= 3.3
 - zsh >= 5.9
 - Neovim >= 0.9.1
 - lf >= 30
-- yabai >= 6.0.2
-- skhd >= 0.3.9
 
 ## Installation
 
@@ -56,18 +54,6 @@ ln -s ~/.config/dotfiles/alacritty/toml/linux.toml ~/.config/alacritty/os.toml
 
 ```shell
 ln -s ~/.config/dotfiles/lf ~/.config/lf
-```
-
-### yabai
-
-```shell
-ln -s ~/.config/dotfiles/yabai ~/.config/yabai
-```
-
-### skhd
-
-```shell
-ln -s ~/.config/dotfiles/skhd ~/.config/skhd
 ```
 
 ### lazygit
