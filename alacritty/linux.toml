@@ -8,5 +8,7 @@ bindings = [
   { key = "Left",  mods = "Alt", chars = "\u001bb" },
   { key = "Right", mods = "Alt", chars = "\u001bf" },
   { key = "Left", mods = "Control", chars = "\u0001" },
-  { key = "Right", mods = "Control", chars = "\u0005" }
+  { key = "Right", mods = "Control", chars = "\u0005" },
+  { key = "Backspace", mods = "Control", chars = "\u0015"},
+  { key = "Backspace", mods = "Alt", chars = "\u0017"}
 ]
