@@ -6,7 +6,7 @@
 - tmux >= 3.3
 - zsh >= 5.9
 - Neovim >= 0.9.1
-- lf >= 30
+- Lazygit >= 0.44.0
 
 ## Installation
 
@@ -48,12 +48,6 @@ ln -s ~/.config/dotfiles/alacritty/toml/macos.toml ~/.config/alacritty/os.toml
 
 ```shell
 ln -s ~/.config/dotfiles/alacritty/toml/linux.toml ~/.config/alacritty/os.toml
-```
-
-### lf
-
-```shell
-ln -s ~/.config/dotfiles/lf ~/.config/lf
 ```
 
 ### lazygit
