@@ -11,7 +11,7 @@ return {
 		lspconfig.gopls.setup {}
 
 		-- JavaScript/TypeScript
-		lspconfig.tsserver.setup {}
+		lspconfig.ts_ls.setup {}
 
 		-- JavaScript Linter
 		lspconfig.eslint.setup {}
