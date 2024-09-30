@@ -1,75 +1,75 @@
-[[colors.indexed_colors]]
-color = "#EF9F76"
-index = 16
-
-[[colors.indexed_colors]]
-color = "#F2D5CF"
-index = 17
-
-[colors.bright]
-black = "#626880"
-blue = "#8CAAEE"
-cyan = "#81C8BE"
-green = "#A6D189"
-magenta = "#F4B8E4"
-red = "#E78284"
-white = "#A5ADCE"
-yellow = "#E5C890"
+[colors.primary]
+foreground = "#C6D0F5"
+background = "#303446"
+dim_foreground = "#C6D0F5"
+bright_foreground = "#C6D0F5"
 
 [colors.cursor]
-cursor = "#C6D0F5"
 text = "#303446"
+cursor = "#C6D0F5"
 
-[colors.dim]
-black = "#51576D"
-blue = "#8CAAEE"
-cyan = "#81C8BE"
-green = "#A6D189"
-magenta = "#F4B8E4"
-red = "#E78284"
-white = "#B5BFE2"
-yellow = "#E5C890"
+[colors.vi_mode_cursor]
+text = "#303446"
+cursor = "#C6D0F5"
 
-[colors.hints.end]
-background = "#A5ADCE"
+[colors.search.matches]
 foreground = "#303446"
+background = "#A5ADCE"
+
+[colors.search.focused_match]
+foreground = "#303446"
+background = "#A6D189"
 
 [colors.hints.start]
-background = "#E5C890"
 foreground = "#303446"
+background = "#E5C890"
+
+[colors.hints.end]
+foreground = "#303446"
+background = "#A5ADCE"
+
+[colors.footer_bar]
+foreground = "#303446"
+background = "#A5ADCE"
+
+[colors.selection]
+text = "#C6D0F5"
+background = "#51576D"
 
 [colors.normal]
 black = "#51576D"
-blue = "#8CAAEE"
-cyan = "#81C8BE"
-green = "#A6D189"
-magenta = "#F4B8E4"
 red = "#E78284"
-white = "#B5BFE2"
+green = "#A6D189"
 yellow = "#E5C890"
+blue = "#8CAAEE"
+magenta = "#F4B8E4"
+cyan = "#81C8BE"
+white = "#B5BFE2"
 
-[colors.primary]
-background = "#303446"
-bright_foreground = "#C6D0F5"
-dim_foreground = "#C6D0F5"
-foreground = "#C6D0F5"
+[colors.bright]
+black = "#626880"
+red = "#E78284"
+green = "#A6D189"
+yellow = "#E5C890"
+blue = "#8CAAEE"
+magenta = "#F4B8E4"
+cyan = "#81C8BE"
+white = "#A5ADCE"
 
-[colors.search.focused_match]
-background = "#A6D189"
-foreground = "#303446"
+[colors.dim]
+black = "#51576D"
+red = "#E78284"
+green = "#A6D189"
+yellow = "#E5C890"
+blue = "#8CAAEE"
+magenta = "#F4B8E4"
+cyan = "#81C8BE"
+white = "#B5BFE2"
 
-[colors.footer_bar]
-background = "#A5ADCE"
-foreground = "#303446"
+[[colors.indexed_colors]]
+index = 16
+color = "#EF9F76"
 
-[colors.search.matches]
-background = "#A5ADCE"
-foreground = "#303446"
-
-[colors.selection]
-background = "#51576D"
-text = "#C6D0F5"
-
-[colors.vi_mode_cursor]
-cursor = "#C6D0F5"
-text = "#303446"
+[[colors.indexed_colors]]
+index = 17
+color = "#F2D5CF"
