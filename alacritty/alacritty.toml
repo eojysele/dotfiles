@@ -20,7 +20,7 @@ history = 10000
 multiplier = 3
 
 [font]
-normal = { family = "IosevkaTerm Nerd Font Mono", style = "Regular"}
+normal = { family = "IosevkaTerm Nerd Font Mono", style = "Regular" }
 bold = { family = "IosevkaTerm Nerd Font Mono", style = "Bold" }
 italic = { family = "IosevkaTerm Nerd Font Mono", style = "Italic" }
 bold_italic = { family = "IosevkaTerm Nerd Font Mono", style = "Bold Italic" }
