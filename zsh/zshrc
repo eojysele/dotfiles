@@ -22,6 +22,8 @@ if [[ "$(uname 2>/dev/null)" = "Darwin" ]]; then
 	source $DOTFILES_HOME/zsh/macos.zsh
 fi
 
+export PATH=$DOTFILES_HOME/tmux/layouts:$PATH
+
 alias t="tmux new -ADs main"
 alias v="nvim"
 alias lg="lazygit"
