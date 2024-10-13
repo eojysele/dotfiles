@@ -5,7 +5,7 @@ return {
 			local jdtls = require('jdtls')
 
 			local home_directory = os.getenv('HOME')
-			local dotfiles_directory = os.getenv('DOTFILES_HOME')
+			local config_directory = home_directory .. "/.config/nvim"
 			local runtimes_directory = os.getenv("SDKMAN_DIR") .. "/candidates/java"
 
 			local mason_registry = require("mason-registry")
@@ -32,7 +32,7 @@ return {
 
 			-- default formatter
 			local formatter_settings = {
-				url = dotfiles_directory .. "/style/java/eclipse-java-google-style.xml",
+				url = config_directory .. "/java-google-style.xml",
 				profile = "GoogleStyle",
 			}
 
