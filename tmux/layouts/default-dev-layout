@@ -14,7 +14,7 @@ if [ -z "$TMUX_SESSION" ]; then
 fi
 
 if [ -d "$PROJECT_DIRECTORY" ]; then
-	cd $PROJECT_DIRECTORY
+	cd "$PROJECT_DIRECTORY"
 fi
 
 FIND_SESSION="$(tmux ls | grep $TMUX_SESSION)"
