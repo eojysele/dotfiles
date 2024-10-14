@@ -18,7 +18,7 @@ if [ -d "$PROJECT_DIRECTORY" ]; then
 fi
 
 FIND_SESSION="$(tmux ls | grep $TMUX_SESSION)"
-if [[ -z $FIND_SESSION || "$FIND_SESSION" == "" ]]; then
+if [ -z $FIND_SESSION ]; then
 	echo "Creating tmux session."
 
 	tmux new-session -d -s $TMUX_SESSION
