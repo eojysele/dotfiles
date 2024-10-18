@@ -10,6 +10,10 @@
 
 ## Installation
 
+```shell
+git clone https://github.com/eojysele/dotfiles.git ~/.config/dotfiles
+```
+
 ### zsh
 
 ```shell
