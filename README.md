@@ -13,7 +13,6 @@
 ### zsh
 
 ```shell
-ln -s ~/.config/dotfiles/zsh/eojysele.zsh-theme ~/.oh-my-zsh/custom/themes/eojysele.zsh-theme
 ln -s ~/.config/dotfiles/zsh/zshrc ~/.zshrc
 ```
 
