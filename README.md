@@ -37,20 +37,20 @@ ln -s ~/.config/dotfiles/nvim ~/.config/nvim
 #### General
 
 ```shell
-ln -s ~/.config/dotfiles/alacritty/toml/alacritty.toml ~/.config/alacritty/alacritty.toml
-ln -s ~/.config/dotfiles/alacritty/toml/colors.toml ~/.config/alacritty/colors.toml
+ln -s ~/.config/dotfiles/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
+ln -s ~/.config/dotfiles/alacritty/colors.toml ~/.config/alacritty/colors.toml
 ```
 
 #### macOS
 
 ```shell
-ln -s ~/.config/dotfiles/alacritty/toml/macos.toml ~/.config/alacritty/os.toml
+ln -s ~/.config/dotfiles/alacritty/macos.toml ~/.config/alacritty/os.toml
 ```
 
 #### linux
 
 ```shell
-ln -s ~/.config/dotfiles/alacritty/toml/linux.toml ~/.config/alacritty/os.toml
+ln -s ~/.config/dotfiles/alacritty/linux.toml ~/.config/alacritty/os.toml
 ```
 
 ### lazygit
