@@ -1,9 +1,13 @@
 [keyboard]
 bindings = [
   { key = "V", mods = "Control", action = "Paste" },
+  { key = "М", mods = "Control", action = "Paste" },
   { key = "V", mods = "Control|Shift", chars = "\u0016" },
+  { key = "М", mods = "Control|Shift", chars = "\u0016" },
   { key = "C", mods = "Control", action = "Copy" },
+  { key = "С", mods = "Control", action = "Copy" },
   { key = "C", mods = "Control|Shift", chars = "\u0003" },
+  { key = "С", mods = "Control|Shift", chars = "\u0003" },
   { key = "A", mods = "Alt", chars = "\u0002" },
   { key = "Left",  mods = "Alt", chars = "\u001bb" },
   { key = "Right", mods = "Alt", chars = "\u001bf" },
