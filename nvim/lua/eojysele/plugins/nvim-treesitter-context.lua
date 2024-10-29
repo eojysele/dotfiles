@@ -10,7 +10,7 @@ return {
 			multiline_threshold = 20,
 			trim_scope = 'outer',
 			mode = 'cursor',
-			separator = nil,
+			separator = '─',
 			zindex = 20,
 			on_attach = function(buf)
 				require("eojysele.core.keymaps").ts_context_keymaps(buf, ts)

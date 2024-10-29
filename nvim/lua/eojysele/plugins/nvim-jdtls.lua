@@ -28,7 +28,7 @@ return {
 				.. "/.local/share/eclipse/"
 				.. vim.fn.fnamemodify(project_directory, ":p:h:t")
 
-			local jdtls_runtime = runtimes_directory .. "/21.0.2-tem/bin/java"
+			local jdtls_runtime = runtimes_directory .. "/21.0.5-tem/bin/java"
 
 			-- default formatter
 			local formatter_settings = {
@@ -127,21 +127,32 @@ return {
 						format = {
 							settings = formatter_settings,
 						},
+						import = {
+							gradle = {
+								enabled = true,
+								wrapper = {
+									enabled = true,
+								},
+							},
+							maven = {
+								enabled = true,
+							},
+						},
 						configuration = {
 							runtimes = {
 								{
 									name = "JavaSE-21",
-									path = runtimes_directory .. "/21.0.2-tem"
+									path = runtimes_directory .. "/21.0.5-tem",
+									default = true
 								},
 								{
 									name = "JavaSE-17",
 									path = runtimes_directory .. "/17.0.10-tem",
-									default = true
 								},
 								{
 									name = "JavaSE-11",
-									path = runtimes_directory .. "/11.0.22-tem"
-								}
+									path = runtimes_directory .. "/11.0.22-tem",
+								},
 							}
 						}
 					}
