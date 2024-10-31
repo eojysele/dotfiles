@@ -146,12 +146,28 @@ return {
 									default = true
 								},
 								{
+									name = "JavaSE-21",
+									path = runtimes_directory .. "/21.0.5-librca",
+								},
+								{
 									name = "JavaSE-17",
-									path = runtimes_directory .. "/17.0.10-tem",
+									path = runtimes_directory .. "/17.0.13-tem",
+								},
+								{
+									name = "JavaSE-17",
+									path = runtimes_directory .. "/17.0.13-librca",
 								},
 								{
 									name = "JavaSE-11",
-									path = runtimes_directory .. "/11.0.22-tem",
+									path = runtimes_directory .. "/11.0.25-tem",
+								},
+								{
+									name = "JavaSE-11",
+									path = runtimes_directory .. "/11.0.25-librca",
+								},
+								{
+									name = "JavaSE-1.8",
+									path = runtimes_directory .. "/8.0.422-librca",
 								},
 							}
 						}
