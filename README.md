@@ -31,6 +31,11 @@ ln -s ~/.config/dotfiles/tmux/tmux.conf ~/.tmux.conf
 ```shell
 ln -s ~/.config/dotfiles/nvim ~/.config/nvim
 ```
+### WezTerm
+
+```shell
+ln -s ~/.config/dotfiles/wezterm ~/.config/wezterm
+```
 
 ### alacritty
 
