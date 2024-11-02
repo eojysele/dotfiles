@@ -1,6 +1,8 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
+
 require("core.events").setup(wezterm)
+
 local os_utils = require("core.utils.os")
 
 local font_name = "IosevkaTerm Nerd Font Mono"
@@ -15,8 +17,7 @@ config.font_size = font_size
 
 local theme = require("core.theme")
 config.colors = theme.get_colors()
-config.window_frame = theme.get_window_frame(wezterm, font_name, font_size)
-
+config.window_frame = theme.get_window_frame(font_name, font_size)
 
 config.scrollback_lines = 10000
 config.hide_mouse_cursor_when_typing = true
@@ -29,10 +30,9 @@ config.window_padding = {
 }
 
 local bindings = require("core.bindings")
-local action = wezterm.action
 config.leader = bindings.setup_leader()
-config.keys = bindings.setup_keyboard_bindings(action)
-config.key_tables = bindings.setup_key_tables(action)
-config.mouse_bindings = bindings.setup_mouse_bindigns(action)
+config.keys = bindings.setup_keyboard_bindings()
+config.key_tables = bindings.setup_key_tables()
+config.mouse_bindings = bindings.setup_mouse_bindigns()
 
 return config

@@ -1,5 +1,7 @@
 local T = {}
 
+local wezterm = require("wezterm")
+
 -- Catppuccin Frappe
 local colors = {
 	rosewater = "#f2d5cf",
@@ -91,7 +93,7 @@ function T.get_colors()
 	}
 end
 
-function T.get_window_frame(wezterm, font_name, font_size)
+function T.get_window_frame(font_name, font_size)
 	return {
 		font = wezterm.font { family = font_name, weight = "Bold" },
 		font_size = font_size,

@@ -1,8 +1,12 @@
 local K = {}
 
-local os_utils = require("core.utils.os")
+local wezterm = require("wezterm")
+local action = wezterm.action
 
-local function set_send_key(action, keybind, send_keybind)
+local os_utils = require("core.utils.os")
+local table_utils = require("core.utils.table")
+
+local function set_send_key(keybind, send_keybind)
 	return {
 		key = keybind.key,
 		mods = keybind.mods,
@@ -13,7 +17,7 @@ local function set_send_key(action, keybind, send_keybind)
 	}
 end
 
-local function set_disabled(action, keybind)
+local function set_disabled(keybind)
 	return {
 		key = keybind.key,
 		mods = keybind.mods,
@@ -21,45 +25,45 @@ local function set_disabled(action, keybind)
 	}
 end
 
-local function get_disabled_keybinds(action)
+local function get_disabled_keybinds()
 	local keys = {
-		set_disabled(action, { key = "Z", mods = "CMD|SHIFT" }),
-		set_disabled(action, { key = "Z", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "w", mods = "CMD" }),
-		set_disabled(action, { key = "t", mods = "CMD" }),
-		set_disabled(action, { key = "W", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "T", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "!", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "@", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "#", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "$", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "%", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "^", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "&", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "*", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "(", mods = "CTRL|SHIFT" }),
-		set_disabled(action, { key = "W", mods = "CTRL" }),
-		set_disabled(action, { key = "T", mods = "CTRL" }),
-		set_disabled(action, { key = "!", mods = "CTRL" }),
-		set_disabled(action, { key = "@", mods = "CTRL" }),
-		set_disabled(action, { key = "#", mods = "CTRL" }),
-		set_disabled(action, { key = "$", mods = "CTRL" }),
-		set_disabled(action, { key = "%", mods = "CTRL" }),
-		set_disabled(action, { key = "^", mods = "CTRL" }),
-		set_disabled(action, { key = "&", mods = "CTRL" }),
-		set_disabled(action, { key = "*", mods = "CTRL" }),
-		set_disabled(action, { key = "(", mods = "CTRL" }),
+		set_disabled({ key = "Z", mods = "CMD|SHIFT" }),
+		set_disabled({ key = "Z", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "w", mods = "CMD" }),
+		set_disabled({ key = "t", mods = "CMD" }),
+		set_disabled({ key = "W", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "T", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "!", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "@", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "#", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "$", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "%", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "^", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "&", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "*", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "(", mods = "CTRL|SHIFT" }),
+		set_disabled({ key = "W", mods = "CTRL" }),
+		set_disabled({ key = "T", mods = "CTRL" }),
+		set_disabled({ key = "!", mods = "CTRL" }),
+		set_disabled({ key = "@", mods = "CTRL" }),
+		set_disabled({ key = "#", mods = "CTRL" }),
+		set_disabled({ key = "$", mods = "CTRL" }),
+		set_disabled({ key = "%", mods = "CTRL" }),
+		set_disabled({ key = "^", mods = "CTRL" }),
+		set_disabled({ key = "&", mods = "CTRL" }),
+		set_disabled({ key = "*", mods = "CTRL" }),
+		set_disabled({ key = "(", mods = "CTRL" }),
 	}
 
 	for i = 1, 9 do
-		table.insert(keys, set_disabled(action, { key = tostring(i), mods = "CMD" }))
-		table.insert(keys, set_disabled(action, { key = tostring(i), mods = "CTRL|SHIFT" }))
+		table.insert(keys, set_disabled({ key = tostring(i), mods = "CMD" }))
+		table.insert(keys, set_disabled({ key = tostring(i), mods = "CTRL|SHIFT" }))
 	end
 
 	return keys
 end
 
-local function get_general_keybinds(action)
+local function get_general_keybinds()
 	local keys = {
 		{ key = "d", mods = "LEADER", action = action.SplitHorizontal { domain = "CurrentPaneDomain" }, },
 		{ key = "D", mods = "LEADER", action = action.SplitVertical { domain = "CurrentPaneDomain" }, },
@@ -109,34 +113,34 @@ local function get_general_keybinds(action)
 	return keys
 end
 
-local function get_mac_os_keybinds(action)
+local function get_mac_os_keybinds()
 	local keys = {
-		set_send_key(action, { key = "a", mods = "CMD", }, { key = "b", mods = "CTRL", }),
-		set_send_key(action, { key = "LeftArrow", mods = "CMD" }, { key = "a", mods = "CTRL" }),
-		set_send_key(action, { key = "RightArrow", mods = "CMD" }, { key = "e", mods = "CTRL" }),
-		set_send_key(action, { key = "LeftArrow", mods = "OPT" }, { key = "b", mods = "ALT" }),
-		set_send_key(action, { key = "RightArrow", mods = "OPT" }, { key = "f", mods = "ALT" }),
-		set_send_key(action, { key = "Backspace", mods = "CMD" }, { key = "u", mods = "CTRL" }),
-		set_send_key(action, { key = "Backspace", mods = "OPT" }, { key = "w", mods = "CTRL" }),
+		set_send_key({ key = "a", mods = "CMD", }, { key = "b", mods = "CTRL", }),
+		set_send_key({ key = "LeftArrow", mods = "CMD" }, { key = "a", mods = "CTRL" }),
+		set_send_key({ key = "RightArrow", mods = "CMD" }, { key = "e", mods = "CTRL" }),
+		set_send_key({ key = "LeftArrow", mods = "OPT" }, { key = "b", mods = "ALT" }),
+		set_send_key({ key = "RightArrow", mods = "OPT" }, { key = "f", mods = "ALT" }),
+		set_send_key({ key = "Backspace", mods = "CMD" }, { key = "u", mods = "CTRL" }),
+		set_send_key({ key = "Backspace", mods = "OPT" }, { key = "w", mods = "CTRL" }),
 		{ key = "/", mods = "CMD", action = action { EmitEvent = "toggle-leader" } },
 	}
 
 	return keys
 end
 
-local function get_linux_and_window_keybinds(action)
+local function get_linux_and_window_keybinds()
 	local keys = {
-		set_send_key(action, { key = "a", mods = "ALT", }, { key = "b", mods = "CTRL", }),
-		set_send_key(action, { key = "LeftArrow", mods = "CTRL" }, { key = "a", mods = "CTRL" }),
-		set_send_key(action, { key = "RightArrow", mods = "CTRL" }, { key = "e", mods = "CTRL" }),
-		set_send_key(action, { key = "LeftArrow", mods = "ALT" }, { key = "b", mods = "ALT" }),
-		set_send_key(action, { key = "RightArrow", mods = "ALT" }, { key = "f", mods = "ALT" }),
-		set_send_key(action, { key = "Backspace", mods = "CTRL" }, { key = "u", mods = "CTRL" }),
-		set_send_key(action, { key = "Backspace", mods = "ALT" }, { key = "w", mods = "CTRL" }),
+		set_send_key({ key = "a", mods = "ALT", }, { key = "b", mods = "CTRL", }),
+		set_send_key({ key = "LeftArrow", mods = "CTRL" }, { key = "a", mods = "CTRL" }),
+		set_send_key({ key = "RightArrow", mods = "CTRL" }, { key = "e", mods = "CTRL" }),
+		set_send_key({ key = "LeftArrow", mods = "ALT" }, { key = "b", mods = "ALT" }),
+		set_send_key({ key = "RightArrow", mods = "ALT" }, { key = "f", mods = "ALT" }),
+		set_send_key({ key = "Backspace", mods = "CTRL" }, { key = "u", mods = "CTRL" }),
+		set_send_key({ key = "Backspace", mods = "ALT" }, { key = "w", mods = "CTRL" }),
 		{
 			key = "c",
 			mods = "CTRL",
-			action = action_callback(function(window, pane)
+			action = wezterm.action_callback(function(window, pane)
 				local selection_text = window:get_selection_text_for_pane(pane)
 				local is_selection_active = string.len(selection_text) ~= 0
 				if is_selection_active then
@@ -147,48 +151,41 @@ local function get_linux_and_window_keybinds(action)
 			end),
 		},
 		{ key = "v", mods = "CTRL", action = action.PasteFrom "Clipboard" },
-		set_send_key(action, { key = "V", mods = "CTRL|SHIFT" }, { key = "v", mods = "CTRL" }),
+		set_send_key({ key = "V", mods = "CTRL|SHIFT" }, { key = "v", mods = "CTRL" }),
 		{ key = "/", mods = "ALT",  action = action { EmitEvent = "toggle-leader" } },
 	}
 
 	return keys
 end
 
-local function merge(into, from)
-	for _, element in ipairs(from) do
-		table.insert(into, element)
-	end
-end
-
 function K.setup_leader()
-	local leader = {}
-	if os_utils.is_mac_os() == true then
-		leader = { key = "a", mods = "CMD", timeout_milliseconds = 1000 }
-	else
-		leader = { key = "a", mods = "ALT", timeout_milliseconds = 1000 }
+	local leader = { key = "A", mods = "CMD", }
+
+	if os_utils.is_mac_os() == false then
+		leader.mods = "ALT"
 	end
 
 	return leader
 end
 
-function K.setup_keyboard_bindings(action)
+function K.setup_keyboard_bindings()
 	local keys = {}
 	if os_utils.is_mac_os() == true then
-		keys = get_mac_os_keybinds(action)
+		keys = get_mac_os_keybinds()
 	else
-		keys = get_linux_and_window_keybinds(action)
+		keys = get_linux_and_window_keybinds()
 	end
 
-	local general_keys = get_general_keybinds(action)
-	local disabled_keys = get_disabled_keybinds(action)
+	local general_keys = get_general_keybinds()
+	local disabled_keys = get_disabled_keybinds()
 
-	merge(keys, general_keys)
-	merge(keys, disabled_keys)
+	table_utils.merge(keys, general_keys)
+	table_utils.merge(keys, disabled_keys)
 
 	return keys
 end
 
-function K.setup_key_tables(action)
+function K.setup_key_tables()
 	return {
 		resize_pane = {
 			{ key = "h",      action = action.AdjustPaneSize { "Left", 5 } },
@@ -200,7 +197,7 @@ function K.setup_key_tables(action)
 	}
 end
 
-function K.setup_mouse_bindigns(action)
+function K.setup_mouse_bindigns()
 	return {
 		{
 			event = { Up = { streak = 1, button = "Left" } },
