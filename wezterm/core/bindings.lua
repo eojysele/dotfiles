@@ -1,9 +1,6 @@
 local K = {}
 
-local MACOS = {
-	APPLE = "aarch64-apple-darwin",
-	INTEL = "x86_64-apple-darwin",
-}
+local OS_UTILS = require("core.utils.os")
 
 local function set_send_key(wezterm, keybind, send_keybind)
 	return {
@@ -32,26 +29,56 @@ local function get_disabled_keybinds(wezterm)
 		set_disabled(wezterm, { key = "t", mods = "CMD" }),
 		set_disabled(wezterm, { key = "W", mods = "CTRL|SHIFT" }),
 		set_disabled(wezterm, { key = "T", mods = "CTRL|SHIFT" }),
+		set_disabled(wezterm, { key = "!", mods = "CTRL|SHIFT" }),
+		set_disabled(wezterm, { key = "@", mods = "CTRL|SHIFT" }),
+		set_disabled(wezterm, { key = "#", mods = "CTRL|SHIFT" }),
+		set_disabled(wezterm, { key = "$", mods = "CTRL|SHIFT" }),
+		set_disabled(wezterm, { key = "%", mods = "CTRL|SHIFT" }),
+		set_disabled(wezterm, { key = "^", mods = "CTRL|SHIFT" }),
+		set_disabled(wezterm, { key = "&", mods = "CTRL|SHIFT" }),
+		set_disabled(wezterm, { key = "*", mods = "CTRL|SHIFT" }),
+		set_disabled(wezterm, { key = "(", mods = "CTRL|SHIFT" }),
+		set_disabled(wezterm, { key = "W", mods = "CTRL" }),
+		set_disabled(wezterm, { key = "T", mods = "CTRL" }),
+		set_disabled(wezterm, { key = "!", mods = "CTRL" }),
+		set_disabled(wezterm, { key = "@", mods = "CTRL" }),
+		set_disabled(wezterm, { key = "#", mods = "CTRL" }),
+		set_disabled(wezterm, { key = "$", mods = "CTRL" }),
+		set_disabled(wezterm, { key = "%", mods = "CTRL" }),
+		set_disabled(wezterm, { key = "^", mods = "CTRL" }),
+		set_disabled(wezterm, { key = "&", mods = "CTRL" }),
+		set_disabled(wezterm, { key = "*", mods = "CTRL" }),
+		set_disabled(wezterm, { key = "(", mods = "CTRL" }),
 	}
+
+	for i = 1, 9 do
+		table.insert(keys, set_disabled(wezterm, { key = tostring(i), mods = "CMD" }))
+		table.insert(keys, set_disabled(wezterm, { key = tostring(i), mods = "CTRL|SHIFT" }))
+	end
 
 	return keys
 end
 
 local function get_general_keybinds(wezterm)
 	local keys = {
-		{ key = "d", mods = "LEADER",       action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" }, },
-		{ key = "D", mods = "LEADER|SHIFT", action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" }, },
-		{ key = "w", mods = "LEADER",       action = wezterm.action.CloseCurrentPane { confirm = true } },
-		{ key = "t", mods = "LEADER",       action = wezterm.action.SpawnTab "CurrentPaneDomain" },
-		{ key = "f", mods = "LEADER",       action = wezterm.action.TogglePaneZoomState },
-		{ key = "h", mods = "LEADER",       action = wezterm.action.ActivatePaneDirection "Left" },
-		{ key = "j", mods = "LEADER",       action = wezterm.action.ActivatePaneDirection "Down" },
-		{ key = "k", mods = "LEADER",       action = wezterm.action.ActivatePaneDirection "Up" },
-		{ key = "l", mods = "LEADER",       action = wezterm.action.ActivatePaneDirection "Right" },
-		{ key = "H", mods = "LEADER|SHIFT", action = wezterm.action.AdjustPaneSize { "Left", 5 } },
-		{ key = "J", mods = "LEADER|SHIFT", action = wezterm.action.AdjustPaneSize { "Down", 5 } },
-		{ key = "K", mods = "LEADER|SHIFT", action = wezterm.action.AdjustPaneSize { "Up", 5 } },
-		{ key = "L", mods = "LEADER|SHIFT", action = wezterm.action.AdjustPaneSize { "Right", 5 } },
+		{ key = "d", mods = "LEADER", action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" }, },
+		{ key = "D", mods = "LEADER", action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" }, },
+		{ key = "w", mods = "LEADER", action = wezterm.action.CloseCurrentPane { confirm = true } },
+		{ key = "t", mods = "LEADER", action = wezterm.action.SpawnTab "CurrentPaneDomain" },
+		{ key = "f", mods = "LEADER", action = wezterm.action.TogglePaneZoomState },
+		{ key = "h", mods = "LEADER", action = wezterm.action.ActivatePaneDirection "Left" },
+		{ key = "j", mods = "LEADER", action = wezterm.action.ActivatePaneDirection "Down" },
+		{ key = "k", mods = "LEADER", action = wezterm.action.ActivatePaneDirection "Up" },
+		{ key = "l", mods = "LEADER", action = wezterm.action.ActivatePaneDirection "Right" },
+		{
+			key = "r",
+			mods = "LEADER",
+			action = wezterm.action.ActivateKeyTable {
+				name = "resize_pane",
+				timeout_milliseconds = 1000,
+				one_shot = false,
+			},
+		},
 		{
 			key = "s",
 			mods = "LEADER",
@@ -60,7 +87,7 @@ local function get_general_keybinds(wezterm)
 			},
 		},
 		{
-			key = "e",
+			key = "S",
 			mods = "LEADER",
 			action = wezterm.action.PaneSelect {
 				alphabet = "1234567890",
@@ -73,6 +100,11 @@ local function get_general_keybinds(wezterm)
 		{ key = "}", mods = "LEADER|SHIFT", action = wezterm.action.MoveTabRelative(1) },
 		{ key = "n", mods = "LEADER",       action = wezterm.action { EmitEvent = "toggle-tabbar" } },
 	}
+
+	for i = 1, 9 do
+		local key = { key = tostring(i), mods = "LEADER", action = wezterm.action.ActivateTab(i - 1), }
+		table.insert(keys, key)
+	end
 
 	return keys
 end
@@ -128,24 +160,20 @@ local function merge(into, from)
 	end
 end
 
-function K.setup_leader(wezterm)
-	local os = wezterm.target_triple
-
+function K.setup_leader()
 	local leader = {}
-	if os == MACOS.APPLE or os == MACOS.INTEL then
-		leader = { key = "a", mods = "CMD" }
+	if OS_UTILS.is_mac_os() == true then
+		leader = { key = "a", mods = "CMD", timeout_milliseconds = 1000 }
 	else
-		leader = { key = "a", mods = "ALT" }
+		leader = { key = "a", mods = "ALT", timeout_milliseconds = 1000 }
 	end
 
 	return leader
 end
 
 function K.setup_keyboard_bindings(wezterm)
-	local os = wezterm.target_triple
-
 	local keys = {}
-	if os == MACOS.APPLE or os == MACOS.INTEL then
+	if OS_UTILS.is_mac_os() == true then
 		keys = get_mac_os_keybinds(wezterm)
 	else
 		keys = get_linux_and_window_keybinds(wezterm)
@@ -158,6 +186,18 @@ function K.setup_keyboard_bindings(wezterm)
 	merge(keys, disabled_keys)
 
 	return keys
+end
+
+function K.setup_key_tables(wezterm)
+	return {
+		resize_pane = {
+			{ key = "h",      action = wezterm.action.AdjustPaneSize { "Left", 5 } },
+			{ key = "j",      action = wezterm.action.AdjustPaneSize { "Down", 5 } },
+			{ key = "k",      action = wezterm.action.AdjustPaneSize { "Up", 5 } },
+			{ key = "l",      action = wezterm.action.AdjustPaneSize { "Right", 5 } },
+			{ key = 'Escape', action = 'PopKeyTable' },
+		}
+	}
 end
 
 function K.setup_mouse_bindigns(wezterm)

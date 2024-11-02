@@ -91,8 +91,10 @@ function T.get_colors()
 	}
 end
 
-function T.get_window_frame()
+function T.get_window_frame(wezterm, font_name, font_size)
 	return {
+		font = wezterm.font { family = font_name, weight = "Bold" },
+		font_size = font_size,
 		active_titlebar_bg = colors.crust,
 		active_titlebar_fg = colors.text,
 		inactive_titlebar_bg = colors.crust,
