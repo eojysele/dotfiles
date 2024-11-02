@@ -1,9 +1,14 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 require("core.events").setup(wezterm)
+local os_utils = require("core.utils.os")
 
 local font_name = "IosevkaTerm Nerd Font Mono"
 local font_size = 16
+
+if os_utils.is_mac_os == false then
+	font_size = 12.5
+end
 
 config.font = wezterm.font(font_name)
 config.font_size = font_size
@@ -24,9 +29,10 @@ config.window_padding = {
 }
 
 local bindings = require("core.bindings")
+local action = wezterm.action
 config.leader = bindings.setup_leader()
-config.keys = bindings.setup_keyboard_bindings(wezterm)
-config.key_tables = bindings.setup_key_tables(wezterm)
-config.mouse_bindings = bindings.setup_mouse_bindigns(wezterm)
+config.keys = bindings.setup_keyboard_bindings(action)
+config.key_tables = bindings.setup_key_tables(action)
+config.mouse_bindings = bindings.setup_mouse_bindigns(action)
 
 return config
