@@ -7,7 +7,7 @@ config.font_size = 16
 
 config.scrollback_lines = 10000
 config.hide_mouse_cursor_when_typing = true
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.window_padding = {
 	left = "0",
 	right = "0",

@@ -71,6 +71,7 @@ local function get_general_keybinds(wezterm)
 		{ key = "]", mods = "LEADER",       action = wezterm.action.ActivateTabRelative(1) },
 		{ key = "{", mods = "LEADER|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
 		{ key = "}", mods = "LEADER|SHIFT", action = wezterm.action.MoveTabRelative(1) },
+		{ key = "n", mods = "LEADER",       action = wezterm.action { EmitEvent = "toggle-tabbar" } },
 	}
 
 	return keys
