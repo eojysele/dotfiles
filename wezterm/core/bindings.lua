@@ -167,6 +167,11 @@ function K.setup_mouse_bindigns(wezterm)
 			mods = "NONE",
 			action = wezterm.action.Nop,
 		},
+		{
+			event = { Up = { streak = 1, button = "Left" } },
+			mods = "SHIFT",
+			action = wezterm.action.Nop,
+		},
 	}
 end
 
