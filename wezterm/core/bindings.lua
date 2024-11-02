@@ -159,7 +159,7 @@ local function get_linux_and_window_keybinds()
 end
 
 function K.setup_leader()
-	local leader = { key = "A", mods = "CMD", }
+	local leader = { key = "a", mods = "CMD", timeout_milliseconds = 1000 }
 
 	if os_utils.is_mac_os() == false then
 		leader.mods = "ALT"
