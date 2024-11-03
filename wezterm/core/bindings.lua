@@ -137,6 +137,7 @@ local function setup_keys()
 
 	return keys
 end
+
 local function setup_key_tables()
 	local key_tables = {
 		search_mode = {
