@@ -15,6 +15,9 @@ end
 config.font = wezterm.font(font_name)
 config.font_size = font_size
 
+config.initial_cols = 120
+config.initial_rows = 32
+
 local theme = require("core.theme")
 config.colors = theme.get_colors()
 config.window_frame = theme.get_window_frame(font_name, font_size)
