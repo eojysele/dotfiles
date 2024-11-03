@@ -30,9 +30,10 @@ config.window_padding = {
 }
 
 local bindings = require("core.bindings")
-config.leader = bindings.setup_leader()
-config.keys = bindings.setup_keyboard_bindings()
-config.key_tables = bindings.setup_key_tables()
-config.mouse_bindings = bindings.setup_mouse_bindigns()
+config.disable_default_key_bindings = true
+config.leader = bindings.leader
+config.keys = bindings.keys
+config.key_tables = bindings.key_tables
+config.mouse_bindings = bindings.mouse_bindings
 
 return config
