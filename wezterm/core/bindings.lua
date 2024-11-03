@@ -68,6 +68,7 @@ local function setup_mac_os_keys()
 		{ key = "-",          mods = "CMD",       action = action.DecreaseFontSize },
 		{ key = "0",          mods = "CMD",       action = action.ResetFontSize },
 		{ key = "f",          mods = "CMD",       action = action.Search "CurrentSelectionOrEmptyString" },
+		{ key = "f",          mods = "CMD|CTRL",  action = action.ToggleFullScreen },
 	}
 
 	for i = 1, 9 do
@@ -118,6 +119,7 @@ local function setup_other_os_keys()
 		{ key = "-",          mods = "CTRL",       action = action.DecreaseFontSize },
 		{ key = "0",          mods = "CTRL",       action = action.ResetFontSize },
 		{ key = "F",          mods = "CTRL|SHIFT", action = action.Search "CurrentSelectionOrEmptyString" },
+		{ key = "F11",        mods = "",           action = action.ToggleFullScreen },
 	}
 
 	for i = 1, 9 do
@@ -169,19 +171,116 @@ local function setup_key_tables()
 	return key_tables
 end
 
+local function setup_mac_os_mouse_bindings()
+	local mouse_bindings = {
+		{
+			event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+			mods = "CMD",
+			action = action.IncreaseFontSize,
+		},
+		{
+			event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+			mods = "CMD",
+			action = action.DecreaseFontSize,
+		},
+		{
+			event = { Down = { streak = 1, button = "Middle" } },
+			mods = "CMD",
+			action = action.ResetFontSize,
+		},
+	}
+	return mouse_bindings
+end
+
+local function setup_other_os_mouse_bindings()
+	local mouse_bindings = {
+		{
+			event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+			mods = "CTRL",
+			action = action.IncreaseFontSize,
+		},
+		{
+			event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+			mods = "CTRL",
+			action = action.DecreaseFontSize,
+		},
+		{
+			event = { Down = { streak = 1, button = "Middle" } },
+			mods = "CTRL",
+			action = action.ResetFontSize,
+		},
+	}
+
+	return mouse_bindings
+end
+
 local function setup_mouse_bindings()
 	local mouse_bindings = {
 		{
-			event = { Up = { streak = 1, button = "Left" } },
+			event = { Down = { streak = 1, button = { WheelUp = 1 } } },
 			mods = "NONE",
-			action = action.Nop,
+			action = action.ScrollByCurrentEventWheelDelta,
+		},
+		{
+			event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+			mods = "NONE",
+			action = action.ScrollByCurrentEventWheelDelta,
+		},
+		{
+			event = { Drag = { streak = 1, button = "Left" } },
+			action = action.ExtendSelectionToMouseCursor("Cell"),
+			mods = "NONE",
+		},
+		{
+			event = { Drag = { streak = 1, button = "Left" } },
+			action = action.ExtendSelectionToMouseCursor("Cell"),
+			mods = "SHIFT",
+		},
+		{
+			event = { Down = { streak = 1, button = "Left" } },
+			action = action.ClearSelection,
+			mods = "NONE",
+		},
+		{
+			event = { Down = { streak = 1, button = "Left" } },
+			action = action.ClearSelection,
+			mods = "SHIFT",
+		},
+		{
+			event = { Down = { streak = 2, button = "Left" } },
+			action = action.SelectTextAtMouseCursor("Word"),
+			mods = "NONE",
+		},
+		{
+			event = { Down = { streak = 3, button = "Left" } },
+			action = action.SelectTextAtMouseCursor("Line"),
+			mods = "NONE",
+		},
+		{
+			event = { Down = { streak = 2, button = "Left" } },
+			action = action.SelectTextAtMouseCursor("Word"),
+			mods = "SHIFT",
+		},
+		{
+			event = { Down = { streak = 3, button = "Left" } },
+			action = action.SelectTextAtMouseCursor("Line"),
+			mods = "SHIFT",
 		},
 		{
 			event = { Up = { streak = 1, button = "Left" } },
-			mods = "SHIFT",
-			action = action.Nop,
+			mods = "CTRL",
+			action = wezterm.action.OpenLinkAtMouseCursor,
 		},
 	}
+
+	local os_specific_mouse_bindings = {}
+	if os_utils.is_mac_os() == true then
+		os_specific_mouse_bindings = setup_mac_os_mouse_bindings()
+	else
+		os_specific_mouse_bindings = setup_other_os_mouse_bindings()
+	end
+
+	table_utils.merge(mouse_bindings, os_specific_mouse_bindings)
 
 	return mouse_bindings
 end

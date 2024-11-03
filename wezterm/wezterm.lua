@@ -18,10 +18,10 @@ config.font_size = font_size
 local theme = require("core.theme")
 config.colors = theme.get_colors()
 config.window_frame = theme.get_window_frame(font_name, font_size)
-
 config.scrollback_lines = 10000
 config.hide_mouse_cursor_when_typing = true
 config.hide_tab_bar_if_only_one_tab = false
+config.native_macos_fullscreen_mode = true
 config.window_padding = {
 	left = "0",
 	right = "0",
@@ -31,6 +31,7 @@ config.window_padding = {
 
 local bindings = require("core.bindings")
 config.disable_default_key_bindings = true
+config.disable_default_mouse_bindings = true
 config.leader = bindings.leader
 config.keys = bindings.keys
 config.key_tables = bindings.key_tables
