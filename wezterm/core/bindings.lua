@@ -74,8 +74,51 @@ end
 
 local function setup_other_os_keys()
 	local keys = {
-
+		{ key = "Q", mods = "CTRL|SHIFT", action = action.QuitApplication },
+		{ key = "H", mods = "CTRL|SHIFT", action = action.HideApplication },
+		{ key = "M", mods = "CTRL|SHIFT", action = action.Hide },
+		{
+			key = "c",
+			mods = "CTRL",
+			action = wezterm.action_callback(function(window, pane)
+				local selection_text = window:get_selection_text_for_pane(pane)
+				local is_selection_active = string.len(selection_text) ~= 0
+				if is_selection_active then
+					window:perform_action(action.CopyTo("ClipboardAndPrimarySelection"), pane)
+				else
+					window:perform_action(action.SendKey { key = "c", mods = "CTRL" }, pane)
+				end
+			end),
+		},
+		{ key = "v",          mods = "CTRL",       action = action.PasteFrom "Clipboard" },
+		{ key = "V",          mods = "CTRL|SHIFT", action = action.SendKey { key = "v", mods = "CTRL" } },
+		{ key = "T",          mods = "CTRL|SHIFT", action = action.SpawnTab "CurrentPaneDomain" },
+		{ key = "W",          mods = "CTRL|SHIFT", action = action.CloseCurrentTab { confirm = true } },
+		{ key = "N",          mods = "CTRL|SHIFT", action = action.SpawnWindow },
+		{ key = "Tab",        mods = "CTRL",       action = action.ActivateTabRelative(1) },
+		{ key = "Tab",        mods = "SHIFT|CTRL", action = action.ActivateTabRelative(-1) },
+		{ key = "[",          mods = "ALT",        action = action.ActivateTabRelative(-1) },
+		{ key = "]",          mods = "ALT",        action = action.ActivateTabRelative(1) },
+		{ key = "{",          mods = "ALT|SHIFT",  action = action.MoveTabRelative(-1) },
+		{ key = "}",          mods = "ALT|SHIFT",  action = action.MoveTabRelative(1) },
+		{ key = "a",          mods = "ALT",        action = action.SendKey { key = "b", mods = "CTRL" } },
+		{ key = "LeftArrow",  mods = "CTRL",       action = action.SendKey { key = "a", mods = "CTRL" } },
+		{ key = "RightArrow", mods = "CTRL",       action = action.SendKey { key = "e", mods = "CTRL" } },
+		{ key = "LeftArrow",  mods = "ALT",        action = action.SendKey { key = "b", mods = "ALT" } },
+		{ key = "RightArrow", mods = "ALT",        action = action.SendKey { key = "f", mods = "ALT" } },
+		{ key = "Backspace",  mods = "CTRL",       action = action.SendKey { key = "u", mods = "CTRL" } },
+		{ key = "Backspace",  mods = "ALT",        action = action.SendKey { key = "w", mods = "CTRL" } },
+		{ key = "/",          mods = "ALT",        action = action { EmitEvent = "toggle-leader" } },
+		{ key = "+",          mods = "CTRL",       action = action.IncreaseFontSize },
+		{ key = "-",          mods = "CTRL",       action = action.DecreaseFontSize },
+		{ key = "0",          mods = "CTRL",       action = action.ResetFontSize },
+		{ key = "F",          mods = "CTRL|SHIFT", action = action.Search "CurrentSelectionOrEmptyString" },
 	}
+
+	for i = 1, 9 do
+		local key = { key = tostring(i), mods = "ALT", action = action.ActivateTab(i - 1), }
+		table.insert(keys, key)
+	end
 
 	return keys
 end
@@ -137,14 +180,9 @@ local function setup_mouse_bindings()
 	return mouse_bindings
 end
 
-local leader = setup_leader()
-local keys = setup_keys()
-local key_tables = setup_key_tables()
-local mouse_bindings = setup_mouse_bindings()
-
 return {
-	leader = leader,
-	keys = keys,
-	key_tables = key_tables,
-	mouse_bindings = mouse_bindings,
+	leader = setup_leader(),
+	keys = setup_keys(),
+	key_tables = setup_key_tables(),
+	mouse_bindings = setup_mouse_bindings(),
 }
