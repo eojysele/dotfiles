@@ -24,6 +24,7 @@ fi
 
 export PATH=$DOTFILES_HOME/tmux/layouts:$PATH
 
+alias icat="wezterm imgcat"
 alias t="tmux new -ADs main"
 alias v="nvim"
 alias lg="lazygit"
