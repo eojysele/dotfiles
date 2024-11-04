@@ -86,8 +86,7 @@ function T.get_colors()
 				bg_color = colors.base,
 				fg_color = colors.text,
 			},
-			-- fancy tab bar
-			inactive_tab_edge = colors.surface0,
+			inactive_tab_edge = colors.crust,
 		},
 		visual_bell = colors.surface0,
 	}

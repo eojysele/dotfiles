@@ -17,12 +17,13 @@ config.font_size = font_size
 
 config.initial_cols = 120
 config.initial_rows = 32
+config.scrollback_lines = 10000
 
 local theme = require("core.theme")
 config.default_cursor_style = "SteadyBar"
+config.use_fancy_tab_bar = true
 config.colors = theme.get_colors()
 config.window_frame = theme.get_window_frame(font_name, font_size)
-config.scrollback_lines = 10000
 config.hide_mouse_cursor_when_typing = true
 config.hide_tab_bar_if_only_one_tab = false
 config.native_macos_fullscreen_mode = true
