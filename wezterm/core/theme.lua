@@ -79,7 +79,7 @@ function T.get_colors()
 				bg_color = colors.base,
 			},
 			new_tab = {
-				bg_color = colors.mantle,
+				bg_color = colors.crust,
 				fg_color = colors.overlay0,
 			},
 			new_tab_hover = {
