@@ -1,10 +1,12 @@
 local E = {}
 
+local wezterm = require("wezterm")
+
 local function basename(s)
 	return string.gsub(s, "(.*[/\\])(.*)", "%2")
 end
 
-function E.setup(wezterm)
+function E.setup()
 	wezterm.on("format-window-title", function()
 		return "WezTerm"
 	end)
