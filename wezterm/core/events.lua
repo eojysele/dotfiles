@@ -16,7 +16,7 @@ function E.setup()
 		local active_pane = tab.active_pane
 		local process_name = basename(active_pane.foreground_process_name)
 
-		return " " .. tab_index .. " " .. process_name .. " "
+		return " " .. tab_index .. ": " .. process_name .. " "
 	end)
 
 	wezterm.on("toggle-leader", function(window, _)

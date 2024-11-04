@@ -188,6 +188,12 @@ local function setup_mac_os_mouse_bindings()
 			mods = "CMD",
 			action = action.ResetFontSize,
 		},
+		{
+			event = { Up = { streak = 1, button = "Left" } },
+			mods = "CMD",
+			action = wezterm.action.OpenLinkAtMouseCursor,
+		},
+
 	}
 	return mouse_bindings
 end
@@ -209,6 +215,12 @@ local function setup_other_os_mouse_bindings()
 			mods = "CTRL",
 			action = action.ResetFontSize,
 		},
+		{
+			event = { Up = { streak = 1, button = "Left" } },
+			mods = "CTRL",
+			action = wezterm.action.OpenLinkAtMouseCursor,
+		},
+
 	}
 
 	return mouse_bindings
@@ -265,11 +277,6 @@ local function setup_mouse_bindings()
 			event = { Down = { streak = 3, button = "Left" } },
 			action = action.SelectTextAtMouseCursor("Line"),
 			mods = "SHIFT",
-		},
-		{
-			event = { Up = { streak = 1, button = "Left" } },
-			mods = "CTRL",
-			action = wezterm.action.OpenLinkAtMouseCursor,
 		},
 	}
 
