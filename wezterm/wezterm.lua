@@ -19,6 +19,7 @@ config.initial_cols = 120
 config.initial_rows = 32
 
 local theme = require("core.theme")
+config.default_cursor_style = "SteadyBar"
 config.colors = theme.get_colors()
 config.window_frame = theme.get_window_frame(font_name, font_size)
 config.scrollback_lines = 10000
