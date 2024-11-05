@@ -35,8 +35,10 @@ local function setup_general_keys()
 				action.SendKey { key = "L", mods = "CTRL" },
 				action.ClearScrollback "ScrollbackOnly" },
 		},
-		{ key = "Tab", mods = "CTRL",       action = action.ActivateTabRelative(1) },
-		{ key = "Tab", mods = "SHIFT|CTRL", action = action.ActivateTabRelative(-1) },
+		{ key = "Tab",      mods = "CTRL",       action = action.ActivateTabRelative(1) },
+		{ key = "Tab",      mods = "SHIFT|CTRL", action = action.ActivateTabRelative(-1) },
+		{ key = "PageUp",   mods = "",           action = action.ScrollToTop },
+		{ key = "PageDown", mods = "",           action = action.ScrollToBottom },
 	}
 
 	return keys
