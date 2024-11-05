@@ -71,6 +71,7 @@ local function setup_mac_os_keys()
 		{ key = "0",          mods = "CMD",       action = action.ResetFontSize },
 		{ key = "f",          mods = "CMD",       action = action.Search "CurrentSelectionOrEmptyString" },
 		{ key = "f",          mods = "CMD|CTRL",  action = action.ToggleFullScreen },
+		{ key = 'D',          mods = 'CMD|SHIFT', action = action.ShowDebugOverlay },
 	}
 
 	for i = 1, 9 do
@@ -122,6 +123,7 @@ local function setup_other_os_keys()
 		{ key = "0",          mods = "CTRL",       action = action.ResetFontSize },
 		{ key = "F",          mods = "CTRL|SHIFT", action = action.Search "CurrentSelectionOrEmptyString" },
 		{ key = "F11",        mods = "",           action = action.ToggleFullScreen },
+		{ key = 'D',          mods = 'CTRL|SHIFT', action = action.ShowDebugOverlay },
 	}
 
 	for i = 1, 9 do

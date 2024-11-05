@@ -19,6 +19,7 @@ config.scrollback_lines = 10000
 local theme = require("core.theme")
 config.default_cursor_style = "SteadyBar"
 config.use_fancy_tab_bar = true
+config.tab_bar_at_bottom = false
 config.colors = theme.get_colors()
 config.window_frame = theme.get_window_frame(font_name, font_size)
 config.hide_mouse_cursor_when_typing = true
@@ -27,8 +28,8 @@ config.native_macos_fullscreen_mode = true
 config.window_padding = {
 	left = "1cell",
 	right = "1cell",
-	top = "0",
-	bottom = "0",
+	top = "0.5cell",
+	bottom = "0.5cell",
 }
 
 local bindings = require("core.bindings")
