@@ -1,14 +1,14 @@
 local wezterm = require("wezterm")
 local action = wezterm.action
 
-local os_utils = require("core.utils.os")
+local platform = require("core.utils.platform")
 local table_utils = require("core.utils.table")
 
 local function setup_leader()
-	local leader = { key = "a", mods = "CMD", timeout_milliseconds = 1000 }
+	local leader = { key = "a", mods = "ALT", timeout_milliseconds = 1000 }
 
-	if os_utils.is_mac_os() == false then
-		leader.mods = "ALT"
+	if platform.is_mac then
+		leader.mods = "CMD"
 	end
 
 	return leader
@@ -136,7 +136,7 @@ local function setup_keys()
 	local keys = setup_general_keys()
 
 	local os_specific_keys = {}
-	if os_utils.is_mac_os() == true then
+	if platform.is_mac then
 		os_specific_keys = setup_mac_os_keys()
 	else
 		os_specific_keys = setup_other_os_keys()
@@ -283,7 +283,7 @@ local function setup_mouse_bindings()
 	}
 
 	local os_specific_mouse_bindings = {}
-	if os_utils.is_mac_os() == true then
+	if platform.is_mac == true then
 		os_specific_mouse_bindings = setup_mac_os_mouse_bindings()
 	else
 		os_specific_mouse_bindings = setup_other_os_mouse_bindings()

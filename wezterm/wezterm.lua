@@ -1,12 +1,12 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-local os_utils = require("core.utils.os")
+local platform = require("core.utils.platform")
 
 local font_name = "IosevkaTerm Nerd Font Mono"
-local font_size = 16
-if os_utils.is_mac_os == false then
-	font_size = 12.5
+local font_size = 12.5
+if platform.is_mac then
+	font_size = 16
 end
 
 config.font = wezterm.font(font_name)
