@@ -71,7 +71,7 @@ function T.get_colors()
 				bg_color = colors.base,
 			},
 			inactive_tab = {
-				fg_color = colors.overlay0,
+				fg_color = colors.text,
 				bg_color = colors.mantle,
 			},
 			inactive_tab_hover = {
@@ -79,12 +79,12 @@ function T.get_colors()
 				bg_color = colors.base,
 			},
 			new_tab = {
+				fg_color = colors.text,
 				bg_color = colors.crust,
-				fg_color = colors.overlay0,
 			},
 			new_tab_hover = {
-				bg_color = colors.base,
 				fg_color = colors.text,
+				bg_color = colors.base,
 			},
 			inactive_tab_edge = colors.crust,
 		},
