@@ -27,7 +27,6 @@ local function setup_general_keys()
 		{ key = "r", mods = "LEADER", action = action.ActivateKeyTable { name = "resize_pane", timeout_milliseconds = 1000, one_shot = false, }, },
 		{ key = "s", mods = "LEADER", action = action.PaneSelect { alphabet = "1234567890", }, },
 		{ key = "S", mods = "LEADER", action = action.PaneSelect { alphabet = "1234567890", mode = "SwapWithActive", }, },
-		{ key = "n", mods = "LEADER", action = action { EmitEvent = "toggle-tabbar" } },
 		{
 			key = "L",
 			mods = "CTRL|SHIFT",

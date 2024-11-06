@@ -28,16 +28,6 @@ function E.setup()
 		end
 		window:set_config_overrides(overrides)
 	end)
-
-	wezterm.on("toggle-tabbar", function(window, _)
-		local overrides = window:get_config_overrides() or {}
-		if overrides.enable_tab_bar == false then
-			overrides.enable_tab_bar = true
-		else
-			overrides.enable_tab_bar = false
-		end
-		window:set_config_overrides(overrides)
-	end)
 end
 
 return E
