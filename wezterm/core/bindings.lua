@@ -36,8 +36,10 @@ local function setup_general_keys()
 		},
 		{ key = "Tab",      mods = "CTRL",       action = action.ActivateTabRelative(1) },
 		{ key = "Tab",      mods = "SHIFT|CTRL", action = action.ActivateTabRelative(-1) },
-		{ key = "PageUp",   mods = "",           action = action.ScrollToTop },
-		{ key = "PageDown", mods = "",           action = action.ScrollToBottom },
+		{ key = "Home",     mods = "",           action = action.ScrollToTop },
+		{ key = "End",      mods = "",           action = action.ScrollToBottom },
+		{ key = "PageUp",   mods = "",           action = action.ScrollByPage(-0.5) },
+		{ key = "PageDown", mods = "",           action = action.ScrollByPage(0.5) },
 	}
 
 	return keys
