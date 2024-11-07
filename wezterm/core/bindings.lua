@@ -87,9 +87,7 @@ end
 
 local function setup_other_os_keys()
 	local keys = {
-		{ key = "Q", mods = "CTRL|SHIFT", action = action.QuitApplication },
-		{ key = "H", mods = "CTRL|SHIFT", action = action.HideApplication },
-		{ key = "M", mods = "CTRL|SHIFT", action = action.Hide },
+		{ key = "Q",          mods = "CTRL|SHIFT", action = action.QuitApplication },
 		{
 			key = "c",
 			mods = "CTRL",
@@ -120,7 +118,7 @@ local function setup_other_os_keys()
 		{ key = "Backspace",  mods = "CTRL",       action = action.SendKey { key = "u", mods = "CTRL" } },
 		{ key = "Backspace",  mods = "ALT",        action = action.SendKey { key = "w", mods = "CTRL" } },
 		{ key = "/",          mods = "ALT",        action = action { EmitEvent = "toggle-leader" } },
-		{ key = "+",          mods = "CTRL",       action = action.IncreaseFontSize },
+		{ key = "=",          mods = "CTRL",       action = action.IncreaseFontSize },
 		{ key = "-",          mods = "CTRL",       action = action.DecreaseFontSize },
 		{ key = "0",          mods = "CTRL",       action = action.ResetFontSize },
 		{ key = "F",          mods = "CTRL|SHIFT", action = action.Search "CurrentSelectionOrEmptyString" },
