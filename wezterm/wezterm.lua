@@ -37,7 +37,7 @@ config.window_padding = {
 
 config.inactive_pane_hsb = {
 	saturation = 1.0,
-	brightness = 0.7,
+	brightness = 0.8,
 }
 
 local bindings = require("core.bindings")
