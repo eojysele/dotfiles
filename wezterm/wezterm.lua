@@ -16,6 +16,7 @@ config.initial_cols = 120
 config.initial_rows = 32
 config.scrollback_lines = 10000
 config.adjust_window_size_when_changing_font_size = false
+config.automatically_reload_config = false
 
 local theme = require("core.theme")
 config.default_cursor_style = "SteadyBar"
