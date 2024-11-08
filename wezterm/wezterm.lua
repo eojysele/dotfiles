@@ -4,11 +4,7 @@ local config = wezterm.config_builder()
 local platform = require("core.utils.platform")
 
 local font_family = "IosevkaTerm Nerd Font Mono"
-local font_size = 12.5
-if platform.is_mac then
-	font_size = 16
-end
-
+local font_size = platform.is_mac and 16 or 12.5
 config.font = wezterm.font(font_family)
 config.font_size = font_size
 
@@ -20,6 +16,7 @@ config.automatically_reload_config = false
 
 local theme = require("core.theme")
 config.default_cursor_style = "SteadyBar"
+config.enable_scroll_bar = true
 config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = false
 config.colors = theme.get_colors()

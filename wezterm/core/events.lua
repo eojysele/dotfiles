@@ -11,14 +11,6 @@ function E.setup()
 		return "WezTerm"
 	end)
 
-	wezterm.on("format-tab-title", function(tab)
-		local tab_index = tab.tab_index + 1
-		local active_pane = tab.active_pane
-		local process_name = basename(active_pane.foreground_process_name)
-
-		return " " .. tab_index .. ": " .. process_name .. " "
-	end)
-
 	wezterm.on("toggle-leader", function(window, _)
 		local overrides = window:get_config_overrides() or {}
 		if not overrides.leader then
