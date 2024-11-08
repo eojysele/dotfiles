@@ -39,7 +39,7 @@ function T.get_colors()
 		cursor_fg = colors.base,
 		cursor_bg = colors.text,
 		cursor_border = colors.text,
-		selection_fg = colors.text,
+		selection_fg = nil,
 		selection_bg = colors.surface1,
 		scrollbar_thumb = colors.surface2,
 		split = colors.overlay0,
