@@ -3,13 +3,13 @@ local config = wezterm.config_builder()
 
 local platform = require("core.utils.platform")
 
-local font_name = "IosevkaTerm Nerd Font Mono"
+local font_family = "IosevkaTerm Nerd Font Mono"
 local font_size = 12.5
 if platform.is_mac then
 	font_size = 16
 end
 
-config.font = wezterm.font(font_name)
+config.font = wezterm.font(font_family)
 config.font_size = font_size
 
 config.initial_cols = 120
@@ -23,7 +23,7 @@ config.default_cursor_style = "SteadyBar"
 config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = false
 config.colors = theme.get_colors()
-config.window_frame = theme.get_window_frame(font_name, font_size)
+config.window_frame = theme.get_window_frame(font_family, font_size)
 config.hide_mouse_cursor_when_typing = true
 config.hide_tab_bar_if_only_one_tab = false
 config.native_macos_fullscreen_mode = true
