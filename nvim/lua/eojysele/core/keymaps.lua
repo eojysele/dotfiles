@@ -55,6 +55,7 @@ function P.general_keymaps()
 	set("n", "<leader>fb", builtin.current_buffer_fuzzy_find)
 	set("n", "<leader>ff", builtin.live_grep)
 	set("n", "<leader>fn", builtin.find_files)
+	set("n", "<leader>ft", builtin.builtin)
 end
 
 ---------------
