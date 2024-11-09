@@ -71,11 +71,11 @@ function T.get_colors()
 				bg_color = colors.base,
 			},
 			inactive_tab = {
-				fg_color = colors.text,
+				fg_color = colors.subtext0,
 				bg_color = colors.mantle,
 			},
 			inactive_tab_hover = {
-				fg_color = colors.text,
+				fg_color = colors.subtext0,
 				bg_color = colors.base,
 			},
 			new_tab = {
