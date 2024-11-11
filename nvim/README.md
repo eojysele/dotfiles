@@ -21,12 +21,12 @@
  11. [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
  12. [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
  13. [mfussenegger/nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)
- 15. [mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)
- 16. [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
- 17. [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
- 18. [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
- 19. [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
- 20. [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+ 14. [mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)
+ 15. [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+ 16. [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+ 17. [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+ 18. [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
+ 19. [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
 ## Packages from Mason
 
