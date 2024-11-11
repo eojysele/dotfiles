@@ -1,5 +1,4 @@
 local ICONS = {
-
 	file = {
 		default = "",
 		symlink = {
