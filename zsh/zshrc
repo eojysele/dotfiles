@@ -29,7 +29,8 @@ alias t="tmux new -ADs main"
 alias v="nvim"
 alias lg="lazygit"
 alias n="tput bel"
-alias ls='ls --color=auto'
+alias ls="ls --color=auto"
+alias la="ls -lah --color=auto"
 alias grep='grep --color=auto'
 
 autoload -Uz compinit
