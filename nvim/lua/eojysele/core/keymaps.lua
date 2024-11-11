@@ -44,7 +44,7 @@ function P.general_keymaps()
 	local format_function = function()
 		lsp_buf.format { async = true }
 	end
-	set({ "n", "v" }, '<leader>cf', format_function)
+	set({ "n", "v" }, "<leader>cf", format_function)
 
 	-- Linting
 	local lint = require("lint")
@@ -62,9 +62,10 @@ end
 -- ON ATTACH --
 -- NvimTree
 function P.tree_keymaps(bufnr)
-	delete('n', 'e', bufnr)
-	delete('n', 'f', bufnr)
-	delete('n', 'F', bufnr)
+	delete("n", "e", bufnr)
+	delete("n", "f", bufnr)
+	delete("n", "F", bufnr)
+	delete("n", "<C-e>", bufnr)
 end
 
 -- Gitsings
