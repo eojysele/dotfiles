@@ -11,7 +11,10 @@ return {
 			defaults = {
 				layout_strategy = "vertical",
 				layout_config = {
-					width = 0.8,
+					vertical = {
+						preview_cutoff = 32,
+					},
+					width = 0.7,
 					height = 0.9,
 				},
 				dynamic_preview_title = true,
