@@ -74,7 +74,7 @@ return {
 
 		local vim_mode_section = {
 			function()
-				return icons.logo.vim
+				return icons.logo.neovim
 			end,
 			color = function()
 				return get_color_by_mode(vim.fn.mode())

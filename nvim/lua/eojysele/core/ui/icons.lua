@@ -37,6 +37,7 @@ local ICONS = {
 	},
 	logo = {
 		vim = "",
+		neovim = "",
 	},
 }
 
