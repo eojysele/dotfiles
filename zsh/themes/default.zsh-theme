@@ -13,7 +13,16 @@ user_prompt(){
 }
 
 dir_prompt(){
-	bold_prompt blue " %~ "
+	local folder_icon=""
+
+	if [[ "$HOME" = "$(pwd)" ]]; then
+		folder_icon=""
+	fi
+
+	local cwd=" %~ "
+	local result=$folder_icon$cwd
+
+	bold_prompt blue $result
 }
 
 git_prompt(){
