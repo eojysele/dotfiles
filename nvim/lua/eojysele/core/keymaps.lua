@@ -19,11 +19,15 @@ function P.general_keymaps()
 	-- Splits
 	set("n", "<leader>sd", "<C-w>v")  -- split window vertically
 	set("n", "<leader>sD", "<C-w>s")  -- split window horizontally
-	set("n", "<leader>s=", "<C-w>=")  -- make split windows equal width & height
+	set("n", "<leader>s0", "<C-w>=")  -- make split windows equal width & height
+	set("n", "<leader>sh", "<C-w>h")  -- to left split
 	set("n", "<leader>sj", "<C-w>j")  -- to lower split
 	set("n", "<leader>sk", "<C-w>k")  -- to upper split
-	set("n", "<leader>sh", "<C-w>h")  -- to left split
 	set("n", "<leader>sl", "<C-w>l")  -- to right split
+	set("n", "<leader>s-", "20<C-w><") -- decrease width
+	set("n", "<leader>s=", "20<C-w>>") -- increase width
+	set("n", "<leader>s_", "20<C-w>-") -- decrease height
+	set("n", "<leader>s+", "20<C-w>+") -- increase height
 	set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 	-- File Tree
