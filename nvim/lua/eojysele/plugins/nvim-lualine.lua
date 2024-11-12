@@ -1,7 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
-		local lualine = require('lualine')
+		local lualine = require("lualine")
 
 		-- Colorscheme: Catpuccin Frappe
 		local colors = require("eojysele.core.ui.colors").get_palette()
@@ -10,9 +10,9 @@ return {
 		local config = {
 			options = {
 				icons_enabled = true,
-				section_separators = '',
-				component_separators = '',
-				ignore_focus = { 'NvimTree', 'Outline' },
+				section_separators = "",
+				component_separators = "",
+				ignore_focus = { "NvimTree" },
 				theme = {
 					normal = {
 						c = { fg = colors.text, bg = colors.crust },
@@ -65,11 +65,11 @@ return {
 				i = colors.green,
 				v = colors.mauve,
 				V = colors.mauve,
-				[''] = colors.mauve,
+				[""] = colors.mauve,
 				c = colors.peach,
 				R = colors.red,
 			}
-			return { fg = colors.crust, bg = mode_color[vim_mode], gui = 'bold' }
+			return { fg = colors.crust, bg = mode_color[vim_mode], gui = "bold" }
 		end
 
 		local vim_mode_section = {
@@ -85,34 +85,35 @@ return {
 		ins_left(vim_mode_section)
 
 		ins_left {
-			'branch',
+			"branch",
 			icon = icons.git.branch,
-			color = { fg = colors.text, gui = 'bold' },
+			color = { fg = colors.text, gui = "bold" },
 			padding = { left = 1, right = 1 }
 		}
 
 		ins_left {
-			'filetype',
-			color = { gui = 'bold' },
+			"filetype",
+			color = { gui = "bold" },
 			icon_only = true,
 			padding = { left = 1, right = 0 }
 		}
 
 		ins_left {
-			'filename',
-			shorting_target = 150,
-			color = { fg = colors.text, gui = 'bold' },
+			"filename",
+			path = 1,
+			shorting_target = 40,
+			color = { fg = colors.text, gui = "bold" },
 			symbols = {
 				modified = icons.file.modified,
 				readonly = icons.file.readonly,
-				unnamed = '',
-				newfile = '',
+				unnamed = "",
+				newfile = "",
 			},
-			padding = { left = 1, right = 1 }
+			padding = { left = 0, right = 1 }
 		}
 
 		ins_left {
-			'diff',
+			"diff",
 			symbols = {
 				added = icons.git.diff.staged .. " ",
 				modified = icons.git.diff.unstaged .. " ",
@@ -122,40 +123,40 @@ return {
 		}
 
 		ins_right {
-			'diagnostics',
-			sources = { 'nvim_diagnostic' },
+			"diagnostics",
+			sources = { "nvim_diagnostic" },
 			symbols = {
-				error = icons.diagnostics.error .. ' ',
-				warn = icons.diagnostics.warn .. ' ',
-				info = icons.diagnostics.info .. ' ',
-				hint = icons.diagnostics.hint .. ' '
+				error = icons.diagnostics.error .. " ",
+				warn = icons.diagnostics.warn .. " ",
+				info = icons.diagnostics.info .. " ",
+				hint = icons.diagnostics.hint .. " "
 			},
 			padding = { left = 1, right = 1 }
 		}
 
 		ins_right {
-			'encoding',
+			"encoding",
 			fmt = string.upper,
-			color = { fg = colors.text, gui = 'bold' },
+			color = { fg = colors.text, gui = "bold" },
 			padding = { left = 1, right = 1 }
 		}
 
 		ins_right {
-			'fileformat',
+			"fileformat",
 			fmt = string.upper,
 			icons_enabled = false,
-			color = { fg = colors.text, gui = 'bold' },
+			color = { fg = colors.text, gui = "bold" },
 			padding = { left = 1, right = 1 },
 		}
 
 		ins_right {
-			'location',
-			color = { fg = colors.text, gui = 'bold' },
+			"location",
+			color = { fg = colors.text, gui = "bold" },
 			padding = { left = 1, right = 1 }
 		}
 
 		ins_right {
-			'progress',
+			"progress",
 			color = { fg = colors.text, gui = "bold" },
 			padding = { left = 1, right = 1 }
 		}
