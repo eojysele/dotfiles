@@ -31,8 +31,7 @@ export PATH=$DOTFILES_HOME/tmux/layouts:$PATH
 
 alias icat="wezterm imgcat"
 alias t="tmux new -ADs main"
-alias n="nvim"
-alias v="vim"
+alias v="nvim"
 alias lg="lazygit"
 alias ez="eza --colour=always --time-style='+%d.%m.%Y %H:%M'"
 alias ea="ez -la"
