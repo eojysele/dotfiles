@@ -3,6 +3,7 @@ local opt = vim.opt
 local autocmd = vim.api.nvim_create_autocmd
 
 g.mapleader = " "
+opt.mousemodel = "extend"
 
 opt.number = true
 opt.relativenumber = true
