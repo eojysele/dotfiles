@@ -26,14 +26,19 @@ export PATH=$DOTFILES_HOME/tmux/layouts:$PATH
 
 alias icat="wezterm imgcat"
 alias t="tmux new -ADs main"
-alias v="nvim"
+alias n="nvim"
+alias v="vim"
 alias lg="lazygit"
-alias n="tput bel"
+alias ez="eza --colour=always --time-style='+%d.%m.%Y %H:%M'"
+alias ea="ez -1lah"
+alias eg="ea --git"
 alias ls="ls --color=auto"
 alias la="ls -lah --color=auto"
 alias grep='grep --color=auto'
 
 autoload -Uz compinit
+
+eval "$(zoxide init zsh)"
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
