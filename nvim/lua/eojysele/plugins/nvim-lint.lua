@@ -1,12 +1,13 @@
 return {
 	"mfussenegger/nvim-lint",
 	config = function()
-		local format = "[%tRROR] %f:%l:%c: %m, [%tRROR] %f:%l: %m, [%tARN] %f:%l:%c: %m, [%tARN] %f:%l: %m"
+		local format =
+			"[%tRROR] %f:%l:%c: %m, [%tRROR] %f:%l: %m, [%tARN] %f:%l:%c: %m, [%tARN] %f:%l: %m"
 
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
-			java = { "checkstyle", }
+			java = { "checkstyle" },
 		}
 
 		local checkstyle_config_file = "checkstyle.xml"
@@ -26,7 +27,7 @@ return {
 
 		local autocmd_events = {
 			"BufEnter",
-			"BufWritePost"
+			"BufWritePost",
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
@@ -36,5 +37,5 @@ return {
 				lint.try_lint()
 			end,
 		})
-	end
+	end,
 }

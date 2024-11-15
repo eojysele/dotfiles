@@ -14,7 +14,7 @@ local ICONS = {
 		open = "",
 		symlink = "",
 		arrow_open = "",
-		arrow_close = ""
+		arrow_close = "",
 	},
 	diagnostics = {
 		error = "",
@@ -32,7 +32,7 @@ local ICONS = {
 			renamed = "",
 			untracked = "",
 			ignored = "",
-		}
+		},
 	},
 	logo = {
 		vim = "",

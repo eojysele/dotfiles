@@ -7,7 +7,7 @@ return {
 	config = function()
 		local telescope = require("telescope")
 
-		telescope.setup {
+		telescope.setup({
 			defaults = {
 				layout_strategy = "vertical",
 				layout_config = {
@@ -25,10 +25,10 @@ return {
 					override_generic_sorter = true,
 					override_file_sorter = true,
 					case_mode = "smart_case",
-				}
-			}
-		}
+				},
+			},
+		})
 
 		telescope.load_extension("fzf")
-	end
+	end,
 }

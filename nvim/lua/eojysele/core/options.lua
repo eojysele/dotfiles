@@ -20,7 +20,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 opt.cursorline = true
-opt.colorcolumn="+1"
+opt.colorcolumn = "+1"
 opt.scrolloff = 0
 opt.foldmethod = "manual"
 
@@ -31,10 +31,10 @@ opt.backspace = "indent,eol,start"
 opt.clipboard:append("unnamedplus")
 
 opt.list = true
-opt.listchars:append "space:·"
-opt.listchars:append "trail:·"
-opt.listchars:append "tab:│ "
-opt.listchars:append "eol:󱞤"
+opt.listchars:append("space:·")
+opt.listchars:append("trail:·")
+opt.listchars:append("tab:│ ")
+opt.listchars:append("eol:󱞤")
 
 opt.splitright = true
 opt.splitbelow = true

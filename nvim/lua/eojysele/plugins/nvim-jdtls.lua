@@ -2,9 +2,9 @@ return {
 	"mfussenegger/nvim-jdtls",
 	config = function()
 		local jdtls_callback = function()
-			local jdtls = require('jdtls')
+			local jdtls = require("jdtls")
 
-			local home_directory = os.getenv('HOME')
+			local home_directory = os.getenv("HOME")
 			local config_directory = home_directory .. "/.config/nvim"
 			local runtimes_directory = os.getenv("SDKMAN_DIR") .. "/candidates/java"
 
@@ -21,8 +21,8 @@ return {
 			local jdtls_file = jdtls_directory .. "/plugins/org.eclipse.equinox.launcher_*.jar"
 			local lombok_file = jdtls_directory .. "/lombok.jar"
 
-			local root_markers = { '.git' }
-			local project_directory = require('jdtls.setup').find_root(root_markers)
+			local root_markers = { ".git" }
+			local project_directory = require("jdtls.setup").find_root(root_markers)
 
 			local workspace_directory = home_directory
 				.. "/.local/share/eclipse/"
@@ -44,7 +44,7 @@ return {
 				"org",
 				"com",
 				"",
-				"#"
+				"#",
 			}
 
 			local file_utils = require("eojysele.core.utils.file")
@@ -72,7 +72,7 @@ return {
 				end
 			end
 
-			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local config = {
 				flags = {
@@ -95,16 +95,16 @@ return {
 							enabled = true,
 						},
 						rename = {
-							enabled = true
+							enabled = true,
 						},
 						references = {
 							includeDecompiledSources = true,
 						},
 						signatureHelp = {
-							enabled = true
+							enabled = true,
 						},
 						contentProvider = {
-							preferred = 'fernflower'
+							preferred = "fernflower",
 						},
 						sources = {
 							organizeImports = {
@@ -113,11 +113,11 @@ return {
 							},
 						},
 						completion = {
-							importOrder = import_order
+							importOrder = import_order,
 						},
 						codeGeneration = {
 							toString = {
-								template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}"
+								template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
 							},
 							hashCodeEquals = {
 								useJava7Objects = true,
@@ -143,7 +143,7 @@ return {
 								{
 									name = "JavaSE-21",
 									path = runtimes_directory .. "/21.0.5-tem",
-									default = true
+									default = true,
 								},
 								{
 									name = "JavaSE-21",
@@ -169,25 +169,30 @@ return {
 									name = "JavaSE-1.8",
 									path = runtimes_directory .. "/8.0.422-librca",
 								},
-							}
-						}
-					}
+							},
+						},
+					},
 				},
 				cmd = {
 					jdtls_runtime,
-					'-Declipse.application=org.eclipse.jdt.ls.core.id1',
-					'-Dosgi.bundles.defaultStartLevel=4',
-					'-Declipse.product=org.eclipse.jdt.ls.core.product',
-					'-Dlog.protocol=true',
-					'-Dlog.level=ALL',
-					'-Xmx4g',
-					'--add-modules=ALL-SYSTEM',
-					'--add-opens', 'java.base/java.util=ALL-UNNAMED',
-					'--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-					'-javaagent:' .. lombok_file,
-					'-jar', vim.fn.glob(jdtls_file),
-					'-configuration', jdtls_config_directory,
-					'-data', workspace_directory,
+					"-Declipse.application=org.eclipse.jdt.ls.core.id1",
+					"-Dosgi.bundles.defaultStartLevel=4",
+					"-Declipse.product=org.eclipse.jdt.ls.core.product",
+					"-Dlog.protocol=true",
+					"-Dlog.level=ALL",
+					"-Xmx4g",
+					"--add-modules=ALL-SYSTEM",
+					"--add-opens",
+					"java.base/java.util=ALL-UNNAMED",
+					"--add-opens",
+					"java.base/java.lang=ALL-UNNAMED",
+					"-javaagent:" .. lombok_file,
+					"-jar",
+					vim.fn.glob(jdtls_file),
+					"-configuration",
+					jdtls_config_directory,
+					"-data",
+					workspace_directory,
 				},
 			}
 
@@ -199,5 +204,5 @@ return {
 			pattern = "java",
 			callback = jdtls_callback,
 		})
-	end
+	end,
 }

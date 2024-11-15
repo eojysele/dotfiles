@@ -1,60 +1,60 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		'williamboman/mason-lspconfig.nvim'
+		"williamboman/mason-lspconfig.nvim",
 	},
 	config = function()
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		local lspconfig = require("lspconfig")
 
 		-- Go
-		lspconfig.gopls.setup {}
+		lspconfig.gopls.setup({})
 
 		-- JavaScript/TypeScript
-		lspconfig.ts_ls.setup {}
+		lspconfig.ts_ls.setup({})
 
 		-- JavaScript Linter
-		lspconfig.eslint.setup {}
+		lspconfig.eslint.setup({})
 
 		-- Markdown
-		lspconfig.marksman.setup {}
+		lspconfig.marksman.setup({})
 
 		-- Lua
-		lspconfig.lua_ls.setup {}
+		lspconfig.lua_ls.setup({})
 
 		-- HTML
-		lspconfig.html.setup {
+		lspconfig.html.setup({
 			capabilities = capabilities,
-		}
+		})
 
 		-- JSON
-		lspconfig.jsonls.setup {
+		lspconfig.jsonls.setup({
 			capabilities = capabilities,
-		}
+		})
 
 		-- XML
-		lspconfig.lemminx.setup {}
+		lspconfig.lemminx.setup({})
 
 		-- YAML
-		lspconfig.yamlls.setup {
+		lspconfig.yamlls.setup({
 			settings = {
 				redhat = {
 					telemetry = {
-						enabled = false
-					}
-				}
-			}
-		}
+						enabled = false,
+					},
+				},
+			},
+		})
 
 		-- Dockerfile
-		lspconfig.dockerls.setup {}
+		lspconfig.dockerls.setup({})
 
 		-- Docker Compose
-		lspconfig.docker_compose_language_service.setup {}
+		lspconfig.docker_compose_language_service.setup({})
 
 		-- Bash
-		lspconfig.bashls.setup {
+		lspconfig.bashls.setup({
 			filetypes = { "sh", "zsh", "bash" },
-		}
-	end
+		})
+	end,
 }

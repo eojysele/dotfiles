@@ -1,14 +1,14 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = {
-		'nvim-tree/nvim-web-devicons'
+		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
 		local icons = require("eojysele.core.ui.icons")
 
-		require("nvim-tree").setup {
+		require("nvim-tree").setup({
 			on_attach = function(bufnr)
-				local api = require('nvim-tree.api')
+				local api = require("nvim-tree.api")
 				api.config.mappings.default_on_attach(bufnr)
 				require("eojysele.core.keymaps").tree_keymaps(bufnr)
 			end,
@@ -45,9 +45,9 @@ return {
 							untracked = icons.git.diff.untracked,
 							deleted = icons.git.diff.deleted,
 							ignored = icons.git.diff.ignored,
-						}
-					}
-				}
+						},
+					},
+				},
 			},
 			diagnostics = {
 				enable = true,
@@ -69,8 +69,8 @@ return {
 			actions = {
 				open_file = {
 					quit_on_open = true,
-				}
-			}
-		}
-	end
+				},
+			},
+		})
+	end,
 }

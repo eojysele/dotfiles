@@ -21,8 +21,8 @@ return {
 					incative = {
 						c = { fg = colors.text, bg = colors.crust },
 						x = { fg = colors.text, bg = colors.crust },
-					}
-				}
+					},
+				},
 			},
 			sections = {
 				lualine_a = {},
@@ -58,7 +58,6 @@ return {
 			table.insert(config.inactive_sections.lualine_x, component)
 		end
 
-
 		local function get_color_by_mode(vim_mode)
 			local mode_color = {
 				n = colors.blue,
@@ -79,26 +78,26 @@ return {
 			color = function()
 				return get_color_by_mode(vim.fn.mode())
 			end,
-			padding = { left = 1, right = 1 }
+			padding = { left = 1, right = 1 },
 		}
 
 		ins_left(vim_mode_section)
 
-		ins_left {
+		ins_left({
 			"branch",
 			icon = icons.git.branch,
 			color = { fg = colors.text, gui = "bold" },
-			padding = { left = 1, right = 1 }
-		}
+			padding = { left = 1, right = 1 },
+		})
 
-		ins_left {
+		ins_left({
 			"filetype",
 			color = { gui = "bold" },
 			icon_only = true,
-			padding = { left = 1, right = 0 }
-		}
+			padding = { left = 1, right = 0 },
+		})
 
-		ins_left {
+		ins_left({
 			"filename",
 			path = 1,
 			shorting_target = 40,
@@ -109,60 +108,60 @@ return {
 				unnamed = "",
 				newfile = "",
 			},
-			padding = { left = 0, right = 1 }
-		}
+			padding = { left = 0, right = 1 },
+		})
 
-		ins_left {
+		ins_left({
 			"diff",
 			symbols = {
 				added = icons.git.diff.staged .. " ",
 				modified = icons.git.diff.unstaged .. " ",
 				removed = icons.git.diff.deleted .. " ",
 			},
-			padding = { left = 1, right = 1 }
-		}
+			padding = { left = 1, right = 1 },
+		})
 
-		ins_right {
+		ins_right({
 			"diagnostics",
 			sources = { "nvim_diagnostic" },
 			symbols = {
 				error = icons.diagnostics.error .. " ",
 				warn = icons.diagnostics.warn .. " ",
 				info = icons.diagnostics.info .. " ",
-				hint = icons.diagnostics.hint .. " "
+				hint = icons.diagnostics.hint .. " ",
 			},
-			padding = { left = 1, right = 1 }
-		}
+			padding = { left = 1, right = 1 },
+		})
 
-		ins_right {
+		ins_right({
 			"encoding",
 			fmt = string.upper,
 			color = { fg = colors.text, gui = "bold" },
-			padding = { left = 1, right = 1 }
-		}
+			padding = { left = 1, right = 1 },
+		})
 
-		ins_right {
+		ins_right({
 			"fileformat",
 			fmt = string.upper,
 			icons_enabled = false,
 			color = { fg = colors.text, gui = "bold" },
 			padding = { left = 1, right = 1 },
-		}
+		})
 
-		ins_right {
+		ins_right({
 			"location",
 			color = { fg = colors.text, gui = "bold" },
-			padding = { left = 1, right = 1 }
-		}
+			padding = { left = 1, right = 1 },
+		})
 
-		ins_right {
+		ins_right({
 			"progress",
 			color = { fg = colors.text, gui = "bold" },
-			padding = { left = 1, right = 1 }
-		}
+			padding = { left = 1, right = 1 },
+		})
 
 		ins_inactive_left(vim_mode_section)
 
 		lualine.setup(config)
-	end
+	end,
 }

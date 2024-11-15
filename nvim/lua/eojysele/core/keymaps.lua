@@ -17,13 +17,13 @@ function P.general_keymaps()
 
 	-- Window management
 	-- Splits
-	set("n", "<leader>sd", "<C-w>v")  -- split window vertically
-	set("n", "<leader>sD", "<C-w>s")  -- split window horizontally
-	set("n", "<leader>s0", "<C-w>=")  -- make split windows equal width & height
-	set("n", "<leader>sh", "<C-w>h")  -- to left split
-	set("n", "<leader>sj", "<C-w>j")  -- to lower split
-	set("n", "<leader>sk", "<C-w>k")  -- to upper split
-	set("n", "<leader>sl", "<C-w>l")  -- to right split
+	set("n", "<leader>sd", "<C-w>v") -- split window vertically
+	set("n", "<leader>sD", "<C-w>s") -- split window horizontally
+	set("n", "<leader>s0", "<C-w>=") -- make split windows equal width & height
+	set("n", "<leader>sh", "<C-w>h") -- to left split
+	set("n", "<leader>sj", "<C-w>j") -- to lower split
+	set("n", "<leader>sk", "<C-w>k") -- to upper split
+	set("n", "<leader>sl", "<C-w>l") -- to right split
 	set("n", "<leader>s-", "20<C-w><") -- decrease width
 	set("n", "<leader>s=", "20<C-w>>") -- increase width
 	set("n", "<leader>s_", "20<C-w>-") -- decrease height
@@ -41,18 +41,22 @@ function P.general_keymaps()
 	set("n", "gi", lsp_buf.implementation)
 	set("n", "<leader>ch", lsp_buf.hover)
 	set("n", "<leader>cs", lsp_buf.signature_help)
-	set("n", "<leader>cd", function() vim.diagnostic.open_float() end)
+	set("n", "<leader>cd", function()
+		vim.diagnostic.open_float()
+	end)
 	set("n", "<leader>ca", lsp_buf.code_action)
 	set("n", "<leader>cr", lsp_buf.rename)
 
 	local format_function = function()
-		lsp_buf.format { async = true }
+		lsp_buf.format({ async = true })
 	end
 	set({ "n", "v" }, "<leader>cf", format_function)
 
 	-- Linting
 	local lint = require("lint")
-	set("n", "<leader>cl", function() lint.try_lint() end)
+	set("n", "<leader>cl", function()
+		lint.try_lint()
+	end)
 
 	-- Searching
 	local builtin = require("telescope.builtin")
@@ -77,16 +81,24 @@ function P.gitsings_keymaps(bufnr, gs)
 	set("n", "<leader>hd", gs.diffthis)
 	set("n", "<leader>hp", gs.preview_hunk)
 	set("n", "<leader>hs", gs.stage_hunk)
-	set("v", "<leader>hs", function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end)
+	set("v", "<leader>hs", function()
+		gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+	end)
 	set("n", "<leader>hr", gs.reset_hunk)
-	set("v", "<leader>hr", function() gs.reset_hunk { vim.fn.line("."), vim.fn.line("v") } end)
+	set("v", "<leader>hr", function()
+		gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+	end)
 	set("n", "<leader>hu", gs.undo_stage_hunk)
-	set("v", "<leader>hu", function() gs.undo_stage_hunk { vim.fn.line("."), vim.fn.line("v") } end)
+	set("v", "<leader>hu", function()
+		gs.undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+	end)
 end
 
 -- Treesitter Context
 function P.ts_context_keymaps(bufrn, ts)
-	set("n", "<leader>tu", function() ts.go_to_context(vim.v.count1) end)
+	set("n", "<leader>tu", function()
+		ts.go_to_context(vim.v.count1)
+	end)
 end
 
 return P
