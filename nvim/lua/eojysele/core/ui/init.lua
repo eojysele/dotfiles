@@ -12,7 +12,7 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-vim.diagnostic.config({
+vim.diagnostic.config {
 	float = {
 		show_header = true,
 		source = "always",
@@ -20,7 +20,7 @@ vim.diagnostic.config({
 	},
 	severity_sort = true,
 	virtual_text = false
-})
+}
 
 -- set all floating preview rounded border
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview

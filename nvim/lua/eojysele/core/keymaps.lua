@@ -87,7 +87,6 @@ end
 -- Treesitter Context
 function P.ts_context_keymaps(bufrn, ts)
 	set("n", "<leader>tu", function() ts.go_to_context(vim.v.count1) end)
-	set("n", "<leader>tt", "<cmd>TSContextToggle<CR>")
 end
 
 return P

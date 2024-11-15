@@ -2,7 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter-context",
 	config = function()
 		local ts = require("treesitter-context")
-		ts.setup({
+		ts.setup {
 			enable = true,
 			max_lines = 0,
 			min_window_height = 0,
@@ -15,6 +15,6 @@ return {
 			on_attach = function(buf)
 				require("eojysele.core.keymaps").ts_context_keymaps(buf, ts)
 			end
-		})
+		}
 	end
 }

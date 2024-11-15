@@ -7,7 +7,7 @@ return {
 	config = function()
 		local telescope = require("telescope")
 
-		telescope.setup({
+		telescope.setup {
 			defaults = {
 				layout_strategy = "vertical",
 				layout_config = {
@@ -27,7 +27,7 @@ return {
 					case_mode = "smart_case",
 				}
 			}
-		})
+		}
 
 		telescope.load_extension("fzf")
 	end

@@ -6,7 +6,7 @@ return {
 	config = function()
 		local icons = require("eojysele.core.ui.icons")
 
-		require("nvim-tree").setup({
+		require("nvim-tree").setup {
 			on_attach = function(bufnr)
 				local api = require('nvim-tree.api')
 				api.config.mappings.default_on_attach(bufnr)
@@ -71,6 +71,6 @@ return {
 					quit_on_open = true,
 				}
 			}
-		})
+		}
 	end
 }

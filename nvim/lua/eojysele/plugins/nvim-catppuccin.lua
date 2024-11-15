@@ -2,7 +2,7 @@ return {
 	"catppuccin/nvim",
 	name = "catppuccin",
 	config = function()
-		require("catppuccin").setup({
+		require("catppuccin").setup{
 			flavour = "frappe",
 			integrations = {
 				treesitter = true,
@@ -41,7 +41,7 @@ return {
 
 				}
 			end
-		})
+		}
 
 		vim.cmd.colorscheme "catppuccin"
 	end

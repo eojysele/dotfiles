@@ -3,13 +3,13 @@ return {
 	config = function()
 		local mason = require("mason")
 
-		mason.setup({
+		mason.setup{
 			ui = {
 				border = "rounded",
 				width = 0.6,
 				height = 0.8,
 			}
-		})
+		}
 
 		-- Auto install mason packages
 		local mason_registry = require("mason-registry")

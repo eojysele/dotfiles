@@ -22,7 +22,7 @@ return {
 					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
 				}
 			},
-			mapping = cmp.mapping.preset.insert({
+			mapping = cmp.mapping.preset.insert {
 				['<C-y>'] = cmp.mapping.scroll_docs(-4),
 				['<C-e>'] = cmp.mapping.scroll_docs(4),
 				['<C-Space>'] = cmp.mapping.complete(),
@@ -44,7 +44,7 @@ return {
 						fallback()
 					end
 				end, { 'i', 's' }),
-			}),
+			},
 		}
 	end
 }
