@@ -94,6 +94,10 @@ function P.gitsings_keymaps(bufnr, gs)
 	end)
 end
 
+function P.jdtls_keymaps(jdtls)
+	set("n", "<leader>ji", jdtls.organize_imports)
+end
+
 -- Treesitter Context
 function P.ts_context_keymaps(bufrn, ts)
 	set("n", "<leader>tu", function()
