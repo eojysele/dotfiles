@@ -22,7 +22,7 @@ local required_keys = {
 	"project_directory",
 }
 
-local function check_options()
+local function check_required_options()
 	for _, key in ipairs(required_keys) do
 		if options[key] == nil then
 			local message = "JDTLS: undefined options - " .. key
@@ -252,7 +252,7 @@ end
 local function jdtls_callback()
 	local jdtls = require("jdtls")
 	init_options()
-	check_options()
+	check_required_options()
 
 	local config = {
 		on_attach = on_attach,
