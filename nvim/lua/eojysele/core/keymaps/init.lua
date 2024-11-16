@@ -1,109 +1,146 @@
 local P = {}
 
-local function set(mode, key, result)
-	vim.keymap.set(mode, key, result)
+local function set(mode, lhs, rhs)
+	vim.keymap.set(mode, lhs, rhs)
 end
 
-local function delete(mode, key, bufnr)
-	vim.keymap.del(mode, key, { buffer = bufnr })
+local function set_list_keymaps(keymaps)
+	for _, keymap in ipairs(keymaps) do
+		set(keymap.mode, keymap.lhs, keymap.rhs)
+	end
 end
+
+local function delete(mode, lhs, buffer)
+	vim.keymap.del(mode, lhs, { buffer = buffer })
+end
+
+local function delete_list_keymaps(keymaps)
+	for _, keymap in ipairs(keymaps) do
+		delete(keymap.mode, keymap.lhs, keymap.buffer)
+	end
+end
+
 
 --------------------------
 -- General keys mapping --
 --------------------------
 function P.general_keymaps()
-	set("n", "<leader>=", "<C-a>")
-	set("n", "<leader>-", "<C-x>")
-
-	-- Window management
-	-- Splits
-	set("n", "<leader>sd", "<C-w>v")  -- split window vertically
-	set("n", "<leader>sD", "<C-w>s")  -- split window horizontally
-	set("n", "<leader>s0", "<C-w>=")  -- make split windows equal width & height
-	set("n", "<leader>sh", "<C-w>h")  -- to left split
-	set("n", "<leader>sj", "<C-w>j")  -- to lower split
-	set("n", "<leader>sk", "<C-w>k")  -- to upper split
-	set("n", "<leader>sl", "<C-w>l")  -- to right split
-	set("n", "<leader>s-", "20<C-w><") -- decrease width
-	set("n", "<leader>s=", "20<C-w>>") -- increase width
-	set("n", "<leader>s_", "20<C-w>-") -- decrease height
-	set("n", "<leader>s+", "20<C-w>+") -- increase height
-	set("n", "<leader>sx", ":close<CR>") -- close current split window
-
-	-- File Tree
-	set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
-	set("n", "<leader>fc", "<cmd>NvimTreeFindFile<CR>")
-
-	-- LSP
 	local lsp_buf = vim.lsp.buf
-	set("n", "gd", lsp_buf.definition)
-	set("n", "gD", lsp_buf.declaration)
-	set("n", "gr", lsp_buf.references)
-	set("n", "gi", lsp_buf.implementation)
-	set("n", "<leader>ch", lsp_buf.hover)
-	set("n", "<leader>cs", lsp_buf.signature_help)
-	set("n", "<leader>cd", function()
-		vim.diagnostic.open_float()
-	end)
-	set("n", "<leader>ca", lsp_buf.code_action)
-	set("n", "<leader>cr", lsp_buf.rename)
-
-	local format_function = function()
-		lsp_buf.format({ async = true })
-	end
-	set({ "n", "v" }, "<leader>cf", format_function)
-
-	-- Linting
 	local lint = require("lint")
-	set("n", "<leader>cl", function()
-		lint.try_lint()
-	end)
-
-	-- Searching
 	local builtin = require("telescope.builtin")
-	set("n", "<leader>fb", builtin.current_buffer_fuzzy_find)
-	set("n", "<leader>ff", builtin.live_grep)
-	set("n", "<leader>fn", builtin.find_files)
-	set("n", "<leader>ft", builtin.builtin)
+
+	local keymaps = {
+		{ mode = "n", lhs = "<leader>=",  rhs = "<C-a>" },
+		{ mode = "n", lhs = "<leader>-",  rhs = "<C-x>" },
+		{ mode = "n", lhs = "<leader>sd", rhs = "<C-w>v" },
+		{ mode = "n", lhs = "<leader>sD", rhs = "<C-w>s" },
+		{ mode = "n", lhs = "<leader>s0", rhs = "<C-w>=" },
+		{ mode = "n", lhs = "<leader>sh", rhs = "<C-w>h" },
+		{ mode = "n", lhs = "<leader>sj", rhs = "<C-w>j" },
+		{ mode = "n", lhs = "<leader>sk", rhs = "<C-w>k" },
+		{ mode = "n", lhs = "<leader>sl", rhs = "<C-w>l" },
+		{ mode = "n", lhs = "<leader>s-", rhs = "20<C-w><" },
+		{ mode = "n", lhs = "<leader>s=", rhs = "20<C-w>>" },
+		{ mode = "n", lhs = "<leader>s_", rhs = "20<C-w>-" },
+		{ mode = "n", lhs = "<leader>s+", rhs = "20<C-w>+" },
+		{ mode = "n", lhs = "<leader>sx", rhs = ":close<CR>" },
+		{ mode = "n", lhs = "<leader>e",  rhs = "<cmd>NvimTreeToggle<CR>" },
+		{ mode = "n", lhs = "<leader>fc", rhs = "<cmd>NvimTreeFindFile<CR>" },
+		{ mode = "n", lhs = "gd",         rhs = lsp_buf.definition },
+		{ mode = "n", lhs = "gD",         rhs = lsp_buf.declaration },
+		{ mode = "n", lhs = "gr",         rhs = lsp_buf.references },
+		{ mode = "n", lhs = "gi",         rhs = lsp_buf.implementation },
+		{ mode = "n", lhs = "<leader>ch", rhs = lsp_buf.hover },
+		{ mode = "n", lhs = "<leader>cs", rhs = lsp_buf.signature_help },
+		{ mode = "n", lhs = "<leader>cd", rhs = vim.diagnostic.open_float },
+		{ mode = "n", lhs = "<leader>ca", rhs = lsp_buf.code_action },
+		{ mode = "n", lhs = "<leader>cr", rhs = lsp_buf.rename },
+		{
+			mode = { "n", "v" },
+			lhs = "<leader>cf",
+			rhs = function()
+				lsp_buf.format({ async = true })
+			end
+		},
+		{ mode = "n", lhs = "<leader>cl", rhs = lint.try_lint },
+		{ mode = "n", lhs = "<leader>fb", rhs = builtin.current_buffer_fuzzy_find },
+		{ mode = "n", lhs = "<leader>ff", rhs = builtin.live_grep },
+		{ mode = "n", lhs = "<leader>fn", rhs = builtin.find_files },
+		{ mode = "n", lhs = "<leader>ft", rhs = builtin.builtin },
+	}
+
+	set_list_keymaps(keymaps)
 end
 
 ---------------
 -- ON ATTACH --
 -- NvimTree
-function P.tree_keymaps(bufnr)
-	delete("n", "e", bufnr)
-	delete("n", "f", bufnr)
-	delete("n", "F", bufnr)
-	delete("n", "<C-e>", bufnr)
+function P.tree_keymaps(buffer)
+	local deleted_keymaps = {
+		{ mode = "n", lhs = "e",     buffer = buffer },
+		{ mode = "n", lhs = "f",     buffer = buffer },
+		{ mode = "n", lhs = "F",     buffer = buffer },
+		{ mode = "n", lhs = "<C-e>", buffer = buffer },
+	}
+
+	delete_list_keymaps(deleted_keymaps)
 end
 
 -- Gitsings
 function P.gitsings_keymaps(bufnr, gs)
-	set("n", "<leader>hd", gs.diffthis)
-	set("n", "<leader>hp", gs.preview_hunk)
-	set("n", "<leader>hs", gs.stage_hunk)
-	set("v", "<leader>hs", function()
-		gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-	end)
-	set("n", "<leader>hr", gs.reset_hunk)
-	set("v", "<leader>hr", function()
-		gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-	end)
-	set("n", "<leader>hu", gs.undo_stage_hunk)
-	set("v", "<leader>hu", function()
-		gs.undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-	end)
+	local keymaps = {
+		{ mode = "n", lhs = "<leader>hd", rhs = gs.diffthis },
+		{ mode = "n", lhs = "<leader>hp", rhs = gs.preview_hunk },
+		{ mode = "n", lhs = "<leader>hs", rhs = gs.stage_hunk },
+		{
+			mode = "v",
+			lhs = "<leader>hs",
+			rhs = function()
+				gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+			end
+		},
+		{ mode = "n", lhs = "<leader>hr", rhs = gs.reset_hunk },
+		{
+			mode = "v",
+			lhs = "<leader>hr",
+			rhs = function()
+				gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+			end
+		},
+		{ mode = "n", lhs = "<leader>hu", rhs = gs.undo_stage_hunk },
+		{
+			mode = "v",
+			lhs = "<leader>hu",
+			rhs = function()
+				gs.undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+			end
+		},
+	}
+
+	set_list_keymaps(keymaps)
 end
 
 function P.jdtls_keymaps(jdtls)
-	set("n", "<leader>ji", jdtls.organize_imports)
+	local keymaps = {
+		{ mode = "n", lhs = "<leader>ji", rhs = jdtls.organize_imports },
+	}
+
+	set_list_keymaps(keymaps)
 end
 
 -- Treesitter Context
 function P.ts_context_keymaps(bufrn, ts)
-	set("n", "<leader>tu", function()
-		ts.go_to_context(vim.v.count1)
-	end)
+	local keymaps = {
+		{
+			mode = "n",
+			lhs = "<leader>tu",
+			rhs = function()
+				ts.go_to_context(vim.v.count1)
+			end
+		}
+	}
+
+	set_list_keymaps(keymaps)
 end
 
 return P
