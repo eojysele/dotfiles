@@ -100,7 +100,7 @@ return {
 		ins_left({
 			"filename",
 			path = 1,
-			shorting_target = 40,
+			shorting_target = 100,
 			color = { fg = colors.text, gui = "bold" },
 			symbols = {
 				modified = icons.file.modified,
