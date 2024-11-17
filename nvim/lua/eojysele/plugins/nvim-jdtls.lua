@@ -118,9 +118,8 @@ local function get_flags()
 	}
 end
 
-local function on_attach(_, bufnr)
-	local jdtls = require("jdtls")
-	require("eojysele.core.keymaps").jdtls_keymaps(jdtls)
+local function on_attach()
+	require("eojysele.core.keymaps").jdtls_keymaps()
 end
 
 local function get_capabilities()

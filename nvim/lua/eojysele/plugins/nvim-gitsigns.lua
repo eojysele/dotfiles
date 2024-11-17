@@ -4,7 +4,7 @@ return {
 		local gs = require("gitsigns")
 		gs.setup({
 			on_attach = function(bufnr)
-				require("eojysele.core.keymaps").gitsings_keymaps(bufnr, gs)
+				require("eojysele.core.keymaps").gitsings_keymaps()
 			end,
 		})
 	end,

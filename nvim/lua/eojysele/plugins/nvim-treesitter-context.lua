@@ -12,8 +12,8 @@ return {
 			mode = "cursor",
 			separator = "─",
 			zindex = 20,
-			on_attach = function(buf)
-				require("eojysele.core.keymaps").ts_context_keymaps(buf, ts)
+			on_attach = function()
+				require("eojysele.core.keymaps").ts_context_keymaps()
 			end,
 		})
 	end,

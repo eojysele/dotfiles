@@ -11,8 +11,8 @@ function P.general_keymaps()
 	local builtin = require("telescope.builtin")
 
 	local keymaps = {
-		{ mode = "n", lhs = "<leader>=", rhs = "<C-a>" },
-		{ mode = "n", lhs = "<leader>-", rhs = "<C-x>" },
+		{ mode = "n", lhs = "<leader>=",  rhs = "<C-a>" },
+		{ mode = "n", lhs = "<leader>-",  rhs = "<C-x>" },
 		{ mode = "n", lhs = "<leader>sd", rhs = "<C-w>v" },
 		{ mode = "n", lhs = "<leader>sD", rhs = "<C-w>s" },
 		{ mode = "n", lhs = "<leader>s0", rhs = "<C-w>=" },
@@ -25,12 +25,12 @@ function P.general_keymaps()
 		{ mode = "n", lhs = "<leader>s_", rhs = "20<C-w>-" },
 		{ mode = "n", lhs = "<leader>s+", rhs = "20<C-w>+" },
 		{ mode = "n", lhs = "<leader>sx", rhs = ":close<CR>" },
-		{ mode = "n", lhs = "<leader>e", rhs = "<cmd>NvimTreeToggle<CR>" },
+		{ mode = "n", lhs = "<leader>e",  rhs = "<cmd>NvimTreeToggle<CR>" },
 		{ mode = "n", lhs = "<leader>fc", rhs = "<cmd>NvimTreeFindFile<CR>" },
-		{ mode = "n", lhs = "gd", rhs = lsp_buf.definition },
-		{ mode = "n", lhs = "gD", rhs = lsp_buf.declaration },
-		{ mode = "n", lhs = "gr", rhs = lsp_buf.references },
-		{ mode = "n", lhs = "gi", rhs = lsp_buf.implementation },
+		{ mode = "n", lhs = "gd",         rhs = lsp_buf.definition },
+		{ mode = "n", lhs = "gD",         rhs = lsp_buf.declaration },
+		{ mode = "n", lhs = "gr",         rhs = lsp_buf.references },
+		{ mode = "n", lhs = "gi",         rhs = lsp_buf.implementation },
 		{ mode = "n", lhs = "<leader>ch", rhs = lsp_buf.hover },
 		{ mode = "n", lhs = "<leader>cs", rhs = lsp_buf.signature_help },
 		{ mode = "n", lhs = "<leader>cd", rhs = vim.diagnostic.open_float },
@@ -43,15 +43,15 @@ function P.general_keymaps()
 				lsp_buf.format({ async = true })
 			end,
 		},
-		{ mode = "n", lhs = "<leader>cl", rhs = lint.try_lint },
+		{ mode = "n", lhs = "<leader>gl", rhs = lint.try_lint },
 		{ mode = "n", lhs = "<leader>fb", rhs = builtin.current_buffer_fuzzy_find },
 		{ mode = "n", lhs = "<leader>ff", rhs = builtin.live_grep },
 		{ mode = "n", lhs = "<leader>fn", rhs = builtin.find_files },
 		{ mode = "n", lhs = "<leader>ft", rhs = builtin.builtin },
-		{ mode = "n", lhs = "<leader>cn", rhs = ":cnext<CR>" },
-		{ mode = "n", lhs = "<leader>cp", rhs = ":cprev<CR>" },
-		{ mode = "n", lhs = "<leader>co", rhs = ":copen<CR>" },
-		{ mode = "n", lhs = "<leader>cx", rhs = ":cclose<CR>" },
+		{ mode = "n", lhs = "<leader>gn", rhs = ":cnext<CR>" },
+		{ mode = "n", lhs = "<leader>gp", rhs = ":cprev<CR>" },
+		{ mode = "n", lhs = "<leader>go", rhs = ":copen<CR>" },
+		{ mode = "n", lhs = "<leader>gx", rhs = ":cclose<CR>" },
 	}
 
 	keymaps_utils.set_keymaps(keymaps)
@@ -63,9 +63,9 @@ end
 -- NvimTree
 function P.tree_keymaps(buffer)
 	local deleted_keymaps = {
-		{ mode = "n", lhs = "e", buffer = buffer },
-		{ mode = "n", lhs = "f", buffer = buffer },
-		{ mode = "n", lhs = "F", buffer = buffer },
+		{ mode = "n", lhs = "e",     buffer = buffer },
+		{ mode = "n", lhs = "f",     buffer = buffer },
+		{ mode = "n", lhs = "F",     buffer = buffer },
 		{ mode = "n", lhs = "<C-e>", buffer = buffer },
 	}
 
@@ -73,7 +73,8 @@ function P.tree_keymaps(buffer)
 end
 
 -- Gitsings
-function P.gitsings_keymaps(bufnr, gs)
+function P.gitsings_keymaps()
+	local gs = require("gitsigns")
 	local keymaps = {
 		{ mode = "n", lhs = "<leader>hd", rhs = gs.diffthis },
 		{ mode = "n", lhs = "<leader>hp", rhs = gs.preview_hunk },
@@ -107,7 +108,8 @@ function P.gitsings_keymaps(bufnr, gs)
 	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
-function P.jdtls_keymaps(jdtls)
+function P.jdtls_keymaps()
+	local jdtls = require("jdtls")
 	local keymaps = {
 		{ mode = "n", lhs = "<leader>ji", rhs = jdtls.organize_imports },
 	}
@@ -117,13 +119,14 @@ function P.jdtls_keymaps(jdtls)
 end
 
 -- Treesitter Context
-function P.ts_context_keymaps(bufrn, ts)
+function P.ts_context_keymaps()
+	local ts_context = require("treesitter-context")
 	local keymaps = {
 		{
 			mode = "n",
 			lhs = "<leader>tu",
 			rhs = function()
-				ts.go_to_context(vim.v.count1)
+				ts_context.go_to_context(vim.v.count1)
 			end,
 		},
 	}
