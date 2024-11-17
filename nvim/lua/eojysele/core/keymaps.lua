@@ -11,8 +11,8 @@ function P.general_keymaps()
 	local builtin = require("telescope.builtin")
 
 	local keymaps = {
-		{ mode = "n", lhs = "<leader>=",  rhs = "<C-a>" },
-		{ mode = "n", lhs = "<leader>-",  rhs = "<C-x>" },
+		{ mode = "n", lhs = "<leader>=", rhs = "<C-a>" },
+		{ mode = "n", lhs = "<leader>-", rhs = "<C-x>" },
 		{ mode = "n", lhs = "<leader>sd", rhs = "<C-w>v" },
 		{ mode = "n", lhs = "<leader>sD", rhs = "<C-w>s" },
 		{ mode = "n", lhs = "<leader>s0", rhs = "<C-w>=" },
@@ -25,12 +25,12 @@ function P.general_keymaps()
 		{ mode = "n", lhs = "<leader>s_", rhs = "20<C-w>-" },
 		{ mode = "n", lhs = "<leader>s+", rhs = "20<C-w>+" },
 		{ mode = "n", lhs = "<leader>sx", rhs = ":close<CR>" },
-		{ mode = "n", lhs = "<leader>e",  rhs = "<cmd>NvimTreeToggle<CR>" },
+		{ mode = "n", lhs = "<leader>e", rhs = "<cmd>NvimTreeToggle<CR>" },
 		{ mode = "n", lhs = "<leader>fc", rhs = "<cmd>NvimTreeFindFile<CR>" },
-		{ mode = "n", lhs = "gd",         rhs = lsp_buf.definition },
-		{ mode = "n", lhs = "gD",         rhs = lsp_buf.declaration },
-		{ mode = "n", lhs = "gr",         rhs = lsp_buf.references },
-		{ mode = "n", lhs = "gi",         rhs = lsp_buf.implementation },
+		{ mode = "n", lhs = "gd", rhs = lsp_buf.definition },
+		{ mode = "n", lhs = "gD", rhs = lsp_buf.declaration },
+		{ mode = "n", lhs = "gr", rhs = lsp_buf.references },
+		{ mode = "n", lhs = "gi", rhs = lsp_buf.implementation },
 		{ mode = "n", lhs = "<leader>ch", rhs = lsp_buf.hover },
 		{ mode = "n", lhs = "<leader>cs", rhs = lsp_buf.signature_help },
 		{ mode = "n", lhs = "<leader>cd", rhs = vim.diagnostic.open_float },
@@ -41,7 +41,7 @@ function P.general_keymaps()
 			lhs = "<leader>cf",
 			rhs = function()
 				lsp_buf.format({ async = true })
-			end
+			end,
 		},
 		{ mode = "n", lhs = "<leader>cl", rhs = lint.try_lint },
 		{ mode = "n", lhs = "<leader>fb", rhs = builtin.current_buffer_fuzzy_find },
@@ -59,9 +59,9 @@ end
 -- NvimTree
 function P.tree_keymaps(buffer)
 	local deleted_keymaps = {
-		{ mode = "n", lhs = "e",     buffer = buffer },
-		{ mode = "n", lhs = "f",     buffer = buffer },
-		{ mode = "n", lhs = "F",     buffer = buffer },
+		{ mode = "n", lhs = "e", buffer = buffer },
+		{ mode = "n", lhs = "f", buffer = buffer },
+		{ mode = "n", lhs = "F", buffer = buffer },
 		{ mode = "n", lhs = "<C-e>", buffer = buffer },
 	}
 
@@ -79,7 +79,7 @@ function P.gitsings_keymaps(bufnr, gs)
 			lhs = "<leader>hs",
 			rhs = function()
 				gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-			end
+			end,
 		},
 		{ mode = "n", lhs = "<leader>hr", rhs = gs.reset_hunk },
 		{
@@ -87,7 +87,7 @@ function P.gitsings_keymaps(bufnr, gs)
 			lhs = "<leader>hr",
 			rhs = function()
 				gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-			end
+			end,
 		},
 		{ mode = "n", lhs = "<leader>hu", rhs = gs.undo_stage_hunk },
 		{
@@ -95,7 +95,7 @@ function P.gitsings_keymaps(bufnr, gs)
 			lhs = "<leader>hu",
 			rhs = function()
 				gs.undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-			end
+			end,
 		},
 	}
 
@@ -120,8 +120,8 @@ function P.ts_context_keymaps(bufrn, ts)
 			lhs = "<leader>tu",
 			rhs = function()
 				ts.go_to_context(vim.v.count1)
-			end
-		}
+			end,
+		},
 	}
 
 	keymaps_utils.set_keymaps(keymaps)
