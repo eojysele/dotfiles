@@ -1,6 +1,6 @@
 local P = {}
 
-local keymaps_utils = require("eojysele.core.keymaps.utils")
+local keymaps_utils = require("cyrillic-keymaps.mapping.utils")
 
 --------------------------
 -- General keys mapping --
@@ -50,7 +50,7 @@ function P.general_keymaps()
 		{ mode = "n", lhs = "<leader>ft", rhs = builtin.builtin },
 	}
 
-	keymaps_utils.set_list_keymaps(keymaps)
+	keymaps_utils.set_keymaps(keymaps)
 	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
@@ -99,7 +99,7 @@ function P.gitsings_keymaps(bufnr, gs)
 		},
 	}
 
-	keymaps_utils.set_list_keymaps(keymaps)
+	keymaps_utils.set_keymaps(keymaps)
 	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
@@ -108,7 +108,7 @@ function P.jdtls_keymaps(jdtls)
 		{ mode = "n", lhs = "<leader>ji", rhs = jdtls.organize_imports },
 	}
 
-	keymaps_utils.set_list_keymaps(keymaps)
+	keymaps_utils.set_keymaps(keymaps)
 	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
@@ -124,7 +124,7 @@ function P.ts_context_keymaps(bufrn, ts)
 		}
 	}
 
-	keymaps_utils.set_list_keymaps(keymaps)
+	keymaps_utils.set_keymaps(keymaps)
 	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
