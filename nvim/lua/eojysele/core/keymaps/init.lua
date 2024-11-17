@@ -1,25 +1,6 @@
 local P = {}
 
-local function set(mode, lhs, rhs)
-	vim.keymap.set(mode, lhs, rhs)
-end
-
-local function set_list_keymaps(keymaps)
-	for _, keymap in ipairs(keymaps) do
-		set(keymap.mode, keymap.lhs, keymap.rhs)
-	end
-end
-
-local function delete(mode, lhs, buffer)
-	vim.keymap.del(mode, lhs, { buffer = buffer })
-end
-
-local function delete_list_keymaps(keymaps)
-	for _, keymap in ipairs(keymaps) do
-		delete(keymap.mode, keymap.lhs, keymap.buffer)
-	end
-end
-
+local keymaps_utils = require("eojysele.core.keymaps.utils")
 
 --------------------------
 -- General keys mapping --
@@ -69,7 +50,8 @@ function P.general_keymaps()
 		{ mode = "n", lhs = "<leader>ft", rhs = builtin.builtin },
 	}
 
-	set_list_keymaps(keymaps)
+	keymaps_utils.set_list_keymaps(keymaps)
+	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
 ---------------
@@ -83,7 +65,7 @@ function P.tree_keymaps(buffer)
 		{ mode = "n", lhs = "<C-e>", buffer = buffer },
 	}
 
-	delete_list_keymaps(deleted_keymaps)
+	keymaps_utils.delete_list_keymaps(deleted_keymaps)
 end
 
 -- Gitsings
@@ -117,7 +99,8 @@ function P.gitsings_keymaps(bufnr, gs)
 		},
 	}
 
-	set_list_keymaps(keymaps)
+	keymaps_utils.set_list_keymaps(keymaps)
+	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
 function P.jdtls_keymaps(jdtls)
@@ -125,7 +108,8 @@ function P.jdtls_keymaps(jdtls)
 		{ mode = "n", lhs = "<leader>ji", rhs = jdtls.organize_imports },
 	}
 
-	set_list_keymaps(keymaps)
+	keymaps_utils.set_list_keymaps(keymaps)
+	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
 -- Treesitter Context
@@ -140,7 +124,8 @@ function P.ts_context_keymaps(bufrn, ts)
 		}
 	}
 
-	set_list_keymaps(keymaps)
+	keymaps_utils.set_list_keymaps(keymaps)
+	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
 return P
