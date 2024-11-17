@@ -48,6 +48,10 @@ function P.general_keymaps()
 		{ mode = "n", lhs = "<leader>ff", rhs = builtin.live_grep },
 		{ mode = "n", lhs = "<leader>fn", rhs = builtin.find_files },
 		{ mode = "n", lhs = "<leader>ft", rhs = builtin.builtin },
+		{ mode = "n", lhs = "<leader>cn", rhs = ":cnext<CR>" },
+		{ mode = "n", lhs = "<leader>cp", rhs = ":cprev<CR>" },
+		{ mode = "n", lhs = "<leader>co", rhs = ":copen<CR>" },
+		{ mode = "n", lhs = "<leader>cx", rhs = ":cclose<CR>" },
 	}
 
 	keymaps_utils.set_keymaps(keymaps)
