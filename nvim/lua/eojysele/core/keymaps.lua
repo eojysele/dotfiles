@@ -76,8 +76,10 @@ end
 function P.gitsings_keymaps()
 	local gs = require("gitsigns")
 	local keymaps = {
+		{ mode = "n", lhs = "<leader>hn", rhs = gs.next_hunk },
+		{ mode = "n", lhs = "<leader>hp", rhs = gs.prev_hunk },
 		{ mode = "n", lhs = "<leader>hd", rhs = gs.diffthis },
-		{ mode = "n", lhs = "<leader>hp", rhs = gs.preview_hunk },
+		{ mode = "n", lhs = "<leader>hP", rhs = gs.preview_hunk },
 		{ mode = "n", lhs = "<leader>hs", rhs = gs.stage_hunk },
 		{
 			mode = "v",
