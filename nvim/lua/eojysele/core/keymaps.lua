@@ -2,9 +2,6 @@ local P = {}
 
 local keymaps_utils = require("cyrillic-keymaps.mapping.utils")
 
---------------------------
--- General keys mapping --
---------------------------
 function P.general_keymaps()
 	local lsp_buf = vim.lsp.buf
 	local lint = require("lint")
@@ -58,9 +55,6 @@ function P.general_keymaps()
 	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
----------------
--- ON ATTACH --
--- NvimTree
 function P.tree_keymaps(buffer)
 	local deleted_keymaps = {
 		{ mode = "n", lhs = "e", buffer = buffer },
@@ -72,7 +66,6 @@ function P.tree_keymaps(buffer)
 	keymaps_utils.delete_list_keymaps(deleted_keymaps)
 end
 
--- Gitsings
 function P.gitsings_keymaps()
 	local gs = require("gitsigns")
 	local keymaps = {
@@ -120,7 +113,6 @@ function P.jdtls_keymaps()
 	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
--- Treesitter Context
 function P.ts_context_keymaps()
 	local ts_context = require("treesitter-context")
 	local keymaps = {
