@@ -21,7 +21,7 @@ opt.smartcase = true
 
 opt.cursorline = true
 opt.colorcolumn = "+1"
-opt.scrolloff = 0
+opt.scrolloff = 5
 opt.foldmethod = "manual"
 
 opt.termguicolors = true
