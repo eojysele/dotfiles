@@ -37,6 +37,9 @@ config.inactive_pane_hsb = {
 	brightness = 0.8,
 }
 
+config.front_end="WebGpu"
+config.webgpu_power_preference = "LowPower"
+
 local bindings = require("core.bindings")
 config.disable_default_key_bindings = true
 config.disable_default_mouse_bindings = true
