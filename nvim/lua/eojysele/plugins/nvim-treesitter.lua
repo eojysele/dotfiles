@@ -14,6 +14,7 @@ return {
 				"xml",
 				"json",
 				"yaml",
+				"toml",
 				"dockerfile",
 			},
 			sync_install = true,
