@@ -24,11 +24,11 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt share_history
 
-if [[ "$(uname 2>/dev/null)" = "Darwin" ]]; then
+if [ "$(uname 2>/dev/null)" = "Darwin" ]; then
 	source $DOTFILES_HOME/zsh/macos.zsh
 fi
 
-if [[ "$(uname 2>/dev/null)" = "Linux" ]]; then
+if [ "$(uname 2>/dev/null)" = "Linux" ]; then
 	source $DOTFILES_HOME/zsh/linux.zsh
 fi
 
