@@ -28,6 +28,14 @@ if [[ "$(uname 2>/dev/null)" = "Darwin" ]]; then
 	source $DOTFILES_HOME/zsh/macos.zsh
 fi
 
+if [[ "$(uname 2>/dev/null)" = "Linux" ]]; then
+	source $DOTFILES_HOME/zsh/linux.zsh
+fi
+
+if [ -n "$(brew --prefix 2>/dev/null)" ]; then
+	source $DOTFILES_HOME/zsh/brew.zsh
+fi
+
 export PATH=$DOTFILES_HOME/tmux/layouts:$PATH
 
 alias icat="wezterm imgcat"
