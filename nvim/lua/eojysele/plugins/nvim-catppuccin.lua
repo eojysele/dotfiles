@@ -20,7 +20,7 @@ return {
 					NonText = { fg = colors.surface2 },
 					SpecialKey = { fg = colors.surface2 },
 					Whitespace = { fg = colors.surface2 },
-					ColorColumn = { bg = colors.surface0 },
+					ColorColumn = { bg = colors.surface2 },
 					NormalFloat = { bg = colors.base },
 					FloatBorder = { bg = colors.base },
 					TabLine = { fg = colors.overlay0, bg = colors.mantle },
