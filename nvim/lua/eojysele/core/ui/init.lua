@@ -26,7 +26,7 @@ vim.diagnostic.config({
 			min = vim.diagnostic.severity.WARN,
 		},
 		format = function(diagnostic)
-			local max_length = 50
+			local max_length = 80
 			local symbols = {
 				[vim.diagnostic.severity.ERROR] = icons.diagnostics.error,
 				[vim.diagnostic.severity.WARN] = icons.diagnostics.warn,
