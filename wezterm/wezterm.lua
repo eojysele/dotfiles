@@ -16,7 +16,7 @@ config.automatically_reload_config = true
 
 local theme = require("core.theme")
 config.default_cursor_style = "SteadyBar"
-config.enable_scroll_bar = true
+config.enable_scroll_bar = false
 config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = false
 config.colors = theme.get_colors()
