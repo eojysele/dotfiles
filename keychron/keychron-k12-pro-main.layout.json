@@ -88,8 +88,8 @@
       "KC_NO",
       "KC_NO",
       "CUSTOM(3)",
-      "MO(2)",
       "MO(4)",
+      "TG(2)",
       "KC_RCTL"
     ],
     [
@@ -160,8 +160,8 @@
       "KC_NO",
       "KC_NO",
       "KC_RALT",
-      "MO(3)",
       "MO(4)",
+      "TG(3)",
       "KC_RCTL"
     ],
     [
