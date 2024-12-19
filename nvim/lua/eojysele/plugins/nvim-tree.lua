@@ -54,6 +54,9 @@ return {
 				show_on_dirs = true,
 				show_on_open_dirs = true,
 				debounce_delay = 50,
+				severity = {
+					min = vim.diagnostic.severity.ERROR,
+				},
 				icons = {
 					hint = icons.diagnostics.hint,
 					info = icons.diagnostics.info,
