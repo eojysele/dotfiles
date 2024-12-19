@@ -5,6 +5,8 @@ return {
 		require("catppuccin").setup({
 			flavour = "frappe",
 			integrations = {
+				cmp = true,
+				gitsigns = true,
 				treesitter = true,
 				treesitter_context = false,
 				telescope = {
