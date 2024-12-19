@@ -25,6 +25,7 @@ return {
 					ColorColumn = { bg = colors.surface2 },
 					NormalFloat = { bg = colors.base },
 					FloatBorder = { bg = colors.base },
+					MsgArea = { fg = colors.text, bg = colors.crust },
 					TabLine = { fg = colors.overlay0, bg = colors.mantle },
 					TabLineFill = { fg = colors.text, bg = colors.crust },
 					TabLineSel = { fg = colors.text, bg = colors.base },

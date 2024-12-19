@@ -39,6 +39,7 @@ opt.listchars:append("eol:󱞤")
 opt.splitright = true
 opt.splitbelow = true
 opt.showtabline = 1
+opt.cmdheight = 0
 
 opt.swapfile = false
 
