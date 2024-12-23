@@ -38,17 +38,7 @@ fi
 
 export PATH=$DOTFILES_HOME/tmux/layouts:$PATH
 
-alias icat="wezterm imgcat"
-alias t="tmux new -ADs main"
-alias v="nvim"
-alias lg="lazygit"
-alias ez="eza --colour=always --time-style='+%d.%m.%Y %H:%M'"
-alias ea="ez -la"
-alias eg="ea --git"
-alias egt="eg --tree --ignore-glob .git"
-alias ls="ls --color=auto"
-alias la="ls -lah --color=auto"
-alias grep='grep --color=auto'
+for file in $DOTFILES_HOME/zsh/core/aliases/*; do source $file; done
 
 autoload -Uz compinit
 
