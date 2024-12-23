@@ -1,4 +1,10 @@
 local ICONS = {
+	listchars = {
+		space = "·",
+		trail = "·",
+		tab = "│ ",
+		eol = "󱞦",
+	},
 	file = {
 		default = "",
 		symlink = {

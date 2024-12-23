@@ -1,6 +1,7 @@
 local g = vim.g
 local opt = vim.opt
 local autocmd = vim.api.nvim_create_autocmd
+local icons = require("eojysele.core.ui.icons")
 
 g.mapleader = " "
 opt.mousemodel = "extend"
@@ -31,10 +32,10 @@ opt.backspace = "indent,eol,start"
 opt.clipboard:append("unnamedplus")
 
 opt.list = true
-opt.listchars:append("space:·")
-opt.listchars:append("trail:·")
-opt.listchars:append("tab:│ ")
-opt.listchars:append("eol:󱞤")
+opt.listchars:append("space:" .. icons.listchars.space)
+opt.listchars:append("trail:" .. icons.listchars.trail)
+opt.listchars:append("tab:" .. icons.listchars.tab)
+opt.listchars:append("eol:" .. icons.listchars.eol)
 
 opt.splitright = true
 opt.splitbelow = true
