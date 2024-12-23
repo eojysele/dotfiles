@@ -21,6 +21,7 @@ config.enable_scroll_bar = false
 config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = false
 config.colors = theme.get_colors()
+config.force_reverse_video_cursor = true
 config.window_frame = theme.get_window_frame(font_family, font_size)
 config.hide_mouse_cursor_when_typing = true
 config.hide_tab_bar_if_only_one_tab = false
