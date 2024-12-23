@@ -23,10 +23,9 @@ vim.diagnostic.config({
 		prefix = "",
 		spacing = 4,
 		severity = {
-			min = vim.diagnostic.severity.WARN,
+			min = vim.diagnostic.severity.ERROR,
 		},
 		format = function(diagnostic)
-			local max_length = 80
 			local symbols = {
 				[vim.diagnostic.severity.ERROR] = icons.diagnostics.error,
 				[vim.diagnostic.severity.WARN] = icons.diagnostics.warn,
@@ -36,9 +35,6 @@ vim.diagnostic.config({
 
 			local message = diagnostic.message
 			local severity = diagnostic.severity
-			if #message > max_length then
-				message = message:sub(1, max_length) .. "..."
-			end
 
 			return string.format("%s %s ", symbols[severity], message)
 		end,
