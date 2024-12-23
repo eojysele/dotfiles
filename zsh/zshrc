@@ -5,7 +5,7 @@ export DOTFILES_HOME=$HOME/.config/dotfiles
 
 autoload -U colors && colors
 setopt PROMPT_SUBST
-source $DOTFILES_HOME/zsh/themes/default.zsh-theme
+source $DOTFILES_HOME/zsh/core/themes/default.zsh-theme
 
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxAgAdXbAgAcAd
