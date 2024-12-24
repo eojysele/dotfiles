@@ -41,6 +41,7 @@ opt.splitright = true
 opt.splitbelow = true
 opt.showtabline = 1
 opt.cmdheight = 0
+opt.laststatus = 3
 
 opt.swapfile = false
 
