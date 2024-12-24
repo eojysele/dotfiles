@@ -134,6 +134,12 @@ return {
 		})
 
 		ins_right({
+			"searchcount",
+			color = { fg = colors.text, gui = "bold" },
+			padding = { left = 1, right = 1 },
+		})
+
+		ins_right({
 			"encoding",
 			fmt = string.upper,
 			color = { fg = colors.text, gui = "bold" },
