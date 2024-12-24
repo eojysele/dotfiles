@@ -21,7 +21,7 @@ function P.general_keymaps()
 		{ mode = "n", lhs = "<leader>s=", rhs = "20<C-w>>" },
 		{ mode = "n", lhs = "<leader>s_", rhs = "20<C-w>-" },
 		{ mode = "n", lhs = "<leader>s+", rhs = "20<C-w>+" },
-		{ mode = "n", lhs = "<leader>sx", rhs = ":close<CR>" },
+		{ mode = "n", lhs = "<leader>sw", rhs = ":close<CR>" },
 		{ mode = "n", lhs = "<leader>e", rhs = "<cmd>NvimTreeToggle<CR>" },
 		{ mode = "n", lhs = "<leader>fc", rhs = "<cmd>NvimTreeFindFile<CR>" },
 		{ mode = "n", lhs = "gd", rhs = lsp_buf.definition },
@@ -48,7 +48,7 @@ function P.general_keymaps()
 		{ mode = "n", lhs = "<leader>gn", rhs = ":cnext<CR>" },
 		{ mode = "n", lhs = "<leader>gp", rhs = ":cprev<CR>" },
 		{ mode = "n", lhs = "<leader>go", rhs = ":copen<CR>" },
-		{ mode = "n", lhs = "<leader>gx", rhs = ":cclose<CR>" },
+		{ mode = "n", lhs = "<leader>gw", rhs = ":cclose<CR>" },
 	}
 
 	keymaps_utils.set_keymaps(keymaps)
