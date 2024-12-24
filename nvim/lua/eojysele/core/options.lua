@@ -40,7 +40,7 @@ opt.listchars:append("eol:" .. icons.listchars.eol)
 opt.splitright = true
 opt.splitbelow = true
 opt.showtabline = 1
-opt.cmdheight = 0
+opt.cmdheight = 1
 opt.laststatus = 3
 
 opt.swapfile = false

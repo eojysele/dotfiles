@@ -15,12 +15,12 @@ return {
 				ignore_focus = { "NvimTree" },
 				theme = {
 					normal = {
-						c = { fg = colors.text, bg = colors.base },
-						x = { fg = colors.text, bg = colors.base },
+						c = { fg = colors.text, bg = colors.mantle },
+						x = { fg = colors.text, bg = colors.mantle },
 					},
 					incative = {
-						c = { fg = colors.text, bg = colors.base },
-						x = { fg = colors.text, bg = colors.base },
+						c = { fg = colors.text, bg = colors.mantle },
+						x = { fg = colors.text, bg = colors.mantle },
 					},
 				},
 			},
