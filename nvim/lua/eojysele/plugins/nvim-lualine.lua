@@ -68,7 +68,7 @@ return {
 				c = colors.peach,
 				R = colors.red,
 			}
-			return { fg = colors.base, bg = mode_color[vim_mode], gui = "bold" }
+			return { fg = mode_color[vim_mode], bg = colors.base, gui = "bold" }
 		end
 
 		local vim_mode_section = {
