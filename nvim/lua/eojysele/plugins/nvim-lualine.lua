@@ -15,12 +15,12 @@ return {
 				ignore_focus = { "NvimTree" },
 				theme = {
 					normal = {
-						c = { fg = colors.text, bg = colors.crust },
-						x = { fg = colors.text, bg = colors.crust },
+						c = { fg = colors.text, bg = colors.base },
+						x = { fg = colors.text, bg = colors.base },
 					},
 					incative = {
-						c = { fg = colors.text, bg = colors.crust },
-						x = { fg = colors.text, bg = colors.crust },
+						c = { fg = colors.text, bg = colors.base },
+						x = { fg = colors.text, bg = colors.base },
 					},
 				},
 			},
@@ -68,7 +68,7 @@ return {
 				c = colors.peach,
 				R = colors.red,
 			}
-			return { fg = colors.crust, bg = mode_color[vim_mode], gui = "bold" }
+			return { fg = colors.base, bg = mode_color[vim_mode], gui = "bold" }
 		end
 
 		local vim_mode_section = {

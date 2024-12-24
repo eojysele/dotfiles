@@ -25,7 +25,10 @@ return {
 					ColorColumn = { bg = colors.surface2 },
 					NormalFloat = { bg = colors.base },
 					FloatBorder = { bg = colors.base },
-					MsgArea = { fg = colors.text, bg = colors.crust },
+					MsgArea = { fg = colors.text, bg = colors.base },
+					StatusLine = { fg = colors.text, bg = colors.base },
+					StatusLineNC = { fg = colors.text, bg = colors.base },
+					WinSeparator = { fg = colors.surface2, bg = colors.base },
 					TabLine = { fg = colors.overlay0, bg = colors.mantle },
 					TabLineFill = { fg = colors.text, bg = colors.crust },
 					TabLineSel = { fg = colors.text, bg = colors.base },
@@ -41,6 +44,10 @@ return {
 						bg = colors.base,
 					},
 					TreesitterContextSeparator = { fg = colors.surface2 },
+					NvimTreeNormal = {bg = colors.base},
+					NvimTreeWinSeparator = { fg = colors.surface2, bg = colors.base },
+					NvimTreeStatusLine = { bg = colors.base },
+					NvimTreeStatusLineNC = { bg = colors.base },
 				}
 			end,
 		})
