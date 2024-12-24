@@ -50,46 +50,6 @@ return {
 			table.insert(config.sections.lualine_x, component)
 		end
 
-		local function ins_inactive_left(component)
-			table.insert(config.inactive_sections.lualine_c, component)
-		end
-
-		local function ins_inactive_right(component)
-			table.insert(config.inactive_sections.lualine_x, component)
-		end
-
-		local function get_color_by_mode(vim_mode)
-			local mode_color = {
-				n = colors.blue,
-				i = colors.green,
-				v = colors.mauve,
-				V = colors.mauve,
-				[""] = colors.mauve,
-				c = colors.peach,
-				R = colors.red,
-			}
-			return { fg = mode_color[vim_mode], bg = colors.base, gui = "bold" }
-		end
-
-		local vim_mode_section = {
-			function()
-				return icons.logo.neovim
-			end,
-			color = function()
-				return get_color_by_mode(vim.fn.mode())
-			end,
-			padding = { left = 1, right = 1 },
-		}
-
-		ins_left(vim_mode_section)
-
-		ins_left({
-			"branch",
-			icon = icons.git.branch,
-			color = { fg = colors.text, gui = "bold" },
-			padding = { left = 1, right = 1 },
-		})
-
 		ins_left({
 			"filetype",
 			color = { gui = "bold" },
@@ -112,16 +72,6 @@ return {
 		})
 
 		ins_left({
-			"diff",
-			symbols = {
-				added = icons.git.diff.staged .. " ",
-				modified = icons.git.diff.unstaged .. " ",
-				removed = icons.git.diff.deleted .. " ",
-			},
-			padding = { left = 1, right = 1 },
-		})
-
-		ins_right({
 			"diagnostics",
 			sources = { "nvim_diagnostic" },
 			symbols = {
@@ -134,14 +84,7 @@ return {
 		})
 
 		ins_right({
-			"searchcount",
-			color = { fg = colors.text, gui = "bold" },
-			padding = { left = 1, right = 1 },
-		})
-
-		ins_right({
-			"encoding",
-			fmt = string.upper,
+			"location",
 			color = { fg = colors.text, gui = "bold" },
 			padding = { left = 1, right = 1 },
 		})
@@ -155,18 +98,28 @@ return {
 		})
 
 		ins_right({
-			"location",
+			"encoding",
+			fmt = string.upper,
 			color = { fg = colors.text, gui = "bold" },
 			padding = { left = 1, right = 1 },
 		})
 
 		ins_right({
-			"progress",
-			color = { fg = colors.text, gui = "bold" },
+			"diff",
+			symbols = {
+				added = icons.git.diff.staged .. " ",
+				modified = icons.git.diff.unstaged .. " ",
+				removed = icons.git.diff.deleted .. " ",
+			},
 			padding = { left = 1, right = 1 },
 		})
 
-		ins_inactive_left(vim_mode_section)
+		ins_right({
+			"branch",
+			icon = icons.git.branch,
+			color = { fg = colors.text, gui = "bold" },
+			padding = { left = 1, right = 1 },
+		})
 
 		lualine.setup(config)
 	end,
