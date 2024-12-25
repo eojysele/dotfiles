@@ -36,7 +36,7 @@ config.window_padding = {
 
 config.inactive_pane_hsb = {
 	saturation = 1.0,
-	brightness = 0.8,
+	brightness = 0.7,
 }
 
 config.front_end = "WebGpu"
