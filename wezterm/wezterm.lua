@@ -7,7 +7,7 @@ local font_family = "IosevkaTerm Nerd Font Mono"
 local font_size = platform.is_mac and 16 or 12.5
 config.font = wezterm.font(font_family)
 config.font_size = font_size
-config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 config.initial_cols = 120
 config.initial_rows = 32

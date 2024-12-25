@@ -548,18 +548,38 @@ local function setup_mouse_bindings()
 			mods = "NONE",
 		},
 		{
-			event = { Down = { streak = 3, button = "Left" } },
-			action = action.SelectTextAtMouseCursor("Line"),
-			mods = "NONE",
-		},
-		{
 			event = { Down = { streak = 2, button = "Left" } },
 			action = action.SelectTextAtMouseCursor("Word"),
 			mods = "SHIFT",
 		},
 		{
+			event = { Drag = { streak = 2, button = "Left" } },
+			action = action.ExtendSelectionToMouseCursor("Word"),
+			mods = "NONE",
+		},
+		{
+			event = { Drag = { streak = 2, button = "Left" } },
+			action = action.ExtendSelectionToMouseCursor("Word"),
+			mods = "SHIFT",
+		},
+		{
 			event = { Down = { streak = 3, button = "Left" } },
 			action = action.SelectTextAtMouseCursor("Line"),
+			mods = "NONE",
+		},
+		{
+			event = { Down = { streak = 3, button = "Left" } },
+			action = action.SelectTextAtMouseCursor("Line"),
+			mods = "SHIFT",
+		},
+		{
+			event = { Drag = { streak = 3, button = "Left" } },
+			action = action.ExtendSelectionToMouseCursor("Line"),
+			mods = "NONE",
+		},
+		{
+			event = { Drag = { streak = 3, button = "Left" } },
+			action = action.ExtendSelectionToMouseCursor("Line"),
 			mods = "SHIFT",
 		},
 	}
