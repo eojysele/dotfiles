@@ -153,7 +153,13 @@ local function setup_other_os_keys()
 				if is_selection_active then
 					window:perform_action(action.CopyTo("ClipboardAndPrimarySelection"), pane)
 				else
-					window:perform_action(action.SendKey({ key = "c", mods = "CTRL" }), pane)
+					window:perform_action(
+						action.Multiple({
+							action.SendKey({ key = "c", mods = "CTRL" }),
+							action.ScrollToBottom,
+						}),
+						pane
+					)
 				end
 			end),
 		},
