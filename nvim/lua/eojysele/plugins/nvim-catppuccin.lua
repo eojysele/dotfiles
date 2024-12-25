@@ -45,7 +45,7 @@ return {
 					},
 					TreesitterContextSeparator = { fg = colors.surface2 },
 					NvimTreeNormal = { bg = colors.mantle },
-					NvimTreeWinSeparator = { fg = colors.surface2, bg = colors.base },
+					NvimTreeWinSeparator = { fg = colors.mantle, bg = colors.mantle },
 					NvimTreeStatusLine = { bg = colors.mantle },
 					NvimTreeStatusLineNC = { bg = colors.mantle },
 				}
