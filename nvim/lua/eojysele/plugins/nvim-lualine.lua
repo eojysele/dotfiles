@@ -53,8 +53,8 @@ return {
 		ins_left({
 			"filetype",
 			color = { gui = "bold" },
-			icon_only = true,
-			padding = { left = 1, right = 0 },
+			icon_only = false,
+			padding = { left = 1, right = 1 },
 		})
 
 		ins_left({
@@ -68,7 +68,7 @@ return {
 				unnamed = "",
 				newfile = "",
 			},
-			padding = { left = 0, right = 1 },
+			padding = { left = 1, right = 1 },
 		})
 
 		ins_left({
