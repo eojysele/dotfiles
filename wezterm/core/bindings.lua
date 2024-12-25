@@ -151,7 +151,13 @@ local function setup_other_os_keys()
 				local selection_text = window:get_selection_text_for_pane(pane)
 				local is_selection_active = string.len(selection_text) ~= 0
 				if is_selection_active then
-					window:perform_action(action.CopyTo("ClipboardAndPrimarySelection"), pane)
+					window:perform_action(
+						action.Multiple({
+							action.CopyTo("ClipboardAndPrimarySelection"),
+							action.ClearSelection,
+						}),
+						pane
+					)
 				else
 					window:perform_action(
 						action.Multiple({
