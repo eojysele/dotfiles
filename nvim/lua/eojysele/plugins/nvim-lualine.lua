@@ -90,6 +90,12 @@ return {
 		})
 
 		ins_right({
+			"progress",
+			color = { fg = colors.text, gui = "bold" },
+			padding = { left = 1, right = 1 },
+		})
+
+		ins_right({
 			"fileformat",
 			fmt = string.upper,
 			icons_enabled = false,
@@ -101,16 +107,6 @@ return {
 			"encoding",
 			fmt = string.upper,
 			color = { fg = colors.text, gui = "bold" },
-			padding = { left = 1, right = 1 },
-		})
-
-		ins_right({
-			"diff",
-			symbols = {
-				added = icons.git.diff.staged .. " ",
-				modified = icons.git.diff.unstaged .. " ",
-				removed = icons.git.diff.deleted .. " ",
-			},
 			padding = { left = 1, right = 1 },
 		})
 
