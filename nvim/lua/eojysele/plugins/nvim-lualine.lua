@@ -65,7 +65,7 @@ return {
 			symbols = {
 				modified = icons.file.modified,
 				readonly = icons.file.readonly,
-				unnamed = "",
+				unnamed = "[No Name]",
 				newfile = "",
 			},
 			padding = { left = 1, right = 1 },
