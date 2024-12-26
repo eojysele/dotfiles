@@ -1,4 +1,4 @@
-export EDITOR=nvim
+export EDITOR=v
 export DEFAULT_USER="$(whoami)"
 
 export DOTFILES_HOME=$HOME/.config/dotfiles
