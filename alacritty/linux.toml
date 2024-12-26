@@ -1,3 +1,6 @@
+[font]
+size = 14
+
 [keyboard]
 bindings = [
   { key = "V", mods = "Control", action = "Paste" },
