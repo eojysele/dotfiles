@@ -12,6 +12,9 @@ return {
 				api.config.mappings.default_on_attach(buffer)
 				require("eojysele.core.keymaps").tree_keymaps(buffer)
 			end,
+			filters = {
+				git_ignored = true,
+			},
 			view = {
 				adaptive_size = true,
 				number = true,
@@ -19,6 +22,7 @@ return {
 				signcolumn = "yes",
 			},
 			renderer = {
+				group_empty = true,
 				root_folder_label = ":~:t?$?/..?",
 				icons = {
 					symlink_arrow = " " .. icons.file.symlink.arrow .. " ",
