@@ -7,10 +7,10 @@ return {
 		local icons = require("eojysele.core.ui.icons")
 
 		require("nvim-tree").setup({
-			on_attach = function(bufnr)
+			on_attach = function(buffer)
 				local api = require("nvim-tree.api")
-				api.config.mappings.default_on_attach(bufnr)
-				require("eojysele.core.keymaps").tree_keymaps(bufnr)
+				api.config.mappings.default_on_attach(buffer)
+				require("eojysele.core.keymaps").tree_keymaps(buffer)
 			end,
 			view = {
 				adaptive_size = true,

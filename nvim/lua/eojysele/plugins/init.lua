@@ -16,5 +16,4 @@ return {
 	require("eojysele.plugins.nvim-treesitter"),
 	require("eojysele.plugins.nvim-treesitter-context"),
 	require("eojysele.plugins.nvim-autopairs"),
-	require("eojysele.plugins.nvim-cyrillic-keymaps"),
 }

@@ -1,11 +1,11 @@
 local P = {}
 
-local keymaps_utils = require("cyrillic-keymaps.mapping.utils")
+local keymaps_utils = require("eojysele.core.utils.keymaps")
 
 function P.general_keymaps()
 	local lsp_buf = vim.lsp.buf
 	local lint = require("lint")
-	local builtin = require("telescope.builtin")
+	local telescope_builtin = require("telescope.builtin")
 
 	local keymaps = {
 		{ mode = "n", lhs = "<leader>=", rhs = "<C-a>" },
@@ -41,10 +41,10 @@ function P.general_keymaps()
 			end,
 		},
 		{ mode = "n", lhs = "<leader>gl", rhs = lint.try_lint },
-		{ mode = "n", lhs = "<leader>fb", rhs = builtin.current_buffer_fuzzy_find },
-		{ mode = "n", lhs = "<leader>ff", rhs = builtin.live_grep },
-		{ mode = "n", lhs = "<leader>fn", rhs = builtin.find_files },
-		{ mode = "n", lhs = "<leader>ft", rhs = builtin.builtin },
+		{ mode = "n", lhs = "<leader>fb", rhs = telescope_builtin.current_buffer_fuzzy_find },
+		{ mode = "n", lhs = "<leader>ff", rhs = telescope_builtin.live_grep },
+		{ mode = "n", lhs = "<leader>fn", rhs = telescope_builtin.find_files },
+		{ mode = "n", lhs = "<leader>ft", rhs = telescope_builtin.builtin },
 		{ mode = "n", lhs = "<leader>gn", rhs = ":cnext<CR>" },
 		{ mode = "n", lhs = "<leader>gp", rhs = ":cprev<CR>" },
 		{ mode = "n", lhs = "<leader>go", rhs = ":copen<CR>" },
@@ -52,7 +52,6 @@ function P.general_keymaps()
 	}
 
 	keymaps_utils.set_keymaps(keymaps)
-	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
 function P.tree_keymaps(buffer)
@@ -67,40 +66,46 @@ function P.tree_keymaps(buffer)
 end
 
 function P.gitsings_keymaps()
-	local gs = require("gitsigns")
+	local gitsigns = require("gitsigns")
 	local keymaps = {
-		{ mode = "n", lhs = "<leader>hn", rhs = gs.next_hunk },
-		{ mode = "n", lhs = "<leader>hp", rhs = gs.prev_hunk },
-		{ mode = "n", lhs = "<leader>hd", rhs = gs.diffthis },
-		{ mode = "n", lhs = "<leader>hP", rhs = gs.preview_hunk },
-		{ mode = "n", lhs = "<leader>hs", rhs = gs.stage_hunk },
+		{ mode = "n", lhs = "<leader>hn", rhs = gitsigns.next_hunk },
+		{ mode = "n", lhs = "<leader>hp", rhs = gitsigns.prev_hunk },
+		{ mode = "n", lhs = "<leader>hd", rhs = gitsigns.diffthis },
+		{
+			mode = "n",
+			lhs = "<leader>hD",
+			rhs = function()
+				gitsigns.diffthis("~")
+			end,
+		},
+		{ mode = "n", lhs = "<leader>hP", rhs = gitsigns.preview_hunk },
+		{ mode = "n", lhs = "<leader>hs", rhs = gitsigns.stage_hunk },
 		{
 			mode = "v",
 			lhs = "<leader>hs",
 			rhs = function()
-				gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+				gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
 			end,
 		},
-		{ mode = "n", lhs = "<leader>hr", rhs = gs.reset_hunk },
+		{ mode = "n", lhs = "<leader>hr", rhs = gitsigns.reset_hunk },
 		{
 			mode = "v",
 			lhs = "<leader>hr",
 			rhs = function()
-				gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+				gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
 			end,
 		},
-		{ mode = "n", lhs = "<leader>hu", rhs = gs.undo_stage_hunk },
+		{ mode = "n", lhs = "<leader>hu", rhs = gitsigns.undo_stage_hunk },
 		{
 			mode = "v",
 			lhs = "<leader>hu",
 			rhs = function()
-				gs.undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+				gitsigns.undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
 			end,
 		},
 	}
 
 	keymaps_utils.set_keymaps(keymaps)
-	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
 function P.jdtls_keymaps()
@@ -110,7 +115,6 @@ function P.jdtls_keymaps()
 	}
 
 	keymaps_utils.set_keymaps(keymaps)
-	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
 function P.ts_context_keymaps()
@@ -126,7 +130,6 @@ function P.ts_context_keymaps()
 	}
 
 	keymaps_utils.set_keymaps(keymaps)
-	keymaps_utils.set_cyrillic_keymaps(keymaps)
 end
 
 return P
