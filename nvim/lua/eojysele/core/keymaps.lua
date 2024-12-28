@@ -68,7 +68,7 @@ end
 function P.gitsings_keymaps()
 	local gitsigns = require("gitsigns")
 	local keymaps = {
-		{ mode = "n", lhs = "<leader>hw", rhs = "<cmd>wincmd p | q<CR>"},
+		{ mode = "n", lhs = "<leader>hw", rhs = "<cmd>wincmd p | q<CR>" },
 		{ mode = "n", lhs = "<leader>hn", rhs = gitsigns.next_hunk },
 		{ mode = "n", lhs = "<leader>hp", rhs = gitsigns.prev_hunk },
 		{ mode = "n", lhs = "<leader>hd", rhs = gitsigns.diffthis },
@@ -80,6 +80,7 @@ function P.gitsings_keymaps()
 			end,
 		},
 		{ mode = "n", lhs = "<leader>hP", rhs = gitsigns.preview_hunk },
+		{ mode = "n", lhs = "<leader>hS", rhs = gitsigns.stage_buffer },
 		{ mode = "n", lhs = "<leader>hs", rhs = gitsigns.stage_hunk },
 		{
 			mode = "v",
@@ -89,6 +90,7 @@ function P.gitsings_keymaps()
 			end,
 		},
 		{ mode = "n", lhs = "<leader>hr", rhs = gitsigns.reset_hunk },
+		{ mode = "n", lhs = "<leader>hR", rhs = gitsigns.reset_buffer },
 		{
 			mode = "v",
 			lhs = "<leader>hr",
