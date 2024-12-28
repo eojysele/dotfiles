@@ -28,8 +28,8 @@ config.hide_tab_bar_if_only_one_tab = false
 config.native_macos_fullscreen_mode = true
 
 config.window_padding = {
-	left = "1cell",
-	right = "1cell",
+	left = "0.5cell",
+	right = "0.5cell",
 	top = "0cell",
 	bottom = "0cell",
 }
