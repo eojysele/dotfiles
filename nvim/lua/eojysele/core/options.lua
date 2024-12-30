@@ -40,6 +40,7 @@ opt.listchars:append("eol:" .. icons.listchars.eol)
 opt.splitright = true
 opt.splitbelow = true
 opt.showtabline = 1
+opt.tabline = "%!v:lua.CustomTabLine()"
 opt.cmdheight = 1
 opt.laststatus = 3
 
