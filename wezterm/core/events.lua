@@ -1,6 +1,7 @@
 local E = {}
 
 local wezterm = require("wezterm")
+local bindings = require("core.bindings").get_overrides()
 
 local function basename(s)
 	return string.gsub(s, "(.*[/\\])(.*)", "%2")
@@ -20,10 +21,10 @@ function E.setup()
 
 	wezterm.on("toggle-leader", function(window, _)
 		local overrides = window:get_config_overrides() or {}
-		if not overrides.leader then
-			overrides.leader = { key = "_", mods = "CTRL|ALT|SUPER" }
-		else
+		if overrides.leader then
 			overrides.leader = nil
+		else
+			overrides.leader = bindings.leader
 		end
 		window:set_config_overrides(overrides)
 	end)

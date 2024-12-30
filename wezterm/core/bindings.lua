@@ -1,3 +1,5 @@
+local B = {}
+
 local wezterm = require("wezterm")
 local action = wezterm.action
 
@@ -613,9 +615,22 @@ local function setup_mouse_bindings()
 	return mouse_bindings
 end
 
-return {
-	leader = setup_leader(),
-	keys = setup_keys(),
-	key_tables = setup_key_tables(),
-	mouse_bindings = setup_mouse_bindings(),
-}
+function B.get_defaults()
+	return {
+		leader = nil,
+		keys = setup_keys(),
+		key_tables = setup_key_tables(),
+		mouse_bindings = setup_mouse_bindings(),
+	}
+end
+
+function B.get_overrides()
+	return {
+		leader = setup_leader(),
+		keys = nil,
+		key_tables = nil,
+		mouse_bindings = nil,
+	}
+end
+
+return B
