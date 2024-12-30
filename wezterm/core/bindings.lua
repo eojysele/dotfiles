@@ -49,10 +49,15 @@ local function setup_general_keys()
 			action = action.PaneSelect({ alphabet = "1234567890", mode = "SwapWithActive" }),
 		},
 		{
+			key = "l",
+			mods = "CTRL",
+			action = action.SendKey({ key = "l", mods = "CTRL" }),
+		},
+		{
 			key = "L",
 			mods = "CTRL|SHIFT",
 			action = action.Multiple({
-				action.SendKey({ key = "L", mods = "CTRL" }),
+				action.SendKey({ key = "l", mods = "CTRL" }),
 				action.ClearScrollback("ScrollbackOnly"),
 			}),
 		},

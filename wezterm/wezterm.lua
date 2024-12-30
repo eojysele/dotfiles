@@ -25,6 +25,8 @@ config.force_reverse_video_cursor = false
 config.window_frame = theme.get_window_frame(font_family, font_size)
 config.hide_mouse_cursor_when_typing = true
 config.hide_tab_bar_if_only_one_tab = false
+config.show_close_tab_button_in_tabs = false
+config.show_new_tab_button_in_tab_bar = false
 config.native_macos_fullscreen_mode = true
 
 config.window_padding = {
