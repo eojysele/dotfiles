@@ -4,6 +4,7 @@ return {
 	require("eojysele.plugins.nvim-lualine"),
 	require("eojysele.plugins.nvim-tree"),
 	require("eojysele.plugins.nvim-gitsigns"),
+	require("eojysele.plugins.nvim-diffview"),
 	require("eojysele.plugins.nvim-telescope"),
 	require("eojysele.plugins.nvim-telescope-fzf-native"),
 	require("eojysele.plugins.nvim-plenary"),

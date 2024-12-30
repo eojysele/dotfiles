@@ -7,6 +7,7 @@ return {
 			integrations = {
 				cmp = true,
 				gitsigns = true,
+				diffview = true,
 				treesitter = true,
 				treesitter_context = false,
 				telescope = {

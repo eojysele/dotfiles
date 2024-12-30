@@ -45,10 +45,11 @@ function P.general_keymaps()
 		{ mode = "n", lhs = "<leader>ff", rhs = telescope_builtin.live_grep },
 		{ mode = "n", lhs = "<leader>fn", rhs = telescope_builtin.find_files },
 		{ mode = "n", lhs = "<leader>ft", rhs = telescope_builtin.builtin },
-		{ mode = "n", lhs = "<leader>gn", rhs = ":cnext<CR>" },
-		{ mode = "n", lhs = "<leader>gp", rhs = ":cprev<CR>" },
-		{ mode = "n", lhs = "<leader>go", rhs = ":copen<CR>" },
-		{ mode = "n", lhs = "<leader>gw", rhs = ":cclose<CR>" },
+		{ mode = "n", lhs = "<leader>gn", rhs = "<cmd>cnext<CR>" },
+		{ mode = "n", lhs = "<leader>gp", rhs = "<cmd>cprev<CR>" },
+		{ mode = "n", lhs = "<leader>go", rhs = "<cmd>copen<CR>" },
+		{ mode = "n", lhs = "<leader>do", rhs = "<cmd>DiffviewOpen<CR>" },
+		{ mode = "n", lhs = "<leader>dw", rhs = "<cmd>DiffviewClose<CR>" },
 	}
 
 	keymaps_utils.set_keymaps(keymaps)
