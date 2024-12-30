@@ -41,7 +41,7 @@ function P.general_keymaps()
 			end,
 		},
 		{ mode = "n", lhs = "<leader>gl", rhs = lint.try_lint },
-		{ mode = "n", lhs = "<leader>fb", rhs = telescope_builtin.current_buffer_fuzzy_find },
+		{ mode = "n", lhs = "<leader>fb", rhs = telescope_builtin.buffers },
 		{ mode = "n", lhs = "<leader>ff", rhs = telescope_builtin.live_grep },
 		{ mode = "n", lhs = "<leader>fn", rhs = telescope_builtin.find_files },
 		{ mode = "n", lhs = "<leader>ft", rhs = telescope_builtin.builtin },
