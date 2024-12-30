@@ -8,5 +8,5 @@ return {
 				folder_open = icons.folder.open,
 			},
 		})
-	end
+	end,
 }
