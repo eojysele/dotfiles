@@ -14,7 +14,7 @@ function K.set_keymaps(keymaps)
 	end
 end
 
-function K.delete_list_keymaps(keymaps)
+function K.delete_keymaps(keymaps)
 	for _, keymap in ipairs(keymaps) do
 		delete(keymap.mode, keymap.lhs, keymap.buffer)
 	end

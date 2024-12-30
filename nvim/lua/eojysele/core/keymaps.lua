@@ -62,7 +62,7 @@ function P.tree_keymaps(buffer)
 		{ mode = "n", lhs = "<C-e>", buffer = buffer },
 	}
 
-	keymaps_utils.delete_list_keymaps(deleted_keymaps)
+	keymaps_utils.delete_keymaps(deleted_keymaps)
 end
 
 function P.gitsings_keymaps()
