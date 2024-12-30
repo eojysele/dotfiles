@@ -16,7 +16,7 @@ config.adjust_window_size_when_changing_font_size = false
 config.automatically_reload_config = true
 
 local theme = require("core.theme")
-config.default_cursor_style = "SteadyBar"
+config.default_cursor_style = "SteadyBlock"
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = true
