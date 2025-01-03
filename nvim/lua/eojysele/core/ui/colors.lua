@@ -1,9 +1,10 @@
-local COLORS = {}
+local C = {}
 
-function COLORS.get_palette()
-	local palette = require("catppuccin").flavour
+function C.get_palette()
+	local flavour = require("catppuccin").flavour
+	local palette = require("catppuccin.palettes").get_palette(flavour)
 
-	return require("catppuccin.palettes").get_palette(palette)
+	return palette
 end
 
-return COLORS
+return C

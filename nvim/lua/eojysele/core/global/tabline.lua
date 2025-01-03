@@ -19,5 +19,6 @@ function _G.CustomTabLine()
 		result_tab_line = result_tab_line .. " " .. tabname .. " "
 	end
 	result_tab_line = result_tab_line .. tab_line_fill
+
 	return result_tab_line
 end

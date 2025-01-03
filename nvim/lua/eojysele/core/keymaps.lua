@@ -1,8 +1,8 @@
-local P = {}
+local K = {}
 
 local keymaps_utils = require("eojysele.core.utils.keymaps")
 
-function P.general_keymaps()
+function K.general_keymaps()
 	local lsp_buf = vim.lsp.buf
 	local lint = require("lint")
 	local telescope_builtin = require("telescope.builtin")
@@ -55,7 +55,7 @@ function P.general_keymaps()
 	keymaps_utils.set_keymaps(keymaps)
 end
 
-function P.tree_keymaps(buffer)
+function K.tree_keymaps(buffer)
 	local deleted_keymaps = {
 		{ mode = "n", lhs = "e", buffer = buffer },
 		{ mode = "n", lhs = "f", buffer = buffer },
@@ -66,7 +66,7 @@ function P.tree_keymaps(buffer)
 	keymaps_utils.delete_keymaps(deleted_keymaps)
 end
 
-function P.gitsings_keymaps()
+function K.gitsings_keymaps()
 	local gitsigns = require("gitsigns")
 	local keymaps = {
 		{ mode = "n", lhs = "<leader>hw", rhs = "<cmd>wincmd p | q<CR>" },
@@ -112,7 +112,7 @@ function P.gitsings_keymaps()
 	keymaps_utils.set_keymaps(keymaps)
 end
 
-function P.jdtls_keymaps()
+function K.jdtls_keymaps()
 	local jdtls = require("jdtls")
 	local keymaps = {
 		{ mode = "n", lhs = "<leader>ji", rhs = jdtls.organize_imports },
@@ -121,7 +121,7 @@ function P.jdtls_keymaps()
 	keymaps_utils.set_keymaps(keymaps)
 end
 
-function P.ts_context_keymaps()
+function K.ts_context_keymaps()
 	local ts_context = require("treesitter-context")
 	local keymaps = {
 		{
@@ -136,4 +136,4 @@ function P.ts_context_keymaps()
 	keymaps_utils.set_keymaps(keymaps)
 end
 
-return P
+return K

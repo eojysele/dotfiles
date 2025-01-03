@@ -1,4 +1,4 @@
-local ICONS = {
+local I = {
 	listchars = {
 		space = "·",
 		trail = "·",
@@ -46,4 +46,4 @@ local ICONS = {
 	},
 }
 
-return ICONS
+return I
