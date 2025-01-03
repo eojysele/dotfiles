@@ -1,5 +1,4 @@
 alias icat="wezterm imgcat"
-alias t="tmux new -ADs main"
 alias v="nvim"
 alias lg="lazygit"
 alias ls="ls --color=auto"
