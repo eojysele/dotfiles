@@ -28,7 +28,7 @@ local function setup_general_keys()
 			mods = "LEADER",
 			action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
 		},
-		{ key = "w", mods = "LEADER", action = action.CloseCurrentPane({ confirm = true }) },
+		{ key = "w", mods = "LEADER", action = action.CloseCurrentPane({ confirm = false }) },
 		{ key = "f", mods = "LEADER", action = action.TogglePaneZoomState },
 		{ key = "h", mods = "LEADER", action = action.ActivatePaneDirection("Left") },
 		{ key = "j", mods = "LEADER", action = action.ActivatePaneDirection("Down") },
@@ -85,7 +85,7 @@ local function setup_mac_os_keys()
 		{
 			key = "w",
 			mods = "CMD",
-			action = action.CloseCurrentTab({ confirm = true }),
+			action = action.CloseCurrentTab({ confirm = false }),
 		},
 		{ key = "n", mods = "CMD", action = action.SpawnWindow },
 		{ key = "[", mods = "CMD", action = action.ActivateTabRelative(-1) },
@@ -191,7 +191,7 @@ local function setup_other_os_keys()
 		{
 			key = "w",
 			mods = "CTRL",
-			action = action.CloseCurrentTab({ confirm = true }),
+			action = action.CloseCurrentTab({ confirm = false }),
 		},
 		{
 			key = "W",
