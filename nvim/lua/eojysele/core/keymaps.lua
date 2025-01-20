@@ -50,6 +50,8 @@ function K.general_keymaps()
 		{ mode = "n", lhs = "<leader>go", rhs = "<cmd>copen<CR>" },
 		{ mode = "n", lhs = "<leader>do", rhs = "<cmd>DiffviewOpen<CR>" },
 		{ mode = "n", lhs = "<leader>dw", rhs = "<cmd>DiffviewClose<CR>" },
+		{ mode = "n", lhs = "<leader>Eu", rhs = "<cmd>e ++encoding=utf-8<CR>" },
+		{ mode = "n", lhs = "<leader>Ew", rhs = "<cmd>e ++encoding=cp1251<CR>" },
 	}
 
 	keymaps_utils.set_keymaps(keymaps)
