@@ -1,16 +1,11 @@
 local icons = require("eojysele.core.ui.icons")
 
-local signs = {
-	DiagnosticSignError = icons.diagnostics.error,
-	DiagnosticSignWarn = icons.diagnostics.warn,
-	DiagnosticSignHint = icons.diagnostics.hint,
-	DiagnosticSignInfo = icons.diagnostics.info,
+local diagnostics = {
+	[vim.diagnostic.severity.ERROR] = icons.diagnostics.error,
+	[vim.diagnostic.severity.WARN] = icons.diagnostics.warn,
+	[vim.diagnostic.severity.INFO] = icons.diagnostics.info,
+	[vim.diagnostic.severity.HINT] = icons.diagnostics.hint,
 }
-
-for type, icon in pairs(signs) do
-	local hl = type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
 
 vim.diagnostic.config({
 	severity_sort = true,
@@ -19,6 +14,9 @@ vim.diagnostic.config({
 		source = "always",
 		suffix = "",
 	},
+	signs = {
+		text = diagnostics,
+	},
 	virtual_text = {
 		prefix = "",
 		spacing = 4,
@@ -26,13 +24,7 @@ vim.diagnostic.config({
 			min = vim.diagnostic.severity.ERROR,
 		},
 		format = function(diagnostic)
-			local symbols = {
-				[vim.diagnostic.severity.ERROR] = icons.diagnostics.error,
-				[vim.diagnostic.severity.WARN] = icons.diagnostics.warn,
-				[vim.diagnostic.severity.INFO] = icons.diagnostics.info,
-				[vim.diagnostic.severity.HINT] = icons.diagnostics.hint,
-			}
-
+			local symbols = diagnostics
 			local message = diagnostic.message
 			local severity = diagnostic.severity
 
