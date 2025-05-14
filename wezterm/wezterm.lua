@@ -53,6 +53,10 @@ config.keys = bindings.keys
 config.key_tables = bindings.key_tables
 config.mouse_bindings = bindings.mouse_bindings
 
+local launchmenu = require("core.launchmenu")
+config.default_prog = launchmenu.default_prog
+config.launch_menu = launchmenu.launch_menu
+
 require("core.events").setup()
 
 return config

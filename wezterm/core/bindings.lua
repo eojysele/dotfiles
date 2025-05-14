@@ -44,7 +44,11 @@ local function setup_general_keys()
 				one_shot = false,
 			}),
 		},
-		{ key = "s", mods = "LEADER", action = action.PaneSelect({ alphabet = "1234567890" }) },
+		{
+			key = "s",
+			mods = "LEADER",
+			action = action.PaneSelect({ alphabet = "1234567890" }),
+		},
 		{
 			key = "S",
 			mods = "LEADER",
@@ -268,14 +272,38 @@ local function setup_other_os_keys()
 	return keys
 end
 
+local function setup_windows_keys()
+	local keys = {
+		{
+			key = "T",
+			mods = "LEADER",
+			action = wezterm.action.ShowLauncher,
+		},
+	}
+
+	table_utils.merge(keys, setup_other_os_keys())
+
+	return keys
+end
+
+local function setup_linux_keys()
+	local keys = {}
+
+	table_utils.merge(keys, setup_other_os_keys())
+
+	return keys
+end
+
 local function setup_keys()
 	local keys = setup_general_keys()
 
 	local os_specific_keys = {}
 	if platform.is_mac then
 		os_specific_keys = setup_mac_os_keys()
+	elseif platform.is_windows then
+		os_specific_keys = setup_windows_keys()
 	else
-		os_specific_keys = setup_other_os_keys()
+		os_specific_keys = setup_linux_keys()
 	end
 
 	table_utils.merge(keys, os_specific_keys)
