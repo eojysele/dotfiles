@@ -32,6 +32,10 @@ if [ "$(uname 2>/dev/null)" = "Linux" ]; then
 	source $DOTFILES_HOME/zsh/core/linux.zsh
 fi
 
+if [ -n "$WSL_INTEROP" ]; then
+  source $DOTFILES_HOME/zsh/core/wsl.zsh
+fi
+
 if [ -n "$(brew --prefix 2>/dev/null)" ]; then
 	source $DOTFILES_HOME/zsh/core/brew.zsh
 fi
