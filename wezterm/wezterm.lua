@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 local platform = require("core.utils.platform")
 
 local font_family = "Iosevka Nerd Font Mono"
-local font_size = platform.is_mac and 16 or 12.5
+local font_size = platform.is_mac and 16 or 13
 config.font = wezterm.font(font_family)
 config.font_size = font_size
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
@@ -42,8 +42,9 @@ config.inactive_pane_hsb = {
 	brightness = 0.7,
 }
 
-config.front_end = "WebGpu"
-config.webgpu_power_preference = "LowPower"
+local gpu = require("core.gpu")
+config.front_end = gpu.front_end
+config.max_fps = gpu.max_fps
 
 local bindings = require("core.bindings").get_defaults()
 config.disable_default_key_bindings = true
