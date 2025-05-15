@@ -10,10 +10,10 @@ if platform.is_windows then
 	launchmenu.launch_menu = {
 		{
 			label = "PowerShell",
-			args = { "pwsh.exe" },
+			args = { "powershell.exe", "-NoLogo" },
 		},
 		{
-			label = "WSL (по умолчанию)",
+			label = "WSL (default)",
 			args = { "wsl.exe" },
 		},
 	}

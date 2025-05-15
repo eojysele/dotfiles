@@ -275,8 +275,8 @@ end
 local function setup_windows_keys()
 	local keys = {
 		{
-			key = "T",
-			mods = "LEADER",
+			key = "t",
+			mods = "ALT",
 			action = wezterm.action.ShowLauncher,
 		},
 	}

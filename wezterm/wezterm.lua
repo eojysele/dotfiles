@@ -3,6 +3,9 @@ local config = wezterm.config_builder()
 
 local platform = require("core.utils.platform")
 
+local env = require("core.env")
+config.set_environment_variables = env.set_environment_variables
+
 local font_family = "Iosevka Nerd Font Mono"
 local font_size = platform.is_mac and 16 or 12.5
 config.font = wezterm.font(font_family)
