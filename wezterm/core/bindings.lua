@@ -277,7 +277,9 @@ local function setup_windows_keys()
 		{
 			key = "t",
 			mods = "ALT",
-			action = wezterm.action.ShowLauncher,
+			action = action.ShowLauncherArgs({
+				flags = "LAUNCH_MENU_ITEMS",
+			}),
 		},
 	}
 
