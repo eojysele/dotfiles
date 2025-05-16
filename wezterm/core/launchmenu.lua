@@ -6,7 +6,8 @@ local launchmenu = {
 local platform = require("core.utils.platform")
 
 if platform.is_windows then
-	launchmenu.default_prog = { "wsl.exe" }
+	local wsl_default_args = { "wsl.exe", "--cd", "~" }
+	launchmenu.default_prog = wsl_default_args
 	launchmenu.launch_menu = {
 		{
 			label = "PowerShell",
@@ -14,7 +15,7 @@ if platform.is_windows then
 		},
 		{
 			label = "WSL (default)",
-			args = { "wsl.exe" },
+			args = wsl_default_args,
 		},
 	}
 end
