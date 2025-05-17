@@ -1,13 +1,10 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-local platform = require("core.utils.platform")
-
-local font_family = "Iosevka Nerd Font Mono"
-local font_size = platform.is_mac and 16 or 13
-config.font = wezterm.font(font_family)
-config.font_size = font_size
-config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
+local font = require("core.font")
+config.font = wezterm.font(font.family)
+config.font_size = font.size
+config.harfbuzz_features = font.harfbuzz_features
 
 config.initial_cols = 120
 config.initial_rows = 32
@@ -23,7 +20,7 @@ config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = true
 config.colors = theme.get_colors()
 config.force_reverse_video_cursor = false
-config.window_frame = theme.get_window_frame(font_family, font_size)
+config.window_frame = theme.get_window_frame(font.family, font.size)
 config.hide_mouse_cursor_when_typing = true
 config.hide_tab_bar_if_only_one_tab = true
 config.show_close_tab_button_in_tabs = false
