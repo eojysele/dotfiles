@@ -7,28 +7,11 @@ local platform = require("core.utils.platform")
 local table_utils = require("core.utils.table")
 
 local function setup_leader()
-	local leader = { key = "phys:a", mods = "ALT", timeout_milliseconds = 1000 }
+	local leader = { key = "a", mods = "ALT", timeout_milliseconds = 1000 }
 	if platform.is_mac then
 		leader.mods = "CMD"
 	end
 	return leader
-end
-
-local function is_latin(key)
-	return key and string.match(key, "^[A-Za-z]$")
-end
-
-local function is_not_leader(mods)
-	return not mods or not string.find(mods, "LEADER")
-end
-
-local function setup_physical_prefix(bindings)
-	local prefix = "phys:"
-	for _, binding in ipairs(bindings) do
-		if is_latin(binding.key) and is_not_leader(binding.mods) then
-			binding.key = prefix .. binding.key
-		end
-	end
 end
 
 local function setup_general_bindings()
@@ -40,7 +23,7 @@ local function setup_general_bindings()
 		},
 		{
 			key = "D",
-			mods = "LEADER",
+			mods = "LEADER|SHIFT",
 			action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
 		},
 		{ key = "w", mods = "LEADER", action = action.CloseCurrentPane({ confirm = false }) },
@@ -66,7 +49,7 @@ local function setup_general_bindings()
 		},
 		{
 			key = "S",
-			mods = "LEADER",
+			mods = "LEADER|SHIFT",
 			action = action.PaneSelect({ alphabet = "1234567890", mode = "SwapWithActive" }),
 		},
 		{
@@ -324,7 +307,6 @@ local function setup_keys()
 	end
 
 	table_utils.merge(bindings, os_specific_bindings)
-	setup_physical_prefix(bindings)
 
 	return bindings
 end

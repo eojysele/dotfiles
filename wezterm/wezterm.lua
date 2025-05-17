@@ -53,6 +53,7 @@ config.leader = bindings.leader
 config.keys = bindings.keys
 config.key_tables = bindings.key_tables
 config.mouse_bindings = bindings.mouse_bindings
+config.key_map_preference = "Physical"
 config.use_ime = true
 
 local launchmenu = require("core.launchmenu")
