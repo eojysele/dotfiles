@@ -7,17 +7,32 @@ local platform = require("core.utils.platform")
 local table_utils = require("core.utils.table")
 
 local function setup_leader()
-	local leader = { key = "a", mods = "ALT", timeout_milliseconds = 1000 }
-
+	local leader = { key = "phys:a", mods = "ALT", timeout_milliseconds = 1000 }
 	if platform.is_mac then
 		leader.mods = "CMD"
 	end
-
 	return leader
 end
 
-local function setup_general_keys()
-	local keys = {
+local function is_latin(key)
+	return key and string.match(key, "^[A-Za-z]$")
+end
+
+local function is_not_leader(mods)
+	return not mods or not string.find(mods, "LEADER")
+end
+
+local function setup_physical_prefix(bindings)
+	local prefix = "phys:"
+	for _, binding in ipairs(bindings) do
+		if is_latin(binding.key) and is_not_leader(binding.mods) then
+			binding.key = prefix .. binding.key
+		end
+	end
+end
+
+local function setup_general_bindings()
+	local bindings = {
 		{
 			key = "d",
 			mods = "LEADER",
@@ -75,11 +90,11 @@ local function setup_general_keys()
 		{ key = "PageDown", mods = "", action = action.ScrollByPage(0.5) },
 	}
 
-	return keys
+	return bindings
 end
 
-local function setup_mac_os_keys()
-	local keys = {
+local function setup_macos_bindings()
+	local bindings = {
 		{ key = "q", mods = "CMD", action = action.QuitApplication },
 		{ key = "h", mods = "CMD", action = action.HideApplication },
 		{ key = "m", mods = "CMD", action = action.Hide },
@@ -146,14 +161,14 @@ local function setup_mac_os_keys()
 
 	for i = 1, 9 do
 		local key = { key = tostring(i), mods = "CMD", action = action.ActivateTab(i - 1) }
-		table.insert(keys, key)
+		table.insert(bindings, key)
 	end
 
-	return keys
+	return bindings
 end
 
-local function setup_other_os_keys()
-	local keys = {
+local function setup_other_os_general_bindings()
+	local bindings = {
 		{ key = "Q", mods = "CTRL|SHIFT", action = action.QuitApplication },
 		{
 			key = "c",
@@ -266,14 +281,14 @@ local function setup_other_os_keys()
 
 	for i = 1, 9 do
 		local key = { key = tostring(i), mods = "ALT", action = action.ActivateTab(i - 1) }
-		table.insert(keys, key)
+		table.insert(bindings, key)
 	end
 
-	return keys
+	return bindings
 end
 
-local function setup_windows_keys()
-	local keys = {
+local function setup_windows_bindings()
+	local bindings = {
 		{
 			key = "t",
 			mods = "ALT",
@@ -283,34 +298,35 @@ local function setup_windows_keys()
 		},
 	}
 
-	table_utils.merge(keys, setup_other_os_keys())
+	table_utils.merge(bindings, setup_other_os_general_bindings())
 
-	return keys
+	return bindings
 end
 
-local function setup_linux_keys()
-	local keys = {}
+local function setup_linux_bindings()
+	local bindings = {}
 
-	table_utils.merge(keys, setup_other_os_keys())
+	table_utils.merge(bindings, setup_other_os_general_bindings())
 
-	return keys
+	return bindings
 end
 
 local function setup_keys()
-	local keys = setup_general_keys()
+	local bindings = setup_general_bindings()
 
-	local os_specific_keys = {}
+	local os_specific_bindings = {}
 	if platform.is_mac then
-		os_specific_keys = setup_mac_os_keys()
+		os_specific_bindings = setup_macos_bindings()
 	elseif platform.is_windows then
-		os_specific_keys = setup_windows_keys()
+		os_specific_bindings = setup_windows_bindings()
 	else
-		os_specific_keys = setup_linux_keys()
+		os_specific_bindings = setup_linux_bindings()
 	end
 
-	table_utils.merge(keys, os_specific_keys)
+	table_utils.merge(bindings, os_specific_bindings)
+	setup_physical_prefix(bindings)
 
-	return keys
+	return bindings
 end
 
 local function setup_key_tables()
