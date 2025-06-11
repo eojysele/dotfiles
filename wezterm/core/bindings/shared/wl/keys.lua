@@ -65,32 +65,32 @@ function K.get()
 		},
 		{
 			key = "LeftArrow",
-			mods = "CTRL",
+			mods = "CTRL|SHIFT",
 			action = action.SendKey({ key = "a", mods = "CTRL" }),
 		},
 		{
 			key = "RightArrow",
-			mods = "CTRL",
+			mods = "CTRL|SHIFT",
 			action = action.SendKey({ key = "e", mods = "CTRL" }),
 		},
 		{
 			key = "LeftArrow",
-			mods = "ALT",
+			mods = "CTRL",
 			action = action.SendKey({ key = "b", mods = "ALT" }),
 		},
 		{
 			key = "RightArrow",
-			mods = "ALT",
+			mods = "CTRL",
 			action = action.SendKey({ key = "f", mods = "ALT" }),
 		},
 		{
 			key = "Backspace",
-			mods = "CTRL",
+			mods = "CTRL|SHIFT",
 			action = action.SendKey({ key = "u", mods = "CTRL" }),
 		},
 		{
 			key = "Backspace",
-			mods = "ALT",
+			mods = "CTRL",
 			action = action.SendKey({ key = "w", mods = "CTRL" }),
 		},
 		{
