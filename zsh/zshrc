@@ -51,12 +51,4 @@ eval "$(zoxide init zsh)"
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-bindkey '^I' menu-complete
-bindkey '^[[Z' reverse-menu-complete
-bindkey '^[[1;2B' history-beginning-search-forward
-bindkey '^[[1;2A' history-beginning-search-backward
-bindkey '^[b' backward-word
-bindkey '^[f' forward-word
-bindkey '^a' beginning-of-line
-bindkey '^e' end-of-line
-bindkey '^U' backward-kill-line
+source $DOTFILES_HOME/zsh/core/bindkey.zsh
