@@ -2,27 +2,17 @@ local B = {}
 
 local platform = require("core.utils.platform")
 local table_utils = require("core.utils.table")
-
-local function safe_object_require(modname)
-	local ok, result = pcall(require, modname)
-	if ok then
-		return result
-	else
-		return {}
-	end
-end
-
-local function get_os_prefix()
-	if platform.is_mac then return "macos" end
-	if platform.is_windows then return "windows" end
-	if platform.is_linux then return "linux" end
-	return "unknown"
-end
+local safe_call= require("core.utils.safe_call")
 
 local function setup_binding(binding_name)
-	local bindings = require("core.bindings.general." .. binding_name)
-	local os_specific_bindings = safe_object_require("core.bindings." .. get_os_prefix() .. binding_name)
-	table_utils.merge(bindings, os_specific_bindings)
+	local base_package = "core.bindings."
+	local bindings = {}
+
+	local general_bindings = safe_call.require(base_package .. "general." .. binding_name)
+	table_utils.merge(bindings, safe_call.object_call(general_bindings, "get"))
+
+	local os_specific_bindings = safe_call.require(base_package .. platform.os_prefix_with_dot .. binding_name)
+	table_utils.safe_merge(bindings, safe_call.object_call(os_specific_bindings, "get"))
 
 	return bindings
 end
@@ -54,8 +44,7 @@ function B.get_defaults()
 		leader = nil,
 		keys = setup_keys(),
 		key_tables = setup_key_tables(),
-		mouse_bindings =
-		setup_mouse_bindings(),
+		mouse_bindings = setup_mouse_bindings(),
 	}
 end
 
