@@ -11,8 +11,8 @@ end
 
 function T.safe_merge(destination, source)
 	if type(destination) ~= "table" then
-        error("safe_merge: dest must be a table")
-    end
+		error("safe_merge: dest must be a table")
+	end
 
 	if type(source) == "table" then
 		merge(destination, source)

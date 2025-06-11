@@ -7,7 +7,6 @@ local function safe_call(method)
 	end
 
 	return result
-
 end
 
 local function object_safe_call(object, method_name)
@@ -34,7 +33,9 @@ function SC.call(method)
 end
 
 function SC.require(modname)
-	return safe_call(function() return require(modname) end)
+	return safe_call(function()
+		return require(modname)
+	end)
 end
 
 function SC.object_call(object, method_name)

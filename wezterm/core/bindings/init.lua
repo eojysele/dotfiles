@@ -2,7 +2,7 @@ local B = {}
 
 local platform = require("core.utils.platform")
 local table_utils = require("core.utils.table")
-local safe_call= require("core.utils.safe_call")
+local safe_call = require("core.utils.safe_call")
 
 local function setup_binding(binding_name)
 	local base_package = "core.bindings."
@@ -11,7 +11,8 @@ local function setup_binding(binding_name)
 	local general_bindings = safe_call.require(base_package .. "general." .. binding_name)
 	table_utils.merge(bindings, safe_call.object_call(general_bindings, "get"))
 
-	local os_specific_bindings = safe_call.require(base_package .. platform.os_prefix_with_dot .. binding_name)
+	local os_specific_bindings =
+		safe_call.require(base_package .. platform.os_prefix_with_dot .. binding_name)
 	table_utils.safe_merge(bindings, safe_call.object_call(os_specific_bindings, "get"))
 
 	return bindings
@@ -21,7 +22,7 @@ local function setup_leader()
 	local leader = {
 		key = "a",
 		mods = platform.is_mac and "CMD" or "ALT",
-		timeout_milliseconds = 1000
+		timeout_milliseconds = 1000,
 	}
 
 	return leader
