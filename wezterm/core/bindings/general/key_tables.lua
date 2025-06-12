@@ -180,10 +180,10 @@ function KT.get()
 			{ key = "PageDown", mods = "NONE", action = action.CopyMode("PageDown") },
 			{
 				key = "End",
-				mods = "NONE",
+				mods = "Ctrl",
 				action = action.CopyMode("MoveToEndOfLineContent"),
 			},
-			{ key = "Home", mods = "NONE", action = action.CopyMode("MoveToStartOfLine") },
+			{ key = "Home", mods = "Ctrl", action = action.CopyMode("MoveToStartOfLine") },
 			{ key = "LeftArrow", mods = "NONE", action = action.CopyMode("MoveLeft") },
 			{ key = "LeftArrow", mods = "ALT", action = action.CopyMode("MoveBackwardWord") },
 			{ key = "RightArrow", mods = "NONE", action = action.CopyMode("MoveRight") },

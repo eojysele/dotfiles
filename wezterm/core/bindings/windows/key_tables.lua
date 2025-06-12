@@ -8,6 +8,16 @@ function KT.get()
 		powershell = {
 			{
 				key = "LeftArrow",
+				mods = "CTRL|SHIFT",
+				action = action.SendKey({ key = "LeftArrow", mods = "CTRL|SHIFT" }),
+			},
+			{
+				key = "RightArrow",
+				mods = "CTRL|SHIFT",
+				action = action.SendKey({ key = "RightArrow", mods = "CTRL|SHIFT" }),
+			},
+			{
+				key = "LeftArrow",
 				mods = "CTRL",
 				action = action.SendKey({ key = "LeftArrow", mods = "CTRL" }),
 			},
@@ -17,26 +27,16 @@ function KT.get()
 				action = action.SendKey({ key = "RightArrow", mods = "CTRL" }),
 			},
 			{
-				key = "LeftArrow",
-				mods = "ALT",
-				action = action.SendKey({ key = "b", mods = "ALT" }),
-			},
-			{
-				key = "RightArrow",
-				mods = "ALT",
-				action = action.SendKey({ key = "f", mods = "ALT" }),
-			},
-			{
 				key = "Backspace",
-				mods = "CTRL",
+				mods = "CTRL|SHIFT",
 				action = action.SendKey({ key = "u", mods = "CTRL" }),
 			},
 			{
 				key = "Backspace",
-				mods = "ALT",
+				mods = "CTRL",
 				action = action.SendKey({ key = "w", mods = "CTRL" }),
 			},
-		}
+		},
 	}
 
 	return key_tables

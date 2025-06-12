@@ -32,26 +32,11 @@ function K.get()
 			end),
 		},
 		{ key = "v", mods = "CTRL", action = action.PasteFrom("Clipboard") },
-		{
-			key = "V",
-			mods = "CTRL|SHIFT",
-			action = action.SendKey({ key = "v", mods = "CTRL" }),
-		},
 		{ key = "t", mods = "CTRL", action = action.SpawnTab("CurrentPaneDomain") },
-		{
-			key = "T",
-			mods = "CTRL|SHIFT",
-			action = action.SendKey({ key = "t", mods = "CTRL" }),
-		},
 		{
 			key = "w",
 			mods = "CTRL",
 			action = action.CloseCurrentTab({ confirm = false }),
-		},
-		{
-			key = "W",
-			mods = "CTRL|SHIFT",
-			action = action.SendKey({ key = "w", mods = "CTRL" }),
 		},
 		{ key = "n", mods = "CTRL", action = action.SpawnWindow },
 		{ key = "[", mods = "ALT", action = action.ActivateTabRelative(-1) },
@@ -62,36 +47,6 @@ function K.get()
 			key = "a",
 			mods = "ALT",
 			action = action.SendKey({ key = "b", mods = "CTRL" }),
-		},
-		{
-			key = "LeftArrow",
-			mods = "CTRL|SHIFT",
-			action = action.SendKey({ key = "a", mods = "CTRL" }),
-		},
-		{
-			key = "RightArrow",
-			mods = "CTRL|SHIFT",
-			action = action.SendKey({ key = "e", mods = "CTRL" }),
-		},
-		{
-			key = "LeftArrow",
-			mods = "CTRL",
-			action = action.SendKey({ key = "b", mods = "ALT" }),
-		},
-		{
-			key = "RightArrow",
-			mods = "CTRL",
-			action = action.SendKey({ key = "f", mods = "ALT" }),
-		},
-		{
-			key = "Backspace",
-			mods = "CTRL|SHIFT",
-			action = action.SendKey({ key = "u", mods = "CTRL" }),
-		},
-		{
-			key = "Backspace",
-			mods = "CTRL",
-			action = action.SendKey({ key = "w", mods = "CTRL" }),
 		},
 		{
 			key = "/",
@@ -105,11 +60,6 @@ function K.get()
 			key = "f",
 			mods = "CTRL",
 			action = action.Search("CurrentSelectionOrEmptyString"),
-		},
-		{
-			key = "F",
-			mods = "CTRL|SHIFT",
-			action = action.SendKey({ key = "f", mods = "CTRL" }),
 		},
 		{ key = "F11", mods = "", action = action.ToggleFullScreen },
 		{ key = "D", mods = "CTRL|SHIFT", action = action.ShowDebugOverlay },

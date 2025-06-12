@@ -1,8 +1,11 @@
 local SC = {}
 
+local wezterm = require("wezterm")
+
 local function safe_call(method)
 	local status, result = pcall(method)
 	if not status then
+		wezterm.log_error(result)
 		return nil
 	end
 
@@ -21,7 +24,7 @@ local function object_safe_call(object, method_name)
 
 	local status, result = pcall(method, object)
 	if not status then
-		error(result)
+		wezterm.log_error(result)
 		return nil
 	end
 
