@@ -31,7 +31,7 @@ local function get_wsl()
 end
 
 if platform.is_windows then
-	local default_prog =  { "wsl.exe", "--cd", "~" }
+	local default_prog = { "wsl.exe", "--cd", "~" }
 	local launch_menu = {
 		{
 			label = "PowerShell",
@@ -43,7 +43,6 @@ if platform.is_windows then
 
 	launchmenu.default_prog = default_prog
 	launchmenu.launch_menu = launch_menu
-
 end
 
 return launchmenu
