@@ -5,6 +5,13 @@ local action = wezterm.action
 
 function KT.get()
 	local key_tables = {
+		resize_pane = {
+			{ key = "h", action = action.AdjustPaneSize({ "Left", 5 }) },
+			{ key = "j", action = action.AdjustPaneSize({ "Down", 5 }) },
+			{ key = "k", action = action.AdjustPaneSize({ "Up", 5 }) },
+			{ key = "l", action = action.AdjustPaneSize({ "Right", 5 }) },
+			{ key = "Escape", action = "PopKeyTable" },
+		},
 		search_mode = {
 			{ key = "Enter", mods = "NONE", action = action.CopyMode("PriorMatch") },
 			{ key = "Escape", mods = "NONE", action = action.CopyMode("Close") },
@@ -16,13 +23,6 @@ function KT.get()
 			{ key = "PageDown", mods = "NONE", action = action.CopyMode("NextMatchPage") },
 			{ key = "UpArrow", mods = "NONE", action = action.CopyMode("PriorMatch") },
 			{ key = "DownArrow", mods = "NONE", action = action.CopyMode("NextMatch") },
-		},
-		resize_pane = {
-			{ key = "h", action = action.AdjustPaneSize({ "Left", 5 }) },
-			{ key = "j", action = action.AdjustPaneSize({ "Down", 5 }) },
-			{ key = "k", action = action.AdjustPaneSize({ "Up", 5 }) },
-			{ key = "l", action = action.AdjustPaneSize({ "Right", 5 }) },
-			{ key = "Escape", action = "PopKeyTable" },
 		},
 		copy_mode = {
 			{ key = "Tab", mods = "NONE", action = action.CopyMode("MoveForwardWord") },
@@ -180,10 +180,10 @@ function KT.get()
 			{ key = "PageDown", mods = "NONE", action = action.CopyMode("PageDown") },
 			{
 				key = "End",
-				mods = "Ctrl",
+				mods = "CTRL",
 				action = action.CopyMode("MoveToEndOfLineContent"),
 			},
-			{ key = "Home", mods = "Ctrl", action = action.CopyMode("MoveToStartOfLine") },
+			{ key = "Home", mods = "CTRL", action = action.CopyMode("MoveToStartOfLine") },
 			{ key = "LeftArrow", mods = "NONE", action = action.CopyMode("MoveLeft") },
 			{ key = "LeftArrow", mods = "ALT", action = action.CopyMode("MoveBackwardWord") },
 			{ key = "RightArrow", mods = "NONE", action = action.CopyMode("MoveRight") },

@@ -5,7 +5,7 @@ local wezterm = require("wezterm")
 local function safe_call(method)
 	local status, result = pcall(method)
 	if not status then
-		wezterm.log_error(result)
+		wezterm.log_info(result)
 		return nil
 	end
 

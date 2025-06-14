@@ -6,10 +6,9 @@ local safe_call = require("core.utils.safe_call")
 
 local function setup_binding(binding_name)
 	local base_package = "core.bindings."
-	local bindings = {}
 
 	local general_bindings = safe_call.require(base_package .. "general." .. binding_name)
-	table_utils.merge(bindings, safe_call.object_call(general_bindings, "get"))
+	local bindings = safe_call.object_call(general_bindings, "get")
 
 	local os_specific_bindings =
 		safe_call.require(base_package .. platform.os_prefix_with_dot .. binding_name)
