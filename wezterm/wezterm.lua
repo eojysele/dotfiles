@@ -26,6 +26,7 @@ config.show_close_tab_button_in_tabs = false
 config.show_new_tab_button_in_tab_bar = false
 config.native_macos_fullscreen_mode = true
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_close_confirmation = "AlwaysPrompt"
 
 config.window_padding = {
 	left = "0.5cell",

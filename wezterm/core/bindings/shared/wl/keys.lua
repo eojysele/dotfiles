@@ -1,74 +1,28 @@
 local K = {}
 
-local wezterm = require("wezterm")
-local action = wezterm.action
+local actions = require("core.bindings.action.keys").get()
 
 function K.get()
 	local keys = {
-		{ key = "Q", mods = "CTRL|SHIFT", action = action.QuitApplication },
-		{
-			key = "c",
-			mods = "CTRL",
-			action = wezterm.action_callback(function(window, pane)
-				local selection_text = window:get_selection_text_for_pane(pane)
-				local is_selection_active = string.len(selection_text) ~= 0
-				if is_selection_active then
-					window:perform_action(
-						action.Multiple({
-							action.CopyTo("ClipboardAndPrimarySelection"),
-							action.ClearSelection,
-						}),
-						pane
-					)
-				else
-					window:perform_action(
-						action.Multiple({
-							action.SendKey({ key = "c", mods = "CTRL" }),
-							action.ScrollToBottom,
-						}),
-						pane
-					)
-				end
-			end),
-		},
-		{ key = "v", mods = "CTRL", action = action.PasteFrom("Clipboard") },
-		{ key = "t", mods = "CTRL", action = action.SpawnTab("CurrentPaneDomain") },
-		{
-			key = "w",
-			mods = "CTRL",
-			action = action.CloseCurrentTab({ confirm = false }),
-		},
-		{ key = "n", mods = "CTRL", action = action.SpawnWindow },
-		{ key = "[", mods = "ALT", action = action.ActivateTabRelative(-1) },
-		{ key = "]", mods = "ALT", action = action.ActivateTabRelative(1) },
-		{ key = "{", mods = "ALT|SHIFT", action = action.MoveTabRelative(-1) },
-		{ key = "}", mods = "ALT|SHIFT", action = action.MoveTabRelative(1) },
-		{
-			key = "a",
-			mods = "ALT",
-			action = action.SendKey({ key = "b", mods = "CTRL" }),
-		},
-		{
-			key = "/",
-			mods = "ALT",
-			action = action({ EmitEvent = "toggle-leader" }),
-		},
-		{ key = "=", mods = "CTRL", action = action.IncreaseFontSize },
-		{ key = "-", mods = "CTRL", action = action.DecreaseFontSize },
-		{ key = "0", mods = "CTRL", action = action.ResetFontSize },
-		{
-			key = "f",
-			mods = "CTRL",
-			action = action.Search("CurrentSelectionOrEmptyString"),
-		},
-		{ key = "F11", mods = "", action = action.ToggleFullScreen },
-		{ key = "D", mods = "CTRL|SHIFT", action = action.ShowDebugOverlay },
+		{ key = "Q", mods = "CTRL|SHIFT", action = actions.QuitApplication },
+		{ key = "c", mods = "CTRL", action = actions.CopyToClipboardOrSIGINT },
+		{ key = "v", mods = "CTRL", action = actions.PasteFromClipboard },
+		{ key = "t", mods = "CTRL", action = actions.NewTab },
+		{ key = "w", mods = "CTRL", action = actions.CloseTab },
+		{ key = "n", mods = "CTRL", action = actions.NewWindow },
+		{ key = "[", mods = "ALT", action = actions.PreviousTab },
+		{ key = "]", mods = "ALT", action = actions.NewTab },
+		{ key = "{", mods = "ALT|SHIFT", action = actions.MoveTabLeft },
+		{ key = "}", mods = "ALT|SHIFT", action = actions.MoveTabRight },
+		{ key = "a", mods = "ALT", action = actions.TmuxLeader },
+		{ key = "/", mods = "ALT", action = actions.ToggleLeader },
+		{ key = "=", mods = "CTRL", action = actions.IncreaseFontSize },
+		{ key = "-", mods = "CTRL", action = actions.DecreaseFontSize },
+		{ key = "0", mods = "CTRL", action = actions.ResetFontSize },
+		{ key = "f", mods = "CTRL", action = actions.Search },
+		{ key = "F11", mods = "", action = actions.ToggleFullScreen },
+		{ key = "D", mods = "CTRL|SHIFT", action = actions.ShowDebugOverlay },
 	}
-
-	for i = 1, 9 do
-		local key = { key = tostring(i), mods = "ALT", action = action.ActivateTab(i - 1) }
-		table.insert(keys, key)
-	end
 
 	return keys
 end

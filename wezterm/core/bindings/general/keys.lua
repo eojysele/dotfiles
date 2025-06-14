@@ -1,66 +1,44 @@
 local K = {}
 
-local wezterm = require("wezterm")
-local action = wezterm.action
+local actions = require("core.bindings.action.keys").get()
+local platform = require("core.utils.platform")
 
 function K.get()
 	local keys = {
-		{
-			key = "d",
-			mods = "LEADER",
-			action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-		},
-		{
-			key = "D",
-			mods = "LEADER|SHIFT",
-			action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
-		},
-		{ key = "w", mods = "LEADER", action = action.CloseCurrentPane({ confirm = false }) },
-		{ key = "f", mods = "LEADER", action = action.TogglePaneZoomState },
-		{ key = "h", mods = "LEADER", action = action.ActivatePaneDirection("Left") },
-		{ key = "j", mods = "LEADER", action = action.ActivatePaneDirection("Down") },
-		{ key = "k", mods = "LEADER", action = action.ActivatePaneDirection("Up") },
-		{ key = "l", mods = "LEADER", action = action.ActivatePaneDirection("Right") },
-		{ key = "v", mods = "LEADER", action = action.ActivateCopyMode },
-		{
-			key = "r",
-			mods = "LEADER",
-			action = action.ActivateKeyTable({
-				name = "resize_pane",
-				timeout_milliseconds = 1000,
-				one_shot = false,
-			}),
-		},
-		{
-			key = "s",
-			mods = "LEADER",
-			action = action.PaneSelect({ alphabet = "1234567890" }),
-		},
-		{
-			key = "S",
-			mods = "LEADER|SHIFT",
-			action = action.PaneSelect({ alphabet = "1234567890", mode = "SwapWithActive" }),
-		},
-		{
-			key = "l",
-			mods = "CTRL",
-			action = action.SendKey({ key = "l", mods = "CTRL" }),
-		},
+		{ key = "d", mods = "LEADER", action = actions.SplitHorizontal },
+		{ key = "D", mods = "LEADER|SHIFT", action = actions.SplitVertical },
+		{ key = "w", mods = "LEADER", action = actions.CloseCurrentPane },
+		{ key = "f", mods = "LEADER", action = actions.TogglePaneZoomState },
+		{ key = "h", mods = "LEADER", action = actions.ActivatePaneDirectionLeft },
+		{ key = "j", mods = "LEADER", action = actions.ActivatePaneDirectionDown },
+		{ key = "k", mods = "LEADER", action = actions.ActivatePaneDirectionUp },
+		{ key = "l", mods = "LEADER", action = actions.ActivatePaneDirectionRight },
+		{ key = "r", mods = "LEADER", action = actions.ActivateResizePane },
+		{ key = "s", mods = "LEADER", action = actions.PaneSelect },
+		{ key = "S", mods = "LEADER|SHIFT", action = actions.PaneSelectAndSwapWithActive },
+		{ key = "v", mods = "LEADER", action = actions.ActivateCopyMode },
+		{ key = "l", mods = "CTRL", action = actions.ClearViewPort },
 		{
 			key = "L",
 			mods = "CTRL|SHIFT",
-			action = action.Multiple({
-				action.SendKey({ key = "l", mods = "CTRL" }),
-				action.ClearScrollback("ScrollbackOnly"),
+			action = actions.Multiple({
+				actions.ClearViewPort,
+				actions.ClearScrollbackOnly,
 			}),
 		},
-		{ key = "Tab", mods = "CTRL", action = action.ActivateTabRelative(1) },
-		{ key = "Tab", mods = "SHIFT|CTRL", action = action.ActivateTabRelative(-1) },
-		{ key = "Home", mods = "", action = action.ScrollToTop },
-		{ key = "End", mods = "", action = action.ScrollToBottom },
-		{ key = "PageUp", mods = "", action = action.ScrollByPage(-0.5) },
-		{ key = "PageDown", mods = "", action = action.ScrollByPage(0.5) },
+		{ key = "Tab", mods = "CTRL", action = actions.NextTab },
+		{ key = "Tab", mods = "SHIFT|CTRL", action = actions.PreviousTab },
+		{ key = "Home", mods = "CTRL", action = actions.ScrollToTop },
+		{ key = "End", mods = "CTRL", action = actions.ScrollToBottom },
+		{ key = "PageUp", mods = "NONE", action = actions.ScrollPageUp },
+		{ key = "PageDown", mods = "NONE", action = actions.ScrollPageDown },
 	}
+
+	for i = 1, 9 do
+		local mods = platform.is_mac and "CMD" or "ALT"
+		local key = { key = tostring(i), mods = mods, action = actions.ActivateTab(i) }
+		table.insert(keys, key)
+	end
 
 	return keys
 end

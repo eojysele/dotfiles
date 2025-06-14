@@ -1,78 +1,36 @@
 local K = {}
 
-local wezterm = require("wezterm")
-local action = wezterm.action
+local actions = require("core.bindings.action.keys").get()
 
 function K.get()
 	local keys = {
-		{ key = "q", mods = "CMD", action = action.QuitApplication },
-		{ key = "h", mods = "CMD", action = action.HideApplication },
-		{ key = "m", mods = "CMD", action = action.Hide },
-		{ key = "c", mods = "CMD", action = action.CopyTo("Clipboard") },
-		{ key = "v", mods = "CMD", action = action.PasteFrom("Clipboard") },
-		{ key = "t", mods = "CMD", action = action.SpawnTab("CurrentPaneDomain") },
-		{
-			key = "w",
-			mods = "CMD",
-			action = action.CloseCurrentTab({ confirm = false }),
-		},
-		{ key = "n", mods = "CMD", action = action.SpawnWindow },
-		{ key = "[", mods = "CMD", action = action.ActivateTabRelative(-1) },
-		{ key = "]", mods = "CMD", action = action.ActivateTabRelative(1) },
-		{ key = "{", mods = "CMD|SHIFT", action = action.MoveTabRelative(-1) },
-		{ key = "}", mods = "CMD|SHIFT", action = action.MoveTabRelative(1) },
-		{
-			key = "a",
-			mods = "CMD",
-			action = action.SendKey({ key = "b", mods = "CTRL" }),
-		},
-		{
-			key = "LeftArrow",
-			mods = "CMD",
-			action = action.SendKey({ key = "a", mods = "CTRL" }),
-		},
-		{
-			key = "RightArrow",
-			mods = "CMD",
-			action = action.SendKey({ key = "e", mods = "CTRL" }),
-		},
-		{
-			key = "LeftArrow",
-			mods = "OPT",
-			action = action.SendKey({ key = "b", mods = "ALT" }),
-		},
-		{
-			key = "RightArrow",
-			mods = "OPT",
-			action = action.SendKey({ key = "f", mods = "ALT" }),
-		},
-		{
-			key = "Backspace",
-			mods = "CMD",
-			action = action.SendKey({ key = "u", mods = "CTRL" }),
-		},
-		{
-			key = "Backspace",
-			mods = "OPT",
-			action = action.SendKey({ key = "w", mods = "CTRL" }),
-		},
-		{ key = "/", mods = "CMD", action = action({ EmitEvent = "toggle-leader" }) },
-		{ key = "+", mods = "CMD", action = action.IncreaseFontSize },
-		{ key = "-", mods = "CMD", action = action.DecreaseFontSize },
-		{ key = "0", mods = "CMD", action = action.ResetFontSize },
-		{
-			key = "f",
-			mods = "CMD",
-			action = action.Search("CurrentSelectionOrEmptyString"),
-		},
-		{ key = "f", mods = "CMD|CTRL", action = action.ToggleFullScreen },
-		{ key = "D", mods = "CMD|SHIFT", action = action.ShowDebugOverlay },
+		{ key = "q", mods = "CMD", action = actions.QuitApplication },
+		{ key = "h", mods = "CMD", action = actions.HideApplication },
+		{ key = "m", mods = "CMD", action = actions.Hide },
+		{ key = "c", mods = "CMD", action = actions.CopyToClipboard },
+		{ key = "v", mods = "CMD", action = actions.PasteFromClipboard },
+		{ key = "t", mods = "CMD", action = actions.NewTab },
+		{ key = "w", mods = "CMD", action = actions.CloseTab },
+		{ key = "n", mods = "CMD", action = actions.NewWindow },
+		{ key = "[", mods = "CMD", action = actions.PreviousTab },
+		{ key = "]", mods = "CMD", action = actions.NextTab },
+		{ key = "{", mods = "CMD|SHIFT", action = actions.MoveTabLeft },
+		{ key = "}", mods = "CMD|SHIFT", action = actions.MoveTabRight },
+		{ key = "a", mods = "CMD", action = actions.TmuxLeader },
+		{ key = "LeftArrow", mods = "CMD", action = actions.ShellKeys.BeginningOfLine },
+		{ key = "RightArrow", mods = "CMD", action = actions.ShellKeys.EndOfLine },
+		{ key = "LeftArrow", mods = "OPT", action = actions.ShellKeys.BackwardWord },
+		{ key = "RightArrow", mods = "OPT", action = actions.ShellKeys.ForwardWord },
+		{ key = "Backspace", mods = "CMD", action = actions.ShellKeys.BackwardKillLine },
+		{ key = "Backspace", mods = "OPT", action = actions.ShellKeys.BackwardKillWord },
+		{ key = "/", mods = "CMD", action = actions({ EmitEvent = "toggle-leader" }) },
+		{ key = "+", mods = "CMD", action = actions.IncreaseFontSize },
+		{ key = "-", mods = "CMD", action = actions.DecreaseFontSize },
+		{ key = "0", mods = "CMD", action = actions.ResetFontSize },
+		{ key = "f", mods = "CMD", action = actions.Search },
+		{ key = "f", mods = "CMD|CTRL", action = actions.ToggleFullScreen },
+		{ key = "D", mods = "CMD|SHIFT", action = actions.ShowDebugOverlay },
 	}
-
-	for i = 1, 9 do
-		local key = { key = tostring(i), mods = "CMD", action = action.ActivateTab(i - 1) }
-		table.insert(keys, key)
-	end
 
 	return keys
 end
