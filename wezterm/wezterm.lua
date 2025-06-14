@@ -57,6 +57,7 @@ config.use_ime = true
 local launchmenu = require("core.launchmenu")
 config.default_prog = launchmenu.default_prog
 config.launch_menu = launchmenu.launch_menu
+config.mux_enable_ssh_agent = false
 
 require("core.events").setup()
 
