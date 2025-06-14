@@ -19,13 +19,19 @@ local function setup_binding(binding_name)
 end
 
 local function setup_leader()
-	local leader = {
+	return {
 		key = "a",
 		mods = platform.is_mac and "CMD" or "ALT",
 		timeout_milliseconds = 1000,
 	}
+end
 
-	return leader
+local function setup_override_leader()
+	return {
+		key = "a",
+		mods = "SHIFT | ALT | CTRL | SUPER",
+		timeout_milliseconds = 1000,
+	}
 end
 
 local function setup_keys()
@@ -42,7 +48,7 @@ end
 
 function B.get_defaults()
 	return {
-		leader = nil,
+		leader = setup_leader(),
 		keys = setup_keys(),
 		key_tables = setup_key_tables(),
 		mouse_bindings = setup_mouse_bindings(),
@@ -51,7 +57,7 @@ end
 
 function B.get_overrides()
 	return {
-		leader = setup_leader(),
+		leader = setup_override_leader(),
 		keys = nil,
 		key_tables = nil,
 		mouse_bindings = nil,

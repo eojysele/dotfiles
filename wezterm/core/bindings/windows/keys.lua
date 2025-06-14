@@ -12,7 +12,11 @@ function K.get()
 		{ key = "LeftArrow", mods = "CTRL|SHIFT", action = actions.PowerShellKeys.BeginningOfLine },
 		{ key = "RightArrow", mods = "CTRL|SHIFT", action = actions.PowerShellKeys.EndOfLine },
 		{ key = "Backspace", mods = "CTRL", action = actions.PowerShellKeys.BackwardKillWord },
-		{ key = "Backspace", mods = "CTRL|SHIFT", action = actions.PowerShellKeys.BackwardKillLine },
+		{
+			key = "Backspace",
+			mods = "CTRL|SHIFT",
+			action = actions.PowerShellKeys.BackwardKillLine,
+		},
 	}
 	table_utils.safe_merge(keys, wl_keys.get())
 
