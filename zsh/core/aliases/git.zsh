@@ -1,4 +1,6 @@
 alias gs="git status"
+alias gl="git log --all --graph"
+alias ga="git add"
 alias gc="git commit -m"
 alias gf="git fetch --prune origin"
 alias gF="git fetch --prune --all"
