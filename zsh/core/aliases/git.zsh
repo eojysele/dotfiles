@@ -1,4 +1,7 @@
 alias gs="git status"
+alias gd="git diff"
+alias gdw="git diff --word-diff"
+alias gds="git diff --stat"
 alias gl="git log --all --graph"
 alias ga="git add"
 alias gc="git commit -m"
