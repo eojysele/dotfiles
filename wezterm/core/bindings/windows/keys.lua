@@ -1,7 +1,7 @@
 local K = {}
 
 local table_utils = require("core.utils.table")
-local actions = require("core.bindings.action.keys").get()
+local actions = require("core.bindings.action").get()
 local wl_keys = require("core.bindings.shared.wl.keys")
 
 function K.get()

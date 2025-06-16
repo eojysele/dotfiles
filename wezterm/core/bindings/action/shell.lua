@@ -1,6 +1,6 @@
 local SK = {}
 
-local send_keys = require("core.bindings.action.keys.send_key").get()
+local send_keys = require("core.bindings.action.send_key").get()
 
 function SK.get()
 	return {

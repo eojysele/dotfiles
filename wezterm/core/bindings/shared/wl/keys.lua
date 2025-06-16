@@ -1,15 +1,15 @@
 local K = {}
 
-local actions = require("core.bindings.action.keys").get()
+local actions = require("core.bindings.action").get()
 
 function K.get()
 	local keys = {
-		{ key = "Q", mods = "CTRL|SHIFT", action = actions.QuitApplication },
 		{ key = "c", mods = "CTRL", action = actions.CopyToClipboardOrSIGINT },
 		{ key = "v", mods = "CTRL", action = actions.PasteFromClipboard },
-		{ key = "t", mods = "CTRL", action = actions.NewTab },
-		{ key = "w", mods = "CTRL", action = actions.CloseTab },
-		{ key = "n", mods = "CTRL", action = actions.NewWindow },
+		{ key = "Q", mods = "CTRL|SHIFT", action = actions.QuitApplication },
+		{ key = "T", mods = "CTRL|SHIFT", action = actions.NewTab },
+		{ key = "W", mods = "CTRL|SHIFT", action = actions.CloseTab },
+		{ key = "N", mods = "CTRL|SHIFT", action = actions.NewWindow },
 		{ key = "[", mods = "ALT", action = actions.PreviousTab },
 		{ key = "]", mods = "ALT", action = actions.NewTab },
 		{ key = "{", mods = "ALT|SHIFT", action = actions.MoveTabLeft },
@@ -19,7 +19,7 @@ function K.get()
 		{ key = "=", mods = "CTRL", action = actions.IncreaseFontSize },
 		{ key = "-", mods = "CTRL", action = actions.DecreaseFontSize },
 		{ key = "0", mods = "CTRL", action = actions.ResetFontSize },
-		{ key = "f", mods = "CTRL", action = actions.Search },
+		{ key = "F", mods = "CTRL|SHIFT", action = actions.Search },
 		{ key = "F11", mods = "", action = actions.ToggleFullScreen },
 		{ key = "D", mods = "CTRL|SHIFT", action = actions.ShowDebugOverlay },
 	}

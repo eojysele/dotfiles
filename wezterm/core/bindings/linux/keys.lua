@@ -1,6 +1,6 @@
 local K = {}
 
-local actions = require("core.bindings.action.keys").get()
+local actions = require("core.bindings.action").get()
 local table_utils = require("core.utils.table")
 local wl_keys = require("core.bindings.shared.wl.keys").get()
 

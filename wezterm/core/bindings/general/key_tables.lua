@@ -1,17 +1,23 @@
 local KT = {}
 
-local wezterm = require("wezterm")
-local action = wezterm.action
+local actions = require("core.bindings.action").get()
 
 function KT.get()
 	local key_tables = {
 		resize_pane = {
-			{ key = "h", action = action.AdjustPaneSize({ "Left", 5 }) },
-			{ key = "j", action = action.AdjustPaneSize({ "Down", 5 }) },
-			{ key = "k", action = action.AdjustPaneSize({ "Up", 5 }) },
-			{ key = "l", action = action.AdjustPaneSize({ "Right", 5 }) },
+			{ key = "h", action = actions.AdjustPaneSizeLeft },
+			{ key = "j", action = actions.AdjustPaneSizeDown },
+			{ key = "k", action = actions.AdjustPaneSizeUp },
+			{ key = "l", action = actions.AdjustPaneSizeRight },
 			{ key = "Escape", action = "PopKeyTable" },
 		},
+		select_pane = {
+			{ key = "h", action = actions.ActivatePaneDirectionLeft },
+			{ key = "j", action = actions.ActivatePaneDirectionDown },
+			{ key = "k", action = actions.ActivatePaneDirectionUp },
+			{ key = "l", action = actions.ActivatePaneDirectionRight },
+			{ key = "Escape", action = "PopKeyTable" },
+		}
 	}
 
 	return key_tables

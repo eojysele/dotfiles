@@ -1,6 +1,6 @@
 local K = {}
 
-local actions = require("core.bindings.action.keys").get()
+local actions = require("core.bindings.action").get()
 
 function K.get()
 	local keys = {

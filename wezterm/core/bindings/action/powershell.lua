@@ -1,7 +1,7 @@
 local PK = {}
 
 local wezterm = require("wezterm")
-local send_keys = require("core.bindings.action.keys.send_key").get()
+local send_keys = require("core.bindings.action.send_key").get()
 
 local function is_powershell(pane)
 	local process = pane:get_foreground_process_name()

@@ -1,6 +1,6 @@
 local K = {}
 
-local actions = require("core.bindings.action.keys").get()
+local actions = require("core.bindings.action").get()
 local platform = require("core.utils.platform")
 
 function K.get()
@@ -26,6 +26,9 @@ function K.get()
 				actions.ClearScrollbackOnly,
 			}),
 		},
+		{ key = "W", mods = "LEADER|SHIFT", action = actions.CloseTab },
+		{ key = "t", mods = "LEADER", action = actions.NewTab },
+		{ key = "f", mods = "LEADER", action = actions.Search },
 		{ key = "Tab", mods = "CTRL", action = actions.NextTab },
 		{ key = "Tab", mods = "SHIFT|CTRL", action = actions.PreviousTab },
 		{ key = "Home", mods = "CTRL", action = actions.ScrollToTop },

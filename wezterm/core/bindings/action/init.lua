@@ -2,9 +2,9 @@ local A = {}
 
 local wezterm = require("wezterm")
 local action = wezterm.action
-local send_keys = require("core.bindings.action.keys.send_key").get()
-local shell_keys = require("core.bindings.action.keys.shell").get()
-local powershell_keys = require("core.bindings.action.keys.powershell").get()
+local send_keys = require("core.bindings.action.send_key").get()
+local shell_keys = require("core.bindings.action.shell").get()
+local powershell_keys = require("core.bindings.action.powershell").get()
 
 local params = {
 	confirm = true,
@@ -69,10 +69,19 @@ function A.get()
 		ActivatePaneDirectionRight = action.ActivatePaneDirection("Right"),
 		ActivatePaneDirectionDown = action.ActivatePaneDirection("Down"),
 		ActivatePaneDirectionUp = action.ActivatePaneDirection("Up"),
+		AdjustPaneSizeLeft = action.AdjustPaneSize({ "Left", 5 }),
+		AdjustPaneSizeRight = action.AdjustPaneSize({ "Right", 5 }),
+		AdjustPaneSizeDown = action.AdjustPaneSize({ "Down", 5 }),
+		AdjustPaneSizeUp = action.AdjustPaneSize({ "Up", 5 }),
 		TogglePaneZoomState = action.TogglePaneZoomState,
 		ActivateCopyMode = action.ActivateCopyMode,
 		ActivateResizePane = action.ActivateKeyTable({
 			name = "resize_pane",
+			timeout_milliseconds = 1000,
+			one_shot = false,
+		}),
+		ActivateSelectPane = action.ActivateKeyTable({
+			name = "select_pane",
 			timeout_milliseconds = 1000,
 			one_shot = false,
 		}),
