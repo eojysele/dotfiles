@@ -20,6 +20,11 @@ function MB.get()
 			mods = "CMD",
 			action = actions.ResetFontSize,
 		},
+		{
+			event = { Up = { streak = 1, button = "Left" } },
+			mods = "CMD",
+			action = actions.Mouse.OpenLinkAtMouseCursor,
+		},
 	}
 	return mouse_bindings
 end

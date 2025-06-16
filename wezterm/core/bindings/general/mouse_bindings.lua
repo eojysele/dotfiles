@@ -74,11 +74,6 @@ function MB.get()
 			action = actions.ExtendSelectionToMouseCursorLine,
 			mods = "SHIFT",
 		},
-		{
-			event = { Up = { streak = 1, button = "Left" } },
-			mods = "SHIFT",
-			action = actions.OpenLinkAtMouseCursor,
-		},
 	}
 
 	return mouse_bindings

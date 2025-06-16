@@ -19,6 +19,11 @@ function MB.get()
 			mods = "CTRL",
 			action = actions.ResetFontSize,
 		},
+		{
+			event = { Up = { streak = 1, button = "Left" } },
+			mods = "CTRL",
+			action = actions.Mouse.OpenLinkAtMouseCursor,
+		},
 	}
 
 	return mouse_bindings
