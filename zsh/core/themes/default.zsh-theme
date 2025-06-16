@@ -33,7 +33,7 @@ git_prompt(){
 		local branch=$(git branch --show-current)$' '
 		local repository_status
 
-		local git_status=$(git status -s 2> /dev/null)
+		local git_status=$(git status --porcelain 2> /dev/null)
 		if [[ -n "$git_status" ]]; then
 			status_color="yellow"
 		fi
