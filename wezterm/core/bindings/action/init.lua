@@ -2,9 +2,10 @@ local A = {}
 
 local wezterm = require("wezterm")
 local action = wezterm.action
-local send_keys = require("core.bindings.action.send_key").get()
-local shell_keys = require("core.bindings.action.shell").get()
-local powershell_keys = require("core.bindings.action.powershell").get()
+local send_key_actions = require("core.bindings.action.send_key").get()
+local shell_actions = require("core.bindings.action.shell").get()
+local powershell_actions = require("core.bindings.action.powershell").get()
+local mouse_actions = require("core.bindings.action.mouse").get()
 
 local params = {
 	confirm = true,
@@ -103,9 +104,10 @@ function A.get()
 		DecreaseFontSize = action.DecreaseFontSize,
 		ResetFontSize = action.ResetFontSize,
 
-		ShellKeys = shell_keys,
-		PowerShellKeys = powershell_keys,
-		SendKey = send_keys,
+		Shell = shell_actions,
+		PowerShell = powershell_actions,
+		SendKey = send_key_actions,
+		Mouse = mouse_actions,
 	}
 
 	return actions
