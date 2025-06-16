@@ -17,7 +17,7 @@ function KT.get()
 			{ key = "k", action = actions.ActivatePaneDirectionUp },
 			{ key = "l", action = actions.ActivatePaneDirectionRight },
 			{ key = "Escape", action = "PopKeyTable" },
-		}
+		},
 	}
 
 	return key_tables
