@@ -18,25 +18,30 @@ local function os_is_windows()
 	return string.find(platform_name, os.windows) ~= nil
 end
 
-local function get_os_prefix()
-	if os_is_mac() then
+local function get_os_prefix(current_platform)
+	if current_platform.is_mac then
 		return "macos"
 	end
-	if os_is_windows() then
+	if current_platform.is_windows then
 		return "windows"
 	end
-	if os_is_linux() then
+	if current_platform.is_linux then
 		return "linux"
 	end
 	return "linux"
 end
 
-local platform = {
+local current_platform = {
 	is_mac = os_is_mac(),
 	is_linux = os_is_linux(),
 	is_windows = os_is_windows(),
-	os_prefix = get_os_prefix(),
-	os_prefix_with_dot = get_os_prefix() .. ".",
 }
+local os_prefix = get_os_prefix(current_platform)
 
-return platform
+return {
+	is_mac = current_platform.is_mac,
+	is_linux = current_platform.is_linux,
+	is_windows = current_platform.is_windows,
+	os_prefix = os_prefix,
+	os_prefix_with_dot = os_prefix .. ".",
+}
