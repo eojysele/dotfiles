@@ -3,6 +3,14 @@ local K = {}
 local actions = require("core.bindings.action").get()
 local platform = require("core.utils.platform")
 
+local function insert_activate_tab_by_number(keys, mods)
+	for i = 1, 9 do
+		local key = { key = tostring(i), mods = mods, action = actions.ActivateTab(i) }
+		table.insert(keys, key)
+	end
+
+end
+
 function K.get()
 	local keys = {
 		{ key = "d", mods = "LEADER", action = actions.SplitHorizontal },
@@ -41,11 +49,9 @@ function K.get()
 		{ key = "PageDown", mods = "NONE", action = actions.ScrollPageDown },
 	}
 
-	for i = 1, 9 do
-		local mods = platform.is_mac and "CMD" or "ALT"
-		local key = { key = tostring(i), mods = mods, action = actions.ActivateTab(i) }
-		table.insert(keys, key)
-	end
+	local mods = platform.is_mac and "CMD" or "ALT"
+	insert_activate_tab_by_number(keys, mods)
+	insert_activate_tab_by_number(keys, "LEADER")
 
 	return keys
 end
