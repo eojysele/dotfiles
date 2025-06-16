@@ -11,7 +11,7 @@ function K.get()
 		{ key = "W", mods = "CTRL|SHIFT", action = actions.CloseTab },
 		{ key = "N", mods = "CTRL|SHIFT", action = actions.NewWindow },
 		{ key = "[", mods = "ALT", action = actions.PreviousTab },
-		{ key = "]", mods = "ALT", action = actions.NewTab },
+		{ key = "]", mods = "ALT", action = actions.NextTab },
 		{ key = "{", mods = "ALT|SHIFT", action = actions.MoveTabLeft },
 		{ key = "}", mods = "ALT|SHIFT", action = actions.MoveTabRight },
 		{ key = "a", mods = "ALT", action = actions.TmuxLeader },
