@@ -12,7 +12,6 @@ return {
 	require("eojysele.plugins.nvim-mason-lspconfig"),
 	require("eojysele.plugins.nvim-lspconfig"),
 	require("eojysele.plugins.nvim-jdtls"),
-	require("eojysele.plugins.nvim-lint"),
 	require("eojysele.plugins.nvim-cmp"),
 	require("eojysele.plugins.nvim-treesitter"),
 	require("eojysele.plugins.nvim-treesitter-context"),

@@ -4,7 +4,6 @@ local keymaps_utils = require("eojysele.core.utils.keymaps")
 
 function K.general_keymaps()
 	local lsp_buf = vim.lsp.buf
-	local lint = require("lint")
 	local telescope_builtin = require("telescope.builtin")
 
 	local keymaps = {
@@ -40,7 +39,6 @@ function K.general_keymaps()
 				lsp_buf.format({ async = true })
 			end,
 		},
-		{ mode = "n", lhs = "<leader>gl", rhs = lint.try_lint },
 		{ mode = "n", lhs = "<leader>fb", rhs = telescope_builtin.buffers },
 		{ mode = "n", lhs = "<leader>ff", rhs = telescope_builtin.live_grep },
 		{ mode = "n", lhs = "<leader>fn", rhs = telescope_builtin.find_files },
