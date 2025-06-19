@@ -40,7 +40,7 @@ function K.get()
 		{ key = "]", mods = "LEADER", action = actions.NextTab },
 		{ key = "{", mods = "LEADER|SHIFT", action = actions.MoveTabLeft },
 		{ key = "}", mods = "LEADER|SHIFT", action = actions.MoveTabRight },
-		{ key = "f", mods = "LEADER", action = actions.Search },
+		{ key = "F", mods = "LEADER|SHIFT", action = actions.Search },
 		{ key = "Tab", mods = "CTRL", action = actions.NextTab },
 		{ key = "Tab", mods = "SHIFT|CTRL", action = actions.PreviousTab },
 		{ key = "Home", mods = "CTRL", action = actions.ScrollToTop },
