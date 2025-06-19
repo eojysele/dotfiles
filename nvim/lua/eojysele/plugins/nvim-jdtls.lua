@@ -8,8 +8,7 @@ return {
 			local config_directory = home_directory .. "/.config/nvim"
 			local runtimes_directory = os.getenv("SDKMAN_DIR") .. "/candidates/java"
 
-			local mason_registry = require("mason-registry")
-			local jdtls_directory = mason_registry.get_package("jdtls"):get_install_path()
+			local jdtls_directory = home_directory .. "/.local/share/nvim/mason/packages/jdtls"
 
 			local jdtls_config_directory
 			if vim.loop.os_uname().sysname == "Darwin" then
@@ -28,15 +27,13 @@ return {
 				.. "/.local/share/eclipse/"
 				.. vim.fn.fnamemodify(project_directory, ":p:h:t")
 
-			local jdtls_runtime = runtimes_directory .. "/21.0.5-tem/bin/java"
+			local jdtls_runtime = runtimes_directory .. "/21.0.7-tem/bin/java"
 
-			-- default formatter
 			local formatter_settings = {
 				url = config_directory .. "/java-google-style.xml",
 				profile = "GoogleStyle",
 			}
 
-			-- default import order
 			local import_order = {
 				"java",
 				"javax",
@@ -46,31 +43,6 @@ return {
 				"",
 				"#",
 			}
-
-			local file_utils = require("eojysele.core.utils.file")
-
-			-- project settings
-			if project_directory ~= nil then
-				-- formatter
-				local formatter_file = project_directory .. "/.nvim/eclipse-java-style.xml"
-				local formatter_name = "ProjectCodeStyle"
-				if file_utils.file_is_exists(formatter_file) then
-					formatter_settings = {
-						url = formatter_file,
-						profile = formatter_name,
-					}
-				end
-
-				-- import order
-				local import_order_file = project_directory .. "/.nvim/import-order.lua"
-				if file_utils.file_is_exists(import_order_file) then
-					local load_project_import_order = assert(loadfile(import_order_file))
-					local project_import_order = load_project_import_order()
-					if project_import_order ~= nil then
-						import_order = project_import_order
-					end
-				end
-			end
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -145,32 +117,16 @@ return {
 							runtimes = {
 								{
 									name = "JavaSE-21",
-									path = runtimes_directory .. "/21.0.5-tem",
+									path = runtimes_directory .. "/21.0.7-tem",
 									default = true,
 								},
 								{
-									name = "JavaSE-21",
-									path = runtimes_directory .. "/21.0.5-librca",
-								},
-								{
 									name = "JavaSE-17",
-									path = runtimes_directory .. "/17.0.13-tem",
-								},
-								{
-									name = "JavaSE-17",
-									path = runtimes_directory .. "/17.0.13-librca",
+									path = runtimes_directory .. "/17.0.15-tem",
 								},
 								{
 									name = "JavaSE-11",
-									path = runtimes_directory .. "/11.0.25-tem",
-								},
-								{
-									name = "JavaSE-11",
-									path = runtimes_directory .. "/11.0.25-librca",
-								},
-								{
-									name = "JavaSE-1.8",
-									path = runtimes_directory .. "/8.0.422-librca",
+									path = runtimes_directory .. "/11.0.27-tem",
 								},
 							},
 						},
