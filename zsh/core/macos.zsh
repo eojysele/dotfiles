@@ -9,11 +9,7 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
 # Docker
-source /Users/eojysele/.docker/init-zsh.sh || true
-
-# FPATH
-export FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-export FPATH="${HOME}/.zsh/completions/:${FPATH}"
+[[ -s "$HOME/.docker/init-zsh.sh" ]] && source $HOME/.docker/init-zsh.sh || true
 
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"

@@ -2,6 +2,8 @@ export EDITOR=v
 export DEFAULT_USER="$(whoami)"
 
 export DOTFILES_HOME=$HOME/.config/dotfiles
+export DOTFILES_ZSH_HOME=$HOME/.config/dotfiles/zsh
+export ZSH_COMPLETIONS_DIR="$HOME/.zsh/completions"
 
 autoload -U colors && colors
 setopt PROMPT_SUBST
@@ -40,11 +42,11 @@ if [ -n "$(brew --prefix 2>/dev/null)" ]; then
 	source $DOTFILES_HOME/zsh/core/brew.zsh
 fi
 
-export PATH=$DOTFILES_HOME/tmux/layouts:$PATH
-
 for file in $DOTFILES_HOME/zsh/core/aliases/*; do source $file; done
 
+source $DOTFILES_ZSH_HOME/core/completions.zsh
 autoload -Uz compinit
+compinit
 
 eval "$(zoxide init zsh)"
 
