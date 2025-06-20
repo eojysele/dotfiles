@@ -25,6 +25,14 @@ local function setup_leader()
 	}
 end
 
+local function setup_leader_override()
+	return {
+		key = "a",
+		mods = "SUPER|CTRL|ALT|SHIFT",
+		timeout_milliseconds = 1000,
+	}
+end
+
 local function setup_keys()
 	return setup_binding("keys")
 end
@@ -39,7 +47,7 @@ end
 
 function B.get_defaults()
 	return {
-		leader = nil,
+		leader = setup_leader(),
 		keys = setup_keys(),
 		key_tables = setup_key_tables(),
 		mouse_bindings = setup_mouse_bindings(),
@@ -48,7 +56,7 @@ end
 
 function B.get_overrides()
 	return {
-		leader = setup_leader(),
+		leader = setup_leader_override(),
 		keys = nil,
 		key_tables = nil,
 		mouse_bindings = nil,
