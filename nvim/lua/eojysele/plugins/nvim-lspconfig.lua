@@ -5,38 +5,40 @@ return {
 	},
 	config = function()
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
-		local lspconfig = require("lspconfig")
 
 		-- Go
-		lspconfig.gopls.setup({})
+		vim.lsp.enable("gopls")
 
 		-- JavaScript/TypeScript
-		lspconfig.ts_ls.setup({})
+		vim.lsp.enable("ts_ls")
 
 		-- JavaScript Linter
-		lspconfig.eslint.setup({})
+		vim.lsp.enable("eslint")
 
 		-- Markdown
-		lspconfig.marksman.setup({})
+		vim.lsp.enable("marksman")
 
 		-- Lua
-		lspconfig.lua_ls.setup({})
+		vim.lsp.enable("lua_ls")
 
 		-- HTML
-		lspconfig.html.setup({
+		vim.lsp.enable("html")
+		vim.lsp.config("html", {
 			capabilities = capabilities,
 		})
 
 		-- JSON
-		lspconfig.jsonls.setup({
+		vim.lsp.enable("jsonls")
+		vim.lsp.config("jsonls", {
 			capabilities = capabilities,
 		})
 
 		-- XML
-		lspconfig.lemminx.setup({})
+		vim.lsp.enable("lemminx")
 
 		-- YAML
-		lspconfig.yamlls.setup({
+		vim.lsp.enable("yamlls")
+		vim.lsp.config("yamlls", {
 			settings = {
 				redhat = {
 					telemetry = {
@@ -47,13 +49,14 @@ return {
 		})
 
 		-- Dockerfile
-		lspconfig.dockerls.setup({})
+		vim.lsp.enable("dockerls")
 
 		-- Docker Compose
-		lspconfig.docker_compose_language_service.setup({})
+		vim.lsp.enable("docker_compose_language_service")
 
 		-- Bash
-		lspconfig.bashls.setup({
+		vim.lsp.enable("bashls")
+		vim.lsp.config("bashls", {
 			filetypes = { "sh", "zsh", "bash" },
 		})
 	end,
