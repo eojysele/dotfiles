@@ -116,6 +116,7 @@ function K.jdtls_keymaps()
 	local jdtls = require("jdtls")
 	local keymaps = {
 		{ mode = "n", lhs = "<leader>ji", rhs = jdtls.organize_imports },
+		{ mode = "n", lhs = "<leader>jU", rhs = "<cmd>JdtUpdateConfig<CR>" },
 	}
 
 	keymaps_utils.set_keymaps(keymaps)
