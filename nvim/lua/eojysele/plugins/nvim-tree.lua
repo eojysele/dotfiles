@@ -4,7 +4,7 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
-		local icons = require("eojysele.core.ui.icons")
+		local icons = require("eojysele.core.utils.icons")
 
 		require("nvim-tree").setup({
 			on_attach = function(buffer)

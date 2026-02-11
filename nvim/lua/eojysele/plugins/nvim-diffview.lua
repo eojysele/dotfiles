@@ -1,7 +1,7 @@
 return {
 	"sindrets/diffview.nvim",
 	config = function()
-		local icons = require("eojysele.core.ui.icons")
+		local icons = require("eojysele.core.utils.icons")
 		require("diffview").setup({
 			icons = {
 				folder_closed = icons.folder.default,

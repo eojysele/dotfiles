@@ -1,7 +1,7 @@
 local g = vim.g
 local opt = vim.opt
 local autocmd = vim.api.nvim_create_autocmd
-local icons = require("eojysele.core.ui.icons")
+local icons = require("eojysele.core.utils.icons")
 
 g.mapleader = " "
 opt.mousemodel = "extend"

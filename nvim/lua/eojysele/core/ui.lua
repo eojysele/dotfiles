@@ -1,4 +1,4 @@
-local icons = require("eojysele.core.ui.icons")
+local icons = require("eojysele.core.utils.icons")
 
 local diagnostics = {
 	[vim.diagnostic.severity.ERROR] = icons.diagnostics.error,
