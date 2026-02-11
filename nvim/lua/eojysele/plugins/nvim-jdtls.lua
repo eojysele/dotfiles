@@ -51,7 +51,7 @@ return {
 					debounce_text_changes = 80,
 				},
 				on_attach = function()
-					require("eojysele.core.keymaps").jdtls_keymaps()
+					require("eojysele.core.settings.keymaps.table").jdtls_keymaps()
 				end,
 				capabilities = capabilities,
 				root_dir = project_directory,

@@ -13,7 +13,7 @@ return {
 			separator = "─",
 			zindex = 20,
 			on_attach = function()
-				require("eojysele.core.keymaps").ts_context_keymaps()
+				require("eojysele.core.settings.keymaps.table").ts_context_keymaps()
 			end,
 		})
 	end,

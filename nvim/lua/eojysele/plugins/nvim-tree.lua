@@ -10,7 +10,7 @@ return {
 			on_attach = function(buffer)
 				local api = require("nvim-tree.api")
 				api.config.mappings.default_on_attach(buffer)
-				require("eojysele.core.keymaps").tree_keymaps(buffer)
+				require("eojysele.core.settings.keymaps.table").tree_keymaps(buffer)
 			end,
 			filters = {
 				git_ignored = true,
