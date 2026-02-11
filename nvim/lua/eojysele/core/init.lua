@@ -4,11 +4,11 @@ local options = {
 	settings = {
 		"options",
 		"ui",
-		"keymaps"
+		"keymaps",
 	},
 	global = {
-		"tabline"
-	}
+		"tabline",
+	},
 }
 
 for category, modules in pairs(options) do
