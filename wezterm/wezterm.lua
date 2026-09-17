@@ -1,8 +1,6 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-local platform = require("core.utils.platform")
-
 local font = require("core.font")
 config.font = wezterm.font(font.family)
 config.font_size = font.size
@@ -18,15 +16,15 @@ local theme = require("core.theme")
 config.default_cursor_style = "SteadyBlock"
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = true
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 config.colors = theme.get_colors()
 config.force_reverse_video_cursor = false
-config.window_frame = theme.get_window_frame(font.family, font.size)
+config.window_frame = theme.get_window_frame(font.size)
 config.hide_mouse_cursor_when_typing = true
 config.enable_tab_bar = true
-config.hide_tab_bar_if_only_one_tab = true
-config.show_close_tab_button_in_tabs = false
-config.show_new_tab_button_in_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = false
+config.show_close_tab_button_in_tabs = true
+config.show_new_tab_button_in_tab_bar = true
 config.native_macos_fullscreen_mode = true
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
@@ -34,8 +32,8 @@ config.window_close_confirmation = "AlwaysPrompt"
 config.window_padding = {
 	left = "0.5cell",
 	right = "0.5cell",
-	top = platform.is_windows and "2.0cell" or "1.5cell",
-	bottom = "0cell",
+	top = "0.5cell",
+	bottom = "0.5cell",
 }
 
 config.inactive_pane_hsb = {
