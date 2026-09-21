@@ -8,7 +8,6 @@ local function insert_activate_tab_by_number(keys, mods)
 		local key = { key = tostring(i), mods = mods, action = actions.ActivateTab(i) }
 		table.insert(keys, key)
 	end
-
 end
 
 function K.get()

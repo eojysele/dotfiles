@@ -1,5 +1,5 @@
 local F = {
-	family = "Iosevka Nerd Font Mono",
+	family = "Fira Code",
 	size = 14,
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 }

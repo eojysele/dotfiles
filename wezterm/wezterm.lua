@@ -4,6 +4,10 @@ local config = wezterm.config_builder()
 local font = require("core.font")
 config.font = wezterm.font(font.family)
 config.font_size = font.size
+config.font = wezterm.font_with_fallback({
+	font.family,
+	"Symbols Nerd Font",
+})
 config.harfbuzz_features = font.harfbuzz_features
 
 config.initial_cols = 120
@@ -19,7 +23,7 @@ config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = false
 config.colors = theme.get_colors()
 config.force_reverse_video_cursor = false
-config.window_frame = theme.get_window_frame(font.size)
+config.window_frame = theme.get_window_frame(font.family, font.size)
 config.hide_mouse_cursor_when_typing = true
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = false
